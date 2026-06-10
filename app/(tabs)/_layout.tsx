@@ -2,6 +2,7 @@ import { Feather } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform, StyleSheet } from 'react-native';
+import { BambooIcon } from '@/components/BambooIcon';
 
 import { HapticTab } from '@/components/haptic-tab';
 
@@ -44,10 +45,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="info"
+        name="langso"
         options={{
-          title: 'Giới thiệu',
-          tabBarIcon: ({ color }) => <Feather name="info" size={22} color={color} />,
+          title: 'Làng Số',
+          tabBarIcon: ({ color }) => <BambooIcon size={22} color={color} />,
         }}
       />
       <Tabs.Screen
