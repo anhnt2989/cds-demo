@@ -1,14 +1,12 @@
 import { Feather } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Dimensions,
   FlatList,
-  Linking,
   NativeScrollEvent,
   NativeSyntheticEvent,
-  Pressable,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -17,7 +15,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { CONTACT, LOGO_TITLE_URL, LOGO_URL, LS, PILLARS, SOLUTIONS } from '@/data/langso';
+import { CONTACT, LOGO_TITLE_URL, LS, PILLARS, SOLUTIONS } from '@/data/langso';
 
 const { width: SW } = Dimensions.get('window');
 const CARD_W        = SW - 64;  // 32px margin each side
@@ -298,7 +296,7 @@ const ss = StyleSheet.create({
   /* Carousel section */
   carouselSection: { marginTop: 16 },
   carouselCounter: { alignItems: 'flex-end', paddingHorizontal: 32, marginBottom: 10 },
-  secHeaderRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingHorizontal: 24, marginBottom: 16 },
+  secHeaderRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 16 },
   secAccent: { width: 4, height: 22, backgroundColor: LS.green, borderRadius: 2 },
   secTitle: { fontSize: 22, fontWeight: '800', color: LS.black, letterSpacing: -0.4, flex: 1 },
   secCount: { fontSize: 13, fontWeight: '600', color: LS.muted },
