@@ -36,11 +36,6 @@ function SolutionCard({ item }: { item: typeof SOLUTIONS[0] }) {
         transition={300}
       />
 
-      {/* number badge */}
-      <View style={card.badge}>
-        <Text style={card.badgeNum}>{String(item.id).padStart(2, '0')}</Text>
-      </View>
-
       {/* gradient overlay + text at bottom */}
       <LinearGradient
         colors={['transparent', 'rgba(0,0,0,0.18)', 'rgba(0,0,0,0.72)', 'rgba(0,0,0,0.88)']}
