@@ -1,0 +1,3602 @@
+[
+  {
+    "num": 1,
+    "name": "1 AI AgentBase - Nền",
+    "desc": "Đơn giản hóa vận hành AI",
+    "developer": "Đơn vị phát triển: Thay vì phải tự xây dựng"
+  },
+  {
+    "num": 2,
+    "name": "2 An ERP - Nền tảng",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Tập Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 3,
+    "name": "3 Art CMS AI Hub -",
+    "desc": "Đây là hệ thống quản trị và",
+    "developer": "Công ty Cổ phần Đáp ứng xu hướng truyền"
+  },
+  {
+    "num": 4,
+    "name": "4 Axiom VinGenChip",
+    "desc": "Axiom VinGenChip: Chip",
+    "developer": "Công ty Cổ phần Chip tính toán, hỗ trợ định"
+  },
+  {
+    "num": 5,
+    "name": "5 Base",
+    "desc": "Quản trị đơn vị, thông tin",
+    "developer": "Học viện Hàng không Quản trị đơn vị, thông tin"
+  },
+  {
+    "num": 6,
+    "name": "6 Bàn Làm việc số",
+    "desc": "Một chỗ làm việc duy nhất",
+    "developer": "Trung tâm Chuyển đổi Sáu vấn đề cụ"
+  },
+  {
+    "num": 7,
+    "name": "7 Bản sao số đô thị",
+    "desc": "Nền tảng Bản sao số đô thị",
+    "developer": "VTS Số hóa toàn diện hiện trạng"
+  },
+  {
+    "num": 8,
+    "name": "8 Bản đồ số 3D di sản",
+    "desc": "Số hóa 3D di sản văn hóa",
+    "developer": "Tổng Công ty Giải Số hóa 3D di sản văn hóa"
+  },
+  {
+    "num": 9,
+    "name": "9 Bảo hiểm xã hội",
+    "desc": "Thực hiện các nghiệp vụ",
+    "developer": "Cục Tiền lương và Thực hiện các nghiệp vụ"
+  },
+  {
+    "num": 10,
+    "name": "10 Bảo tàng số 3D",
+    "desc": "Hệ thống bảo tàng số 3D:",
+    "developer": "Tổng Công ty Giải Xây dựng bảo tàng số 3D"
+  },
+  {
+    "num": 11,
+    "name": "11 BeeKids - Nền tảng",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty cổ phần giáo Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 12,
+    "name": "12 Bệnh viện thông",
+    "desc": "Bộ sản phẩm giúp thông",
+    "developer": "Tổng Công ty Giải Bộ sản phẩm giúp thông"
+  },
+  {
+    "num": 13,
+    "name": "13 Biên bản điện tử AI",
+    "desc": "Tự động ghi lại biên bản",
+    "developer": "TAND TP Hồ Chí Tự động ghi lại biên bản"
+  },
+  {
+    "num": 14,
+    "name": "14 BnK IDP",
+    "desc": "BnK IDP là nền tảng trí tuệ",
+    "developer": "Đơn vị phát triển: BnK IDP đóng góp trực"
+  },
+  {
+    "num": 15,
+    "name": "15 Bộ CMS dùng để",
+    "desc": "Phục vụ cả toàn soạn",
+    "developer": "Trung ương Đoàn Phục vụ cả toàn soạn"
+  },
+  {
+    "num": 16,
+    "name": "16 Bộ công cụ robot",
+    "desc": "Bộ công cụ robot giáo dục",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 17,
+    "name": "17 Bộ giải pháp",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 18,
+    "name": "18 Bộ hình thức thể",
+    "desc": "Trợ lý ảo về lĩnh vực phân",
+    "developer": "Công ty Cổ phần Phân Hỗ trợ người dùng tra cứu,"
+  },
+  {
+    "num": 19,
+    "name": "19 Cấp mã số trực",
+    "desc": "Hệ thống cấp mã số",
+    "developer": "Cục Công nghệ thống Hệ thống cấp mã số"
+  },
+  {
+    "num": 20,
+    "name": "20 Cấp mã số đơn vị có",
+    "desc": "Hỗ trợ cấp mã số cho các",
+    "developer": "Cục Công nghệ thống Hỗ trợ cấp mã số cho các"
+  },
+  {
+    "num": 21,
+    "name": "21 Cấp thị thực ngoại",
+    "desc": "Quản lý hồ sơ cấp thị thực",
+    "developer": "Cục Lãnh sự Quản lý hồ sơ cấp thị thực"
+  },
+  {
+    "num": 22,
+    "name": "22 Cắt file chương trình",
+    "desc": "Tách chương trình phát",
+    "developer": "Trung tâm R&D Tách chương trình phát"
+  },
+  {
+    "num": 23,
+    "name": "23 CES EDUAI - giải",
+    "desc": "CES EDUAI - giải pháp",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 24,
+    "name": "24 Chatbot AI Roboki",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Tư Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 25,
+    "name": "25 Chatbot AI trên",
+    "desc": "Điểm nổi bật của mô hình",
+    "developer": "UBND phường An Khi tiện ích này đi vào hoạt"
+  },
+  {
+    "num": 26,
+    "name": "26 Chatbot AI trên",
+    "desc": "1. Chatbot AI trên Cổng",
+    "developer": "Đơn vị phát triển: 1. Chatbot AI trên Cổng"
+  },
+  {
+    "num": 27,
+    "name": "27 Chấm điểm tín",
+    "desc": "Từ các dữ liệu tín dụng của",
+    "developer": "Đơn vị phát triển: KCI Phê duyệt linh hoạt, mở thẻ"
+  },
+  {
+    "num": 28,
+    "name": "28 CHECKEE - Giải",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 29,
+    "name": "29 Chuyển đổi giọng",
+    "desc": "Cung cấp công cụ chuyển",
+    "developer": "Trung tâm R&D Cung cấp công cụ chuyển"
+  },
+  {
+    "num": 30,
+    "name": "30 Chuyển đổi văn bản",
+    "desc": "Hỗ trợ số hoá và tự động",
+    "developer": "Trung tâm R&D Hỗ trợ số hoá và tự động"
+  },
+  {
+    "num": 31,
+    "name": "31 Chương trình bổ trợ",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 32,
+    "name": "32 Chương trình giáo",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty cổ phần Giáo Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 33,
+    "name": "33 Chương trình Quản",
+    "desc": "Hệ thống Quản lý văn bản",
+    "developer": "Kho bạc Nhà nước Hệ thống Quản lý văn bản"
+  },
+  {
+    "num": 34,
+    "name": "34 Chương trình quản",
+    "desc": "Cung cấp các quy trình xử",
+    "developer": "Cục Công nghệ thống Cung cấp các quy trình xử"
+  },
+  {
+    "num": 35,
+    "name": "35 Chương trình",
+    "desc": "Chương trình Talkshow",
+    "developer": "Kênh VTC1 - Đài Hỗ trợ số hóa, tối ưu hóa"
+  },
+  {
+    "num": 36,
+    "name": "36 Chương trình tổng",
+    "desc": "Do hệ thống TABMIS",
+    "developer": "Kho bạc Nhà nước Do hệ thống"
+  },
+  {
+    "num": 37,
+    "name": "37 Chương trình Đào",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Giáo Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 38,
+    "name": "38 Chữ ký số",
+    "desc": "Ký số văn bản, quyết định",
+    "developer": "Trung tâm R&D Ký số văn bản, quyết định"
+  },
+  {
+    "num": 39,
+    "name": "39 Chữ ký số từ xa",
+    "desc": "Giải pháp chữ ký số",
+    "developer": "Đơn vị phát triển: Thực tế tại Việt Nam cho"
+  },
+  {
+    "num": 40,
+    "name": "40 CityWork - Quản lý",
+    "desc": "Dự án/phần mềm:",
+    "developer": "Đơn vị phát triển: Việc sử dụng phần mềm đã"
+  },
+  {
+    "num": 41,
+    "name": "41 Cloud Infrastructure",
+    "desc": "Cung cấp hạ tầng điện toán",
+    "developer": "Tổng Công ty Giải Cung cấp hạ tầng điện toán"
+  },
+  {
+    "num": 42,
+    "name": "42 Cloud Managed",
+    "desc": "Vận hành, quản trị và tối",
+    "developer": "Tổng Công ty Giải Vận hành, quản trị và tối"
+  },
+  {
+    "num": 43,
+    "name": "43 Cloud Platform",
+    "desc": "Cấp phép nền tảng Cloud",
+    "developer": "Tổng Công ty Giải Cấp phép nền tảng Cloud"
+  },
+  {
+    "num": 44,
+    "name": "44 Cloud Platform as a",
+    "desc": "Cung cấp nền tảng đám",
+    "developer": "Tổng Công ty Giải Cung cấp nền tảng đám"
+  },
+  {
+    "num": 45,
+    "name": "45 Cloud Security",
+    "desc": "Bảo vệ toàn diện dữ liệu,",
+    "developer": "Tổng Công ty Giải Bảo vệ toàn diện dữ liệu,"
+  },
+  {
+    "num": 46,
+    "name": "46 CLOUDGO - Giải",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Công Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 47,
+    "name": "47 CMC AntiVirus",
+    "desc": "Giải pháp diệt virus cho",
+    "developer": "CMC Cyber Security Người dung cá nhân Việt"
+  },
+  {
+    "num": 48,
+    "name": "48 CMC Endpoint",
+    "desc": "Giải pháp giám sát và phản",
+    "developer": "CMC Cyber Security Tấn công APT do nhóm"
+  },
+  {
+    "num": 49,
+    "name": "49 CMC Endpoint",
+    "desc": "Nền tảng bảo mật đầu cuối",
+    "developer": "CMC Cyber Security Các thiết bị đầu cuối trong"
+  },
+  {
+    "num": 50,
+    "name": "50 CMC Mobile",
+    "desc": "Giải pháp bảo mật thiết bị",
+    "developer": "CMC Cyber Security Với hơn 72 triệu người"
+  },
+  {
+    "num": 51,
+    "name": "51 CMC Security",
+    "desc": "Hệ thống giám sát an ninh",
+    "developer": "CMC Cyber Security Luật ANM 2018 & TT"
+  },
+  {
+    "num": 52,
+    "name": "52 CMC Shield (C -",
+    "desc": "Giải pháp bảo vệ ứng dụng",
+    "developer": "CMC Cyber Security Tình trạng giả mạo ứng"
+  },
+  {
+    "num": 53,
+    "name": "53 CMC Smart",
+    "desc": "Tường lửa thế hệ mới, giúp",
+    "developer": "CMC Cyber Security Hạ tầng mạng của cơ quan"
+  },
+  {
+    "num": 54,
+    "name": "54 CMC Threat",
+    "desc": "Nền tảng cung cấp thông",
+    "developer": "CMC Cyber Security Việt Nam thiếu một hệ sinh"
+  },
+  {
+    "num": 55,
+    "name": "55 CMC Web",
+    "desc": "Giải pháp bảo vệ website",
+    "developer": "CMC Cyber Security Bảo vệ website và hệ thống"
+  },
+  {
+    "num": 56,
+    "name": "56 Cole AI - first",
+    "desc": "Hệ thống học tập AI - first,",
+    "developer": "Công ty TNHH Hỗ trợ số hóa, tối ưu hóa"
+  },
+  {
+    "num": 57,
+    "name": "57 Colocation",
+    "desc": "Cung cấp không gian vật lý",
+    "developer": "Tổng Công ty Giải Cung cấp không gian vật lý"
+  },
+  {
+    "num": 58,
+    "name": "58 Công bố bản án",
+    "desc": "Cho phép công bố bản án",
+    "developer": "Tòa án nhân dân tối Cho phép công bố bản án"
+  },
+  {
+    "num": 59,
+    "name": "59 Công chức viên",
+    "desc": "Phần mềm Quản lý Cán bộ,",
+    "developer": "Đơn vị phát triển: Quản lý CCVC giải quyết;"
+  },
+  {
+    "num": 60,
+    "name": "60 Công dân thông",
+    "desc": "Cung cấp siêu ứng dụng",
+    "developer": "Tổng công ty giải Cung cấp siêu ứng dụng"
+  },
+  {
+    "num": 61,
+    "name": "61 Công tác lễ tân đối",
+    "desc": "Quản lý dữ liệu về ưu đãi,",
+    "developer": "Cục LTPD Quản lý dữ liệu về ưu đãi,"
+  },
+  {
+    "num": 62,
+    "name": "62 Cổng công khai",
+    "desc": "cung cấp dữ liệu minh bạch",
+    "developer": "Cục Công nghệ thống cung cấp dữ liệu minh bạch"
+  },
+  {
+    "num": 63,
+    "name": "63 Cổng công khai y tế",
+    "desc": "Cổng kê khai giá trang thiết",
+    "developer": "Vụ TTB&CTYT Cổng kê khai giá trang thiết"
+  },
+  {
+    "num": 64,
+    "name": "64 Cổng Dịch vụ công",
+    "desc": "Cung cấp dịch vụ công trực",
+    "developer": "V01 Cung cấp dịch vụ công trực"
+  },
+  {
+    "num": 65,
+    "name": "65 Cổng dịch vụ công",
+    "desc": "Phục vụ công việc",
+    "developer": "Cục Thương mại điện Phục vụ công việc"
+  },
+  {
+    "num": 66,
+    "name": "66 Cổng dịch vụ công",
+    "desc": "Hệ thống thông tin giải",
+    "developer": "Văn phòng Bộ Hệ thống thông tin giải"
+  },
+  {
+    "num": 67,
+    "name": "67 Cổng dịch vụ công",
+    "desc": "Triển khai dịch vụ công",
+    "developer": "C12 Triển khai dịch vụ công"
+  },
+  {
+    "num": 68,
+    "name": "68 Cổng Dịch vụ công",
+    "desc": "Tiếp nhận, tích hợp, kết",
+    "developer": "Cục Công nghệ thống Tiếp nhận, tích hợp, kết"
+  },
+  {
+    "num": 69,
+    "name": "69 Cổng dữ liệu mở",
+    "desc": "(1) Hệ thống tổng hợp, kết",
+    "developer": "Đơn vị phát triển: (1), (1) khai thác dữ liệu từ"
+  },
+  {
+    "num": 70,
+    "name": "70 Cổng dữ liệu quốc",
+    "desc": "Nền tảng số quốc gia/nền",
+    "developer": "Bộ Công an Hỗ trợ số hóa, chuẩn hóa"
+  },
+  {
+    "num": 71,
+    "name": "71 Cổng kết nối dịch",
+    "desc": "Phục vụ kết nối dịch vụ",
+    "developer": "Trung tâm Chứng thực Phục vụ kết nối dịch vụ"
+  },
+  {
+    "num": 72,
+    "name": "72 Cổng kết nối số",
+    "desc": "Là địa chỉ kết nối tất cả các",
+    "developer": "Đơn vị phát triển: là 1 phần mềm dc ứng"
+  },
+  {
+    "num": 73,
+    "name": "73 Cổng liên thông văn",
+    "desc": "Kết nối, gửi nhận văn bản",
+    "developer": "Thông tấn xã Việt Kết nối, gửi nhận văn bản"
+  },
+  {
+    "num": 74,
+    "name": "74 Cổng lưu trữ số",
+    "desc": "Phục vụ khai thác thông",
+    "developer": "Cục Văn thư và Lưu Phục vụ khai thác thông"
+  },
+  {
+    "num": 75,
+    "name": "75 Cổng Pháp luật quốc",
+    "desc": "Nền tảng số quốc gia/nền",
+    "developer": "Bộ Tư pháp Hỗ trợ số hóa, chuẩn hóa"
+  },
+  {
+    "num": 76,
+    "name": "76 Cổng Sáng kiến",
+    "desc": "Cổng sáng kiến tập chung",
+    "developer": "Quỹ Phát triển khoa Cổng Sáng"
+  },
+  {
+    "num": 77,
+    "name": "77 Cổng thông tin các",
+    "desc": "công thông tin",
+    "developer": "Cục CĐSCY công thông tin"
+  },
+  {
+    "num": 78,
+    "name": "78 Cổng thông tin công",
+    "desc": "Hệ thống trực tuyến dùng",
+    "developer": "Trung tâm Công nghệ Hệ thống trực tuyến dùng"
+  },
+  {
+    "num": 79,
+    "name": "79 Cổng thông tin Cục",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Báo chí Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 80,
+    "name": "80 Cổng thông tin du",
+    "desc": "Hệ thống Cổng thông tin",
+    "developer": "Tổng Công ty Giải Quảng bá và cung cấp"
+  },
+  {
+    "num": 81,
+    "name": "81 Cổng thông tin Học",
+    "desc": "Cổng thông tin điện tử nội",
+    "developer": "Bộ Tư pháp Cổng thông tin điện tử nội"
+  },
+  {
+    "num": 82,
+    "name": "82 Cổng thông tin",
+    "desc": "Cổng thông tin Hạ tầng dữ",
+    "developer": "Cục Đo đạc, Bản đồ Hiện nay, dữ liệu không"
+  },
+  {
+    "num": 83,
+    "name": "83 Cổng thông tin một",
+    "desc": "Nền tảng số quốc gia/nền",
+    "developer": "Bộ Tài chính Hỗ trợ giải quyết thủ tục"
+  },
+  {
+    "num": 84,
+    "name": "84 Cổng thông tin",
+    "desc": "Cổng thông tin điện tử",
+    "developer": "Đơn vị phát triển: Hệ thống giúp các nhà"
+  },
+  {
+    "num": 85,
+    "name": "85 Cổng thông tin Nhà",
+    "desc": "Cung cấp thông tin hoạt",
+    "developer": "Nhà xuất bản Khoa Cung cấp thông tin hoạt"
+  },
+  {
+    "num": 86,
+    "name": "86 Cổng thông tin pháp",
+    "desc": "Hệ thống hóa các quy",
+    "developer": "Bộ Tư pháp Hệ thống hóa các quy"
+  },
+  {
+    "num": 87,
+    "name": "87 Cổng thông tin quản",
+    "desc": "Phục vụ công việc",
+    "developer": "Cục Thương mại điện Phục vụ công việc"
+  },
+  {
+    "num": 88,
+    "name": "88 Cổng thông tin Sức",
+    "desc": "Trang thông tin Sức khỏe",
+    "developer": "Trung tâm Thông tin y Trang thông tin Sức khỏe"
+  },
+  {
+    "num": 89,
+    "name": "89 Cổng thông tin",
+    "desc": "Là kênh cung cấp thông tin",
+    "developer": "Bộ Tư pháp Là kênh cung cấp thông tin"
+  },
+  {
+    "num": 90,
+    "name": "90 Cổng thông tin tòa",
+    "desc": "Cho phép đăng tải thông tin",
+    "developer": "Tòa án nhân dân tối Cho phép đăng tải thông tin"
+  },
+  {
+    "num": 91,
+    "name": "91 Cổng thông tin điện",
+    "desc": "Quản lý văn bản và chỉ đạo",
+    "developer": "C09 Quản lý văn bản và chỉ đạo"
+  },
+  {
+    "num": 92,
+    "name": "92 Cổng thông tin điện",
+    "desc": "Bao gồm 2 hệ thống: Portal",
+    "developer": "Tổng Công ty Giải Cung cấp cổng thông tin"
+  },
+  {
+    "num": 93,
+    "name": "93 Cổng Thông tin điện",
+    "desc": "Cung cấp các văn bản chỉ",
+    "developer": "Cục Công nghệ thống Cung cấp các văn bản chỉ"
+  },
+  {
+    "num": 94,
+    "name": "94 Cổng thông tin điện",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Bảo tàng Lịch sử quốc Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 95,
+    "name": "95 Cổng Thông tin điện",
+    "desc": "Cung cấp thông tin về an",
+    "developer": "V01 Cung cấp thông tin về an"
+  },
+  {
+    "num": 96,
+    "name": "96 Cổng thông tin điện",
+    "desc": "Truyền thông",
+    "developer": "Cục Thương mại điện Truyền thông"
+  },
+  {
+    "num": 97,
+    "name": "97 Cổng thông tin điện",
+    "desc": "Cổng thông tin điện tử của",
+    "developer": "Trung tâm Công nghệ Cổng thông tin điện tử của"
+  },
+  {
+    "num": 98,
+    "name": "98 Cổng thông tin điện",
+    "desc": "Cổng Thông tin điện tử Bộ",
+    "developer": "Bộ Tư pháp Cổng Thông tin điện tử Bộ"
+  },
+  {
+    "num": 99,
+    "name": "99 Cổng thông tin điện",
+    "desc": "Cung cấp thông tin cho",
+    "developer": "Trung tâm Công nghệ Cung cấp thông tin cho"
+  },
+  {
+    "num": 100,
+    "name": "100 Cổng thông tin điện",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Văn phòng Bộ Cổng Thông tin điện tử Bộ"
+  },
+  {
+    "num": 101,
+    "name": "101 Cổng thông tin điện",
+    "desc": "Website Cục Y tế dự phòng",
+    "developer": "Cục An toàn thực Website Cục Y tế dự phòng"
+  },
+  {
+    "num": 102,
+    "name": "102 Cổng thông tin điện",
+    "desc": "Cung cấp cổng thông tin",
+    "developer": "Tổng Công ty Giải Cung cấp cổng thông tin"
+  },
+  {
+    "num": 103,
+    "name": "103 Cổng thông tin điện",
+    "desc": "Đăng tải chủ trương, chính",
+    "developer": "Bộ Giáo dục và Đào Đăng tải chủ trương, chính"
+  },
+  {
+    "num": 104,
+    "name": "104 Cổng thông tin điện",
+    "desc": "Cung cấp thông tin chính",
+    "developer": "Cục Sở hữu trí tuệ Cung cấp thông tin chính"
+  },
+  {
+    "num": 105,
+    "name": "105 Cổng thông tin điện",
+    "desc": "Website Cục An toàn thực",
+    "developer": "Cục An toàn thực Website Cục An toàn thực"
+  },
+  {
+    "num": 106,
+    "name": "106 Cổng thông tin điện",
+    "desc": "Cổng Thông tin điện tử",
+    "developer": "Cục Dự trữ Nhà nước Cổng Thông tin điện tử"
+  },
+  {
+    "num": 107,
+    "name": "107 Cổng thông tin điện",
+    "desc": "Phần mềm quản lý thông",
+    "developer": "Cục Khoa học công Phần mềm quản lý thông"
+  },
+  {
+    "num": 108,
+    "name": "108 Cổng thông tin điện",
+    "desc": "Hệ thống quản lý môi",
+    "developer": "Cục Môi Trường Y Tế Hệ thống quản lý môi"
+  },
+  {
+    "num": 109,
+    "name": "109 Cổng thông tin điện",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Nghệ thuật biểu Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 110,
+    "name": "110 Cổng thông tin điện",
+    "desc": "Website Cục Phòng, chống",
+    "developer": "Cục Phòng, chống Website Cục Phòng, chống"
+  },
+  {
+    "num": 111,
+    "name": "111 Cổng thông tin điện",
+    "desc": "Website Cục Quản lý Dược",
+    "developer": "Cục Quản lý Dược Website Cục Quản lý Dược"
+  },
+  {
+    "num": 112,
+    "name": "112 Cổng thông tin điện",
+    "desc": "Website Cục Quản lý Y,",
+    "developer": "Cục Quản lý Y, Dược Website Cục Quản lý Y,"
+  },
+  {
+    "num": 113,
+    "name": "113 Cổng thông tin điện",
+    "desc": "Truyền thông",
+    "developer": "Cục Quản lý và phát Truyền thông"
+  },
+  {
+    "num": 114,
+    "name": "114 Cổng Thông tin điện",
+    "desc": "Cổng là kênh thông tin",
+    "developer": "Trung ương Hội Cổng là kênh thông tin"
+  },
+  {
+    "num": 115,
+    "name": "115 Cổng thông tin điện",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Văn hóa cơ sở, Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 116,
+    "name": "116 Cổng thông tin điện",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Phòng, chống rửa Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 117,
+    "name": "117 Cổng thông tin điện",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Trường Cao đẳng Du Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 118,
+    "name": "118 Cổng thông tin điện",
+    "desc": "Cung cấp các văn bản chỉ",
+    "developer": "Cục Công nghệ thống Cung cấp các văn bản chỉ"
+  },
+  {
+    "num": 119,
+    "name": "119 Cổng thông tin điện",
+    "desc": "Tạo nền tảng số thống nhất,",
+    "developer": "Bộ Tư pháp Tạo nền tảng số thống nhất,"
+  },
+  {
+    "num": 120,
+    "name": "120 Cổng Thông tin điện",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Thông tin cơ sở Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 121,
+    "name": "121 Cổng thông tin điện",
+    "desc": "Theo dõi tiến độ giải quyết",
+    "developer": "Tòa án nhân dân khu Theo dõi tiến độ giải quyết"
+  },
+  {
+    "num": 122,
+    "name": "122 Cổng thông tin điện",
+    "desc": "Theo dõi tiến độ giải quyết",
+    "developer": "Tòa án nhân dân khu Theo dõi tiến độ giải quyết"
+  },
+  {
+    "num": 123,
+    "name": "123 Cổng thông tin điện",
+    "desc": "Trang thông tin điện tử",
+    "developer": "Trung tâm Thông tin y Trang thông tin điện tử"
+  },
+  {
+    "num": 124,
+    "name": "124 Cổng thông tin điện",
+    "desc": "Cung cấp thông tin, dịch vụ",
+    "developer": "Học viện Tài chính Cung cấp thông tin, dịch vụ"
+  },
+  {
+    "num": 125,
+    "name": "125 Cổng thông tin điện",
+    "desc": "Phục vụ hoạt động hành",
+    "developer": "Văn phòng Viện Hàn Phục vụ hoạt động hành"
+  },
+  {
+    "num": 126,
+    "name": "126 Cổng thông tin điện",
+    "desc": "Website Vụ Hợp tác quốc",
+    "developer": "Vụ Hợp tác quốc tế Website Vụ Hợp tác quốc"
+  },
+  {
+    "num": 127,
+    "name": "127 Cổng thông tin điện",
+    "desc": "Website Vụ Pháp chế",
+    "developer": "Vụ pháp chế Website Vụ Pháp chế"
+  },
+  {
+    "num": 128,
+    "name": "128 Cổng thông tin điện",
+    "desc": "Website Vụ Sức khỏe Bà",
+    "developer": "Vụ Sức khỏe Bà mẹ - Website Vụ Sức khỏe Bà"
+  },
+  {
+    "num": 129,
+    "name": "129 Cổng Thông tin Đô",
+    "desc": "Công khai thông tin, tiếp",
+    "developer": "Cục Phát triển đô thị Công khai thông tin, tiếp"
+  },
+  {
+    "num": 130,
+    "name": "130 Cổng thông tin, các",
+    "desc": "cung cấp thông tin ứng",
+    "developer": "Trường Đại học Thủy cung cấp thông tin ứng"
+  },
+  {
+    "num": 131,
+    "name": "131 Cổng thông",
+    "desc": "Cổng thông tin điện tử",
+    "developer": "Đơn vị phát triển: Công khai, minh bạch"
+  },
+  {
+    "num": 132,
+    "name": "132 Cổng tiếp nhận dữ",
+    "desc": "Cổng thông tin tập trung",
+    "developer": "Bảo hiểm xã hội Việt Cổng thông tin tập trung"
+  },
+  {
+    "num": 133,
+    "name": "133 Cổng tra cứu dữ liệu",
+    "desc": "Hệ thống tra cứu Giấy",
+    "developer": "Cục Viễn thông Hệ thống tra cứu Giấy"
+  },
+  {
+    "num": 134,
+    "name": "134 Cổng tra cứu dữ liệu",
+    "desc": "Ứng dụng tra cứu dữ liệu",
+    "developer": "Cục Viễn thông Ứng dụng tra cứu dữ liệu"
+  },
+  {
+    "num": 135,
+    "name": "135 Cổng trang thông tin",
+    "desc": "Gửi nhận văn bản điện tử",
+    "developer": "K02 Gửi nhận văn bản điện tử"
+  },
+  {
+    "num": 136,
+    "name": "136 Cổng đào tạo bồi",
+    "desc": "Kiến thức Quản lý nhà",
+    "developer": "Đơn vị phát triển: Chuẩn hóa, hiện đại hóa"
+  },
+  {
+    "num": 137,
+    "name": "137 Cơ sở dữ liệu cán",
+    "desc": "Dùng để gửi và nhận văn",
+    "developer": "Ban Quản lý Đầu tư Dùng để gửi và nhận văn"
+  },
+  {
+    "num": 138,
+    "name": "138 Cơ sở dữ liệu cấp",
+    "desc": "CSDL lĩnh vực cấp thoát",
+    "developer": "Cục Kết cấu hạ tầng CSDL lĩnh vực cấp thoát"
+  },
+  {
+    "num": 139,
+    "name": "139 Cơ sở dữ liệu",
+    "desc": "Xử lý HSCV, quản lý đào",
+    "developer": "Trường Cao đẳng Cơ Xử lý HSCV, quản lý đào"
+  },
+  {
+    "num": 140,
+    "name": "140 Cơ sở dữ liệu",
+    "desc": "Cung cấp dữ liệu về DN",
+    "developer": "Cục Công nghiệp Cung cấp dữ liệu về DN"
+  },
+  {
+    "num": 141,
+    "name": "141 Cơ sở dữ liệu công",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Viện Khoa học Tổ Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 142,
+    "name": "142 Cơ sở dữ liệu cơ",
+    "desc": "Cung cấp thông tin, hoạt",
+    "developer": "Cục Công nghiệp Cung cấp thông tin, hoạt"
+  },
+  {
+    "num": 143,
+    "name": "143 Cơ sở dữ liệu cơ",
+    "desc": "1. Quản lý thông tin cấp",
+    "developer": "Vụ Bưu chính 1. Quản lý thông tin cấp"
+  },
+  {
+    "num": 144,
+    "name": "144 Cơ sở dữ liệu da dày",
+    "desc": "Cung cấp thông tin dữ liệu",
+    "developer": "Cục Công nghiệp Cung cấp thông tin dữ liệu"
+  },
+  {
+    "num": 145,
+    "name": "145 Cơ sở dữ liệu danh",
+    "desc": "Tập hợp các danh mục",
+    "developer": "Cục Công nghệ thống Tập hợp các danh mục"
+  },
+  {
+    "num": 146,
+    "name": "146 Cơ sở dữ liệu danh",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Công an Khắc phục phân tán dữ"
+  },
+  {
+    "num": 147,
+    "name": "147 Cơ sở dữ liệu doanh",
+    "desc": "Cung cấp thông tin sản",
+    "developer": "Cục Công nghiệp Cung cấp thông tin sản"
+  },
+  {
+    "num": 148,
+    "name": "148 Cơ sở dữ liệu doanh",
+    "desc": "Phục vụ tra cứu hồ sơ",
+    "developer": "H02 Phục vụ tra cứu hồ sơ"
+  },
+  {
+    "num": 149,
+    "name": "149 Cơ sở dữ liệu hồ",
+    "desc": "Hàng ngày, chủ đập, hồ",
+    "developer": "Cục Kỹ thuật an toàn Hàng ngày, chủ đập, hồ"
+  },
+  {
+    "num": 150,
+    "name": "150 Cơ sở dữ liệu Khoa",
+    "desc": "Cập nhật các thông tin, dữ",
+    "developer": "Viện Khoa học Tổ Cập nhật các thông tin, dữ"
+  },
+  {
+    "num": 151,
+    "name": "151 Cơ sở dữ liệu khu",
+    "desc": "Cung cấp thông tin cụm",
+    "developer": "Cục Công nghiệp Cung cấp thông tin cụm"
+  },
+  {
+    "num": 152,
+    "name": "152 Cơ sở dữ liệu lớn về",
+    "desc": "Phục vụ công tác báo cáo",
+    "developer": "A08 Phục vụ công tác báo cáo"
+  },
+  {
+    "num": 153,
+    "name": "153 Cơ sở dữ liệu môi",
+    "desc": "khai báo công tác bảo vệ",
+    "developer": "Cục Kỹ thuật an toàn khai báo công tác bảo vệ"
+  },
+  {
+    "num": 154,
+    "name": "154 Cơ sở dữ liệu năng",
+    "desc": "Lưu trữ và quản lý thông",
+    "developer": "Trung tâm Công nghệ Lưu trữ và quản lý thông"
+  },
+  {
+    "num": 155,
+    "name": "155 Cơ sở dữ liệu Nền",
+    "desc": "Là các thành phần hạ tầng",
+    "developer": "Trung tâm Công nghệ Là các thành phần hạ tầng"
+  },
+  {
+    "num": 156,
+    "name": "156 Cơ sở dữ liệu Nền",
+    "desc": "Hệ thống thông tin dùng để",
+    "developer": "Trung tâm Công nghệ Hệ thống thông tin dùng để"
+  },
+  {
+    "num": 157,
+    "name": "157 Cơ sở dữ liệu ngành",
+    "desc": "Cung cấp thông tin ngành",
+    "developer": "Cục Công nghiệp Cung cấp thông tin ngành"
+  },
+  {
+    "num": 158,
+    "name": "158 Cơ sở dữ liệu ngành",
+    "desc": "Sản phẩm được xây dựng",
+    "developer": "Đơn vị phát triển: Tập Quản lý tập trung hồ sơ nhà"
+  },
+  {
+    "num": 159,
+    "name": "159 Cơ sở dữ liệu ngành",
+    "desc": "Phần mềm Cơ Sở Dữ liệu",
+    "developer": "Tổng Công ty Giải Xây dựng kho dữ liệu"
+  },
+  {
+    "num": 160,
+    "name": "160 Cơ sở dữ liệu",
+    "desc": "Báo cáo nghiệp vụ",
+    "developer": "A04 Báo cáo nghiệp vụ"
+  },
+  {
+    "num": 161,
+    "name": "161 Cơ sở dữ liệu nợ",
+    "desc": "Lập kế hoạch, phân",
+    "developer": "Cục Quản lý nợ Lập kế hoạch, phân"
+  },
+  {
+    "num": 162,
+    "name": "162 Cơ sở dữ liệu phát",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Phát hành và Kho Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 163,
+    "name": "163 Cơ sở dữ liệu quản",
+    "desc": "Giải quyết TTHC và thực",
+    "developer": "C06 Giải quyết TTHC và thực"
+  },
+  {
+    "num": 164,
+    "name": "164 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Nội vụ Khắc phục phân tán dữ"
+  },
+  {
+    "num": 165,
+    "name": "165 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Tài chính Khắc phục phân tán dữ"
+  },
+  {
+    "num": 166,
+    "name": "166 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Nông nghiệp và Khắc phục phân tán dữ"
+  },
+  {
+    "num": 167,
+    "name": "167 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Nội vụ Khắc phục phân tán dữ"
+  },
+  {
+    "num": 168,
+    "name": "168 Cơ sở dữ liệu Quốc",
+    "desc": "Là hệ thống thông tin liên",
+    "developer": "Đơn vị phát triển: Tập Hệ thống Cơ sở dữ liệu"
+  },
+  {
+    "num": 169,
+    "name": "169 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Công an Khắc phục phân tán dữ"
+  },
+  {
+    "num": 170,
+    "name": "170 Cơ sở dữ liệu quốc",
+    "desc": "Phần mềm phục vụ thu",
+    "developer": "Cục Công nghệ thống Phần mềm phục vụ thu"
+  },
+  {
+    "num": 171,
+    "name": "171 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Giáo dục và Đào Khắc phục phân tán dữ"
+  },
+  {
+    "num": 172,
+    "name": "172 Cơ sở dữ liệu quốc",
+    "desc": "Hệ thống thông tin dùng để",
+    "developer": "Trung tâm Công nghệ Hệ thống thông tin dùng để"
+  },
+  {
+    "num": 173,
+    "name": "173 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Thanh tra Chính phủ Khắc phục phân tán dữ"
+  },
+  {
+    "num": 174,
+    "name": "174 Cơ sở dữ liệu Quốc",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Bộ Tư pháp Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 175,
+    "name": "175 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Tài chính Khắc phục phân tán dữ"
+  },
+  {
+    "num": 176,
+    "name": "176 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Tư pháp Khắc phục phân tán dữ"
+  },
+  {
+    "num": 177,
+    "name": "177 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Công an Khắc phục phân tán dữ"
+  },
+  {
+    "num": 178,
+    "name": "178 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Công an Khắc phục phân tán dữ"
+  },
+  {
+    "num": 179,
+    "name": "179 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Công an Khắc phục phân tán dữ"
+  },
+  {
+    "num": 180,
+    "name": "180 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Y tế Khắc phục phân tán dữ"
+  },
+  {
+    "num": 181,
+    "name": "181 Cơ sở dữ liệu quốc",
+    "desc": "theo dõi, đánh giá và phân",
+    "developer": "Cục Đầu tư nước theo dõi, đánh giá và phân"
+  },
+  {
+    "num": 182,
+    "name": "182 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Nông nghiệp và Khắc phục phân tán dữ"
+  },
+  {
+    "num": 183,
+    "name": "183 Cơ sở dữ liệu quốc",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Tài chính Khắc phục phân tán dữ"
+  },
+  {
+    "num": 184,
+    "name": "184 Cơ sở dữ liệu sản",
+    "desc": "Cung cấp thông tin sản",
+    "developer": "Cục Công nghiệp Cung cấp thông tin sản"
+  },
+  {
+    "num": 185,
+    "name": "185 Cơ sở dữ liệu sinh",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Viện Kiểm sát nhân Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 186,
+    "name": "186 Cơ sở dữ liệu tài",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Nội vụ Khắc phục phân tán dữ"
+  },
+  {
+    "num": 187,
+    "name": "187 Cơ sở dữ liệu Tem",
+    "desc": "1. Quản lý thông tin cấp",
+    "developer": "Vụ Bưu chính 1. Quản lý thông tin cấp"
+  },
+  {
+    "num": 188,
+    "name": "188 Cơ sở dữ liệu Thông",
+    "desc": "Cập nhật các thông tin, dữ",
+    "developer": "Viện Khoa học Tổ Cập nhật các thông tin, dữ"
+  },
+  {
+    "num": 189,
+    "name": "189 Cơ sở dữ liệu tiền",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Phát hành và Kho Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 190,
+    "name": "190 Cơ sở dữ liệu Tổ",
+    "desc": "Sử dụng để quản lý dữ liệu",
+    "developer": "Vụ Đánh giá và Thẩm Sử dụng để quản lý dữ liệu"
+  },
+  {
+    "num": 191,
+    "name": "191 Cơ sở dữ liệu tổng",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Công an Khắc phục phân tán dữ"
+  },
+  {
+    "num": 192,
+    "name": "192 Cơ sở dữ liệu Tổng",
+    "desc": "Hiện đại hóa quản lý nhà",
+    "developer": "Cục Công nghệ thống Hiện đại hóa quản lý nhà"
+  },
+  {
+    "num": 193,
+    "name": "193 Cơ sở dữ liệu văn",
+    "desc": "Quản trị, khai thác CSDL",
+    "developer": "V03 Quản trị, khai thác CSDL"
+  },
+  {
+    "num": 194,
+    "name": "194 Cơ sở dữ liệu văn",
+    "desc": "Cung cấp khả năng tra cứu,",
+    "developer": "Cục Công nghệ thống Cung cấp khả năng tra cứu,"
+  },
+  {
+    "num": 195,
+    "name": "195 Cơ sở dữ liệu về bảo",
+    "desc": "1. Sử dung cho việc xử lý",
+    "developer": "Ủy ban Cạnh tranh 1. Sử dung cho việc xử lý"
+  },
+  {
+    "num": 196,
+    "name": "196 Cơ sở dữ liệu về",
+    "desc": "Trung tâm lưu trữ và khai",
+    "developer": "Đơn vị phát triển: Trung tâm lưu trữ và khai"
+  },
+  {
+    "num": 197,
+    "name": "197 Cơ sở dữ liệu về giá",
+    "desc": "Tổng hợp các số liệu về giá",
+    "developer": "Sở Tài chính Nghệ An Tổng hợp các dữ liệu về"
+  },
+  {
+    "num": 198,
+    "name": "198 Cơ sở dữ liệu về",
+    "desc": "Quản lý hồ sơ, dữ liệu và",
+    "developer": "Cục Phát triển đô thị Quản lý hồ sơ, dữ liệu và"
+  },
+  {
+    "num": 199,
+    "name": "199 Cơ sở dữ liệu về",
+    "desc": "Công khai danh sách người",
+    "developer": "Bộ Tư pháp Công khai danh sách người"
+  },
+  {
+    "num": 200,
+    "name": "200 Cơ sở dữ liệu về xử",
+    "desc": "Quản trị, khai thác CSDL",
+    "developer": "V03 Quản trị, khai thác CSDL"
+  },
+  {
+    "num": 201,
+    "name": "201 Cơ sở dữ liệu về",
+    "desc": "Hệ thống thông tin dùng để",
+    "developer": "Trung tâm Công nghệ Hệ thống thông tin dùng để"
+  },
+  {
+    "num": 202,
+    "name": "202 Cơ sở dữ liệu đất",
+    "desc": "Hệ thống số hóa phục vụ",
+    "developer": "Viện Thổ nhưỡng Khắc phục tình trạng dữ"
+  },
+  {
+    "num": 203,
+    "name": "203 Cơ sở dữ liệu định",
+    "desc": "Cơ sở dữ liệu quốc gia",
+    "developer": "Bộ Công an Khắc phục phân tán dữ"
+  },
+  {
+    "num": 204,
+    "name": "204 CyStack Endpoint",
+    "desc": "Giải pháp bảo mật thiết bị",
+    "developer": "Công ty Cổ phần Theo thống kê, 83% vi"
+  },
+  {
+    "num": 205,
+    "name": "205 CyStack Platform",
+    "desc": "CyStack Platform là nền",
+    "developer": "Công ty Cổ phần Doanh nghiệp Việt Nam"
+  },
+  {
+    "num": 206,
+    "name": "206 DIGIFACTORY:",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty CP Thành Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 207,
+    "name": "207 DigiO: Giải pháp",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 208,
+    "name": "208 DigiRetails: Giải",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 209,
+    "name": "209 Dịch vụ chứng thực",
+    "desc": "Là dịch vụ chứng thực chữ",
+    "developer": "Đơn vị phát triển: Hạn chế tối đa làm giả,"
+  },
+  {
+    "num": 210,
+    "name": "210 Dịch vụ công kho",
+    "desc": "Thực hiện các nghiệp vụ",
+    "developer": "Cục Tiền lương và Thực hiện các nghiệp vụ"
+  },
+  {
+    "num": 211,
+    "name": "211 Dịch vụ công trực",
+    "desc": "Hướng đến 100% các thủ",
+    "developer": "Công an xã Rút ngắn thời gian thực"
+  },
+  {
+    "num": 212,
+    "name": "212 Dịch vụ công và",
+    "desc": "Một cửa điện tử & Dịch vụ",
+    "developer": "Tổng Công ty Giải Cung cấp cổng dịch vụ"
+  },
+  {
+    "num": 213,
+    "name": "213 Dịch vụ kê khai bảo",
+    "desc": "Tin học hoá và tự động hoá",
+    "developer": "Đơn vị phát triển: Tin học hoá và tự động hoá"
+  },
+  {
+    "num": 214,
+    "name": "214 Dịch vụ ký số từ xa",
+    "desc": "Là dịch vụ chứng thực chữ",
+    "developer": "Đơn vị phát triển: Cho phép người dùng ký"
+  },
+  {
+    "num": 215,
+    "name": "215 Dịch vụ",
+    "desc": "sản phẩm dịch vụ dữ liệu",
+    "developer": "VNPT Media dựa trên tập thông tin"
+  },
+  {
+    "num": 216,
+    "name": "216 Dịch vụ",
+    "desc": "sản phẩm: cung cấp dịch vụ",
+    "developer": "VNPT - Media kiểm tra tính đúng đắn của"
+  },
+  {
+    "num": 217,
+    "name": "217 Dịch vụ logistics",
+    "desc": "Khai thác cảng; dịch vụ",
+    "developer": "Công ty TNHH MTV Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 218,
+    "name": "218 Dịch vụ MobiFone",
+    "desc": "MobiFone Cloud là nền",
+    "developer": "Đơn vị phát triển: Chi phí đầu tư lớn: Loại bỏ"
+  },
+  {
+    "num": 219,
+    "name": "219 Dịch vụ nhắn tin",
+    "desc": "Nhắn tin thông báo tiếp",
+    "developer": "Thông tấn xã Việt Nhắn tin thông báo tiếp"
+  },
+  {
+    "num": 220,
+    "name": "220 Dịch vụ phát triển",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 221,
+    "name": "221 Dịch vụ sinh ảnh tự",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Trung tâm Dịch vụ dữ Sinh ảnh tự động theo nhu"
+  },
+  {
+    "num": 222,
+    "name": "222 Dịch vụ số hóa Di",
+    "desc": "Dịch vụ số hóa Di sản văn",
+    "developer": "Tổng Công ty Giải Số hóa 2D/3D, AR/VR"
+  },
+  {
+    "num": 223,
+    "name": "223 Dịch vụ xác thực",
+    "desc": "Dịch vụ xác thực CCCD",
+    "developer": "Trung tâm Dịch vụ dữ Các đơn vị/doanh nghiệp"
+  },
+  {
+    "num": 224,
+    "name": "224 Dịch vụ Điện toán",
+    "desc": "VNPT Cloud Server, hay",
+    "developer": "Đơn vị phát triển: Cung cấp tài nguyên tính"
+  },
+  {
+    "num": 225,
+    "name": "225 Dịch vụ đường",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Bảo tàng Văn hoá các Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 226,
+    "name": "226 Dlib - Giải pháp",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Tài Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 227,
+    "name": "227 DMS - Giải pháp",
+    "desc": "Cung cấp Nền tảng bán",
+    "developer": "Tổng công ty giải Cung cấp Nền tảng bán"
+  },
+  {
+    "num": 228,
+    "name": "228 DMS - Hệ thống",
+    "desc": "Quản lý toàn bộ kênh phân",
+    "developer": "Tổng công ty giải Quản lý toàn bộ kênh phân"
+  },
+  {
+    "num": 229,
+    "name": "229 DMS - Ứng dụng xử",
+    "desc": "Tự động đánh giá và chấm",
+    "developer": "Tổng công ty giải Tự động đánh giá và chấm"
+  },
+  {
+    "num": 230,
+    "name": "230 DMS - Ứng dụng xử",
+    "desc": "Cung cấp công cụ phân tích",
+    "developer": "Đơn vị phát triển: Cung cấp công cụ phân tích"
+  },
+  {
+    "num": 231,
+    "name": "231 Du lịch thông minh",
+    "desc": "Cổng Du lịch Thông minh",
+    "developer": "Đơn vị phát triển: Hệ thống hỗ trợ du khách"
+  },
+  {
+    "num": 232,
+    "name": "232 Dự toán G8",
+    "desc": "phục vụ công tác chuyên",
+    "developer": "H07 phục vụ công tác chuyên"
+  },
+  {
+    "num": 233,
+    "name": "233 E - Learning",
+    "desc": "Nền tảng học trực tuyến",
+    "developer": "Công ty Cổ phần Hỗ trợ số hóa, tối ưu hóa"
+  },
+  {
+    "num": 234,
+    "name": "234 Edoc",
+    "desc": "Hệ thống quản lý văn bản",
+    "developer": "Đơn vị phát triển: Tập Tạo lập và lưu trữ toàn bộ"
+  },
+  {
+    "num": 235,
+    "name": "235 EDR",
+    "desc": "1. SIEM: NCS SIEM là hệ",
+    "developer": "Đơn vị phát triển: 1. SIEM: Giải pháp giải"
+  },
+  {
+    "num": 236,
+    "name": "236 Edu Digital",
+    "desc": "Giải pháp số phục vụ lĩnh",
+    "developer": "Viện Phát triển Công Hỗ trợ số hóa, tối ưu hóa"
+  },
+  {
+    "num": 237,
+    "name": "237 EduQuiz - Nền tảng",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 238,
+    "name": "238 EDUSOFT",
+    "desc": "Quản lý học tập sinh viên,",
+    "developer": "Học viện Công nghệ Quản lý học tập sinh viên,"
+  },
+  {
+    "num": 239,
+    "name": "239 EKYC",
+    "desc": "Giải pháp nhận diện, so",
+    "developer": "Đơn vị phát triển: Giải pháp định danh và xác"
+  },
+  {
+    "num": 240,
+    "name": "240 Email 365",
+    "desc": "Hệ thống email domain",
+    "developer": "Báo VnExpress Hệ thống email domain"
+  },
+  {
+    "num": 241,
+    "name": "241 Email công vụ",
+    "desc": "gửi, nhận thông tin",
+    "developer": "Viện Khoa học xã hội gửi, nhận thông tin"
+  },
+  {
+    "num": 242,
+    "name": "242 EzCloudhotel - Hệ",
+    "desc": "ezCloudhotel là phần mềm",
+    "developer": "CÔNG TY TNHH Trước đây, phần lớn cơ sở"
+  },
+  {
+    "num": 243,
+    "name": "243 EZCLOUDHOTEL",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Công Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 244,
+    "name": "244 EzCrs - Hệ thống",
+    "desc": "ezCrs là hệ thống đặt",
+    "developer": "CÔNG TY TNHH Các khách sạn và chuỗi"
+  },
+  {
+    "num": 245,
+    "name": "245 EzFolio - Hệ thống",
+    "desc": "ezFolio là phần mềm quản",
+    "developer": "CÔNG TY TNHH Các khách sạn 4"
+  },
+  {
+    "num": 246,
+    "name": "246 F - CIM - Phần mềm",
+    "desc": "f - CIM - Phần mềm quản lý",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 247,
+    "name": "247 FiinScore+",
+    "desc": "Chấm điểm các doanh",
+    "developer": "Đơn vị phát triển: Nhu cầu đánh giá đối tác,"
+  },
+  {
+    "num": 248,
+    "name": "248 FLYER LMS - R:",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 249,
+    "name": "249 FRM - Giải pháp",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 250,
+    "name": "250 Gen Alpha AI trong",
+    "desc": "Dự án Gen Alpha AI trong",
+    "developer": "Trường THCS & Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 251,
+    "name": "251 Giám sát an ninh, an",
+    "desc": "Giám sát ATTT cho các hệ",
+    "developer": "V01 Giám sát ATTT cho các hệ"
+  },
+  {
+    "num": 252,
+    "name": "252 Giải pháp",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 253,
+    "name": "253 Giải pháp bảo mật",
+    "desc": "Giải pháp bảo mật tích hợp",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 254,
+    "name": "254 Giải pháp Camera",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần MK Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 255,
+    "name": "255 Giải pháp Camera",
+    "desc": "Tự động nhận diện biển số",
+    "developer": "Trung tâm Dịch vụ dữ Tự động nhận diện biển số"
+  },
+  {
+    "num": 256,
+    "name": "256 Giải pháp chuyển",
+    "desc": "Giải pháp Giáo dục Đào",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 257,
+    "name": "257 Giải pháp chuyển",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 258,
+    "name": "258 Giải pháp CMC",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Tập Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 259,
+    "name": "259 Giải pháp công nghệ",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty CP Dịch vụ Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 260,
+    "name": "260 Giải pháp công nghệ",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty CP Dịch Vụ Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 261,
+    "name": "261 Giải pháp giáo dục",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Giáo Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 262,
+    "name": "262 Giải pháp Giáo dục",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Giáo Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 263,
+    "name": "263 Giải pháp Giáo dục",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Sản Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 264,
+    "name": "264 Giải pháp Giáo dục",
+    "desc": "Giải pháp \"Giáo dục Trí",
+    "developer": "Công ty cổ phần Công Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 265,
+    "name": "265 Giải pháp hệ thống",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Tổng Công ty Viễn Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 266,
+    "name": "266 Giải pháp hỗ trợ",
+    "desc": "Giải pháp hỗ trợ người dân",
+    "developer": "Đơn vị phát triển: Giải pháp \"Hỗ trợ người"
+  },
+  {
+    "num": 267,
+    "name": "267 Giải pháp học tập",
+    "desc": "Giải pháp học tập kết hợp",
+    "developer": "Công ty TNHH Eeo Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 268,
+    "name": "268 Giải pháp",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Đầu Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 269,
+    "name": "269 Giải pháp kiểm",
+    "desc": "Dịch vụ kiểm duyệt tự",
+    "developer": "Trung tâm Dịch vụ dữ Tự động hóa việc kiểm"
+  },
+  {
+    "num": 270,
+    "name": "270 Giải pháp Language",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Đầu Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 271,
+    "name": "271 Giải pháp lớp học",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Thiết Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 272,
+    "name": "272 Giải pháp nhà máy",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 273,
+    "name": "273 Giải pháp phát hiện",
+    "desc": "Giải pháp VNPT Smart IR",
+    "developer": "Đơn vị phát triển: Phát hiện những bất thường"
+  },
+  {
+    "num": 274,
+    "name": "274 Giải pháp phần mềm",
+    "desc": "DC 4. 0 là nền tảng phần",
+    "developer": "Đơn vị phát triển: Dữ liệu dân cư cấp"
+  },
+  {
+    "num": 275,
+    "name": "275 Giải pháp Phòng",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Giải Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 276,
+    "name": "276 Giải pháp Phòng",
+    "desc": "Xác định và đề xuất cấp độ",
+    "developer": "Đơn vị phát triển: Hiện nay,"
+  },
+  {
+    "num": 277,
+    "name": "277 Giải pháp Phòng",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Đầu Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 278,
+    "name": "278 Giải pháp phòng học",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Giải Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 279,
+    "name": "279 Giải pháp phòng học",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần đầu Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 280,
+    "name": "280 Giải pháp quản lý",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 281,
+    "name": "281 Giải pháp quản lý",
+    "desc": "Là hệ thống quản lý vào ra",
+    "developer": "Trung tâm Dịch vụ dữ Quản lý vào ra và chấm"
+  },
+  {
+    "num": 282,
+    "name": "282 Giải pháp Quản lý",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 283,
+    "name": "283 Giải pháp quản lý",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Tài Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 284,
+    "name": "284 Giải pháp quản trị",
+    "desc": "MB đã phát triển giải pháp",
+    "developer": "Đơn vị phát triển: Giao dịch doanh nghiệp"
+  },
+  {
+    "num": 285,
+    "name": "285 Giải pháp Quản trị",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 286,
+    "name": "286 Giải pháp S. Touch -",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Đầu Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 287,
+    "name": "287 Giải pháp sản phẩm",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 288,
+    "name": "288 Giải pháp Smartedu",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 289,
+    "name": "289 Giải pháp Smartos -",
+    "desc": "Giải pháp Smartos - One -",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 290,
+    "name": "290 Giải pháp số hóa 3D",
+    "desc": "Giải pháp Số hóa 3D các",
+    "developer": "Tổng Công ty Giải Số hóa 3D toàn bộ tài"
+  },
+  {
+    "num": 291,
+    "name": "291 Giải pháp số hóa",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty CP Dịch vụ Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 292,
+    "name": "292 Giải pháp số hóa và",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Ngân Hàng Nông Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 293,
+    "name": "293 Giải pháp Tasken",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Opus Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 294,
+    "name": "294 Giải pháp thanh toán",
+    "desc": "Dịch vụ Giải pháp thanh",
+    "developer": "Đơn vị phát triển: Giải pháp giải quyết nhu"
+  },
+  {
+    "num": 295,
+    "name": "295 Giải pháp thanh toán",
+    "desc": "Triển khai các phương thức",
+    "developer": "Đơn vị phát triển: Giảm chi phí giao dịch,"
+  },
+  {
+    "num": 296,
+    "name": "296 Giải pháp thanh toán",
+    "desc": "Nghiên cứu và xây dựng",
+    "developer": "VNPT Media Phụ thuộc tiền mặt do phần"
+  },
+  {
+    "num": 297,
+    "name": "297 Giải pháp thực tại ảo",
+    "desc": "Xây dựng giải pháp thực",
+    "developer": "Đơn vị phát triển: Áp dụng hỗ trợ giảng dạy"
+  },
+  {
+    "num": 298,
+    "name": "298 Giải pháp tích hợp",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 299,
+    "name": "299 Giải pháp toàn diện",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Sa Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 300,
+    "name": "300 Giải pháp Tổng đài",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Mắt Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 301,
+    "name": "301 Giải pháp Tổng đài",
+    "desc": "VNPT ICC là hệ thống",
+    "developer": "Đơn vị phát triển: Sản phẩm tổng đài VNPT"
+  },
+  {
+    "num": 302,
+    "name": "302 Giải pháp tường lửa",
+    "desc": "Giải pháp VNPT S - Gate",
+    "developer": "Đơn vị phát triển: Đảm bảo an toàn thông tin"
+  },
+  {
+    "num": 303,
+    "name": "303 Giải pháp tưởng lửa",
+    "desc": "Dịch vụ VNPT Cloud Web",
+    "developer": "Đơn vị phát triển: Bảo Vệ Hiệu Suất Ứng"
+  },
+  {
+    "num": 304,
+    "name": "304 Giải pháp xác thực",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 305,
+    "name": "305 Giải pháp Zalopay",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Zion Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 306,
+    "name": "306 Giải pháp Đào tạo",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Trường Đại học Công Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 307,
+    "name": "307 Giải quyết TTHC tại",
+    "desc": "Giúp người dân giảm thời",
+    "developer": "Đơn vị phát triển: Một bộ phận nhân dân"
+  },
+  {
+    "num": 308,
+    "name": "308 GPU AI Cloud",
+    "desc": "Cung cấp hạ tầng và nền",
+    "developer": "Tổng Công ty Giải Cung cấp hạ tầng và nền"
+  },
+  {
+    "num": 309,
+    "name": "309 Gương điện tử AI",
+    "desc": "Thiết bị hỗ trợ lái xe ứng",
+    "developer": "Công ty TNHH Hỗ trợ người lái xe quan"
+  },
+  {
+    "num": 310,
+    "name": "310 Hành chính công",
+    "desc": "Hệ thống dịch vụ công trực",
+    "developer": "Tổng Công ty Giải Ứng dụng CNTT vào quy"
+  },
+  {
+    "num": 311,
+    "name": "311 Hê thống Quản lý",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Đăng kiểm Việt Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 312,
+    "name": "312 Hề thống cơ sở dữ",
+    "desc": "Cung cấp thông tin doanh",
+    "developer": "Cục Xúc tiến thương Cung cấp thông tin doanh"
+  },
+  {
+    "num": 313,
+    "name": "313 Hệ sản xuất thông",
+    "desc": "Quản lý việc sản xuất tin,",
+    "developer": "Thông tấn xã Việt Quản lý việc sản xuất tin,"
+  },
+  {
+    "num": 314,
+    "name": "314 Hệ sinh thái - LMS",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 315,
+    "name": "315 Hệ Sinh Thái Bản",
+    "desc": "Hệ sinh thái \"Bản sao số",
+    "developer": "CÔNG TY CỔ PHẦN Hệ sinh thái \"Bản sao số"
+  },
+  {
+    "num": 316,
+    "name": "316 Hệ sinh thái Công",
+    "desc": "Hệ sinh thái công nghệ hỗ",
+    "developer": "Công ty Cổ phần Tập Hỗ trợ số hóa, tối ưu hóa"
+  },
+  {
+    "num": 317,
+    "name": "317 Hệ sinh thái Công",
+    "desc": "Hệ sinh thái công nghệ hỗ",
+    "developer": "Công ty Cổ phần Tập Hỗ trợ số hóa, tối ưu hóa"
+  },
+  {
+    "num": 318,
+    "name": "318 Hệ Sinh Thái Công",
+    "desc": "Mạng Xã Hội Vdiarybook,",
+    "developer": "Đơn vị phát triển: Môi trường công nghệ."
+  },
+  {
+    "num": 319,
+    "name": "319 Hệ sinh thái giáo",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty cổ phần Công Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 320,
+    "name": "320 Hệ sinh thái giải",
+    "desc": "Hệ sinh thái giải pháp",
+    "developer": "Công ty Cổ phần Giải Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 321,
+    "name": "321 Hệ sinh thái giải",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Giải Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 322,
+    "name": "322 Hệ sinh thái KidsUP",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 323,
+    "name": "323 Hệ sinh thái số quản",
+    "desc": "(a) PABMIS Ecosystem là",
+    "developer": "Công ty TNHH PABMIS là nền tảng công"
+  },
+  {
+    "num": 324,
+    "name": "324 Hệ sinh thái ứng",
+    "desc": "Hệ sinh thái ứng dụng học",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 325,
+    "name": "325 Hệ sinh thái đấu",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần phát Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 326,
+    "name": "326 Hệ sinh thái đấu",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hệ Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 327,
+    "name": "327 Hệ thống",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Công nghệ thống Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 328,
+    "name": "328 Hệ thống AVP (Tờ",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 329,
+    "name": "329 Hệ thống Bài giảng",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty cổ phần Giáo Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 330,
+    "name": "330 Hệ thống bán vé",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Trung tâm Chiếu phim Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 331,
+    "name": "331 Hệ thống báo cáo",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Vụ Dự báo, thống kê - Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 332,
+    "name": "332 Hệ thống báo cáo",
+    "desc": "Hệ thống giúp chuẩn hóa",
+    "developer": "Công ty Cổ phần Tin Giúp giảm thời gian thực"
+  },
+  {
+    "num": 333,
+    "name": "333 Hệ thống báo cáo",
+    "desc": "Phục vụ công việc",
+    "developer": "Cục Thương mại điện Phục vụ công việc"
+  },
+  {
+    "num": 334,
+    "name": "334 Hệ thống báo cáo",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Phòng, chống rửa Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 335,
+    "name": "335 Hệ thống báo cáo",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "NHNN Khu vực 1 Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 336,
+    "name": "336 Hệ thống báo cáo",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Vụ Tín dụng các Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 337,
+    "name": "337 Hệ thống báo cáo",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Phát thanh, truyền Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 338,
+    "name": "338 Hệ thống báo cáo,",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Viễn thông Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 339,
+    "name": "339 Hệ thống Bản đồ số",
+    "desc": "Tích hợp thông tin quản lý,",
+    "developer": "Bộ Giáo dục và Đào Tích hợp thông tin quản lý,"
+  },
+  {
+    "num": 340,
+    "name": "340 Hệ thống Callbot",
+    "desc": "Hệ thống tổng đài tự động",
+    "developer": "Trung tâm Dịch vụ dữ Tổng đài tự động gọi cho"
+  },
+  {
+    "num": 341,
+    "name": "341 Hệ thống Camera AI",
+    "desc": "Hệ thống Camera AI an",
+    "developer": "Đơn vị phát triển: Lắp đặt hệ thống Camera"
+  },
+  {
+    "num": 342,
+    "name": "342 Hệ thống các sản",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 343,
+    "name": "343 Hệ thống cấp chứng",
+    "desc": "cấp chứng chỉ nghiệp vụ",
+    "developer": "Cục Quản lý đấu thầu cấp chứng chỉ nghiệp vụ"
+  },
+  {
+    "num": 344,
+    "name": "344 Hệ thống cấp giấy",
+    "desc": "Hệ thống Dịch vụ Công Bố",
+    "developer": "Cục An toàn thực Hệ thống Dịch vụ Công Bố"
+  },
+  {
+    "num": 345,
+    "name": "345 Hệ thống cấp mã số",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 346,
+    "name": "346 Hệ thống cấp số đơn",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Cục Sở hữu trí tuệ Hệ thống cấp số đơn sở"
+  },
+  {
+    "num": 347,
+    "name": "347 Hệ thống cảnh báo",
+    "desc": "Hệ thống cảnh báo cháy",
+    "developer": "Đơn vị phát triển: các Giải pháp nhằm khắc phục"
+  },
+  {
+    "num": 348,
+    "name": "348 Hệ thống CBP",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Công nghệ thống Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 349,
+    "name": "349 Hệ thống CDP",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Công nghệ thống Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 350,
+    "name": "350 Hệ thống Chăm sóc",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 351,
+    "name": "351 Hệ thống chiếu sáng",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 352,
+    "name": "352 Hệ thống chống úng",
+    "desc": "Đây là giải pháp hữu ích",
+    "developer": "Đơn vị phát triển: Vấn đề thực tiễn là giúp"
+  },
+  {
+    "num": 353,
+    "name": "353 Hệ thống Chuyển",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Viễn thông Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 354,
+    "name": "354 Hệ thống chuyển đổi",
+    "desc": "Chuyển đổi tin text sang",
+    "developer": "Thông tấn xã Việt Chuyển đổi tin text sang"
+  },
+  {
+    "num": 355,
+    "name": "355 Hệ thống Chữ ký số",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 356,
+    "name": "356 Hệ thống Chữ ký số",
+    "desc": "Tin học hoá và tự động hoá",
+    "developer": "Đơn vị phát triển: Tin học hoá và tự động hoá"
+  },
+  {
+    "num": 357,
+    "name": "357 Hệ thống CNTT",
+    "desc": "Nền tảng số quốc gia/nền",
+    "developer": "Bộ Tài chính Hỗ trợ số hóa, chuẩn hóa"
+  },
+  {
+    "num": 358,
+    "name": "358 Hệ thống Công bố",
+    "desc": "Hệ thống để thực hiện báo",
+    "developer": "Ủy ban Chứng khoán Hệ thống để thực hiện báo"
+  },
+  {
+    "num": 359,
+    "name": "359 Hệ thống công chức,",
+    "desc": "Quản lý cơ sở dữ liệu về",
+    "developer": "Trung tâm R&D Quản lý cơ sở dữ liệu về"
+  },
+  {
+    "num": 360,
+    "name": "360 Hệ thống công nghệ",
+    "desc": "Xử lý hồ sơ giải quyết thủ",
+    "developer": "Cục An toàn bức xạ Xử lý hồ sơ giải quyết thủ"
+  },
+  {
+    "num": 361,
+    "name": "361 Hệ thống Cổng",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 362,
+    "name": "362 Hệ thống Cổng",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 363,
+    "name": "363 Hệ thống cổng",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Báo chí Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 364,
+    "name": "364 Hệ thống Cổng",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 365,
+    "name": "365 Hệ thống Cổng",
+    "desc": "cung cấp thông tin phục vụ",
+    "developer": "Cổng Thông tin Điện cung cấp thông tin phục vụ"
+  },
+  {
+    "num": 366,
+    "name": "366 Hệ thống cơ sở dữ",
+    "desc": "Hệ thống CSDL Danh mục",
+    "developer": "Kho bạc Nhà nước Hệ thống CSDL Danh mục"
+  },
+  {
+    "num": 367,
+    "name": "367 Hệ thống cơ sở dữ",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Phòng, chống rửa Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 368,
+    "name": "368 Hệ thống Cơ sở dữ",
+    "desc": "Quản lý, giám sát về hoạt",
+    "developer": "Ủy ban Chứng khoán Quản lý, giám sát về hoạt"
+  },
+  {
+    "num": 369,
+    "name": "369 Hệ thống Cơ sở dữ",
+    "desc": "Quản lý, giám sát quá trình",
+    "developer": "Ủy ban Chứng khoán Quản lý, giám sát quá trình"
+  },
+  {
+    "num": 370,
+    "name": "370 Hệ thống Cơ sở dữ",
+    "desc": "Quản lý, giám sát về hoạt",
+    "developer": "Ủy ban Chứng khoán Quản lý, giám sát về hoạt"
+  },
+  {
+    "num": 371,
+    "name": "371 Hệ thống Cơ sở dữ",
+    "desc": "Quản lý dữ liệu về tình",
+    "developer": "Trung tâm Chứng thực Quản lý dữ liệu về tình"
+  },
+  {
+    "num": 372,
+    "name": "372 Hệ thống Cơ sở dữ",
+    "desc": "Quản lý văn bản điện tử;",
+    "developer": "Trường Đại học Nông Quản lý văn bản điện tử;"
+  },
+  {
+    "num": 373,
+    "name": "373 Hệ thống cung cấp",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 374,
+    "name": "374 Hệ thống CWS",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 375,
+    "name": "375 Hệ thống danh mục",
+    "desc": "Phần mềm, hệ thống phục",
+    "developer": "Cục Chuyển đổi số Phần mềm, hệ thống phục"
+  },
+  {
+    "num": 376,
+    "name": "376 Hệ thống dạy và thi",
+    "desc": "Tổ chức giảng dạy và thi",
+    "developer": "Học viện Tài chính Tổ chức giảng dạy và thi"
+  },
+  {
+    "num": 377,
+    "name": "377 Hệ thống dịch vụ",
+    "desc": "Cung cấp dịch vụ Công",
+    "developer": "Cục Thông tin, thống Cung cấp dịch vụ Công"
+  },
+  {
+    "num": 378,
+    "name": "378 Hệ thống Dịch vụ",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Vụ Dự báo, thống kê - Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 379,
+    "name": "379 Hệ thống dịch vụ",
+    "desc": "Hệ thống dịch vụ công của",
+    "developer": "Trung tâm Công nghệ Hệ thống dịch vụ công của"
+  },
+  {
+    "num": 380,
+    "name": "380 Hệ thống dịch vụ",
+    "desc": "Dịch vụ công trực tuyến xã",
+    "developer": "Đơn vị phát triển: Ủy Người dân và doanh nghiệp"
+  },
+  {
+    "num": 381,
+    "name": "381 Hệ thống Dịch vụ",
+    "desc": "Hệ thống Dịch vụ công",
+    "developer": "Kho bạc Nhà nước Hệ thống Dịch vụ công"
+  },
+  {
+    "num": 382,
+    "name": "382 Hệ thống dịch vụ",
+    "desc": "Cho phép doanh nghiệp và",
+    "developer": "Trung tâm Công nghệ Cho phép doanh nghiệp và"
+  },
+  {
+    "num": 383,
+    "name": "383 Hệ thống Dịch vụ",
+    "desc": "Cung cấp dịch vụ cho",
+    "developer": "Trung tâm Công nghệ Cung cấp dịch vụ cho"
+  },
+  {
+    "num": 384,
+    "name": "384 Hệ thống Email",
+    "desc": "Cung cấp dịch vụ email",
+    "developer": "Bộ Giáo dục và Đào Cung cấp dịch vụ email"
+  },
+  {
+    "num": 385,
+    "name": "385 Hệ thống ERP",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Công nghệ thống Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 386,
+    "name": "386 Hệ thống Giao dịch",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 387,
+    "name": "387 Hệ thống giao kế",
+    "desc": "Thông tin riêng/HTTT",
+    "developer": "Cục Thống kê Thông tin riêng/HTTT"
+  },
+  {
+    "num": 388,
+    "name": "388 Hệ thống Giá tính",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 389,
+    "name": "389 Hệ thống giám sát",
+    "desc": "Phần mềm giám sát giao",
+    "developer": "Ủy ban Chứng khoán Phần mềm giám sát giao"
+  },
+  {
+    "num": 390,
+    "name": "390 Hệ thống giám sát",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 391,
+    "name": "391 Hệ thống giám sát",
+    "desc": "Giám sát thiết bị mạng, an",
+    "developer": "Học viện Tài chính Giám sát thiết bị mạng, an"
+  },
+  {
+    "num": 392,
+    "name": "392 Hệ thống giám sát",
+    "desc": "Giải pháp xây dựng hệ",
+    "developer": "Công ty Cổ phần Net Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 393,
+    "name": "393 Hệ thống giám sát,",
+    "desc": "Phần mềm, hệ thống phục",
+    "developer": "Cục Chuyển đổi số Phần mềm, hệ thống phục"
+  },
+  {
+    "num": 394,
+    "name": "394 Hệ thống giám định",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 395,
+    "name": "395 Hệ thống giám",
+    "desc": "xác định nhanh loài gỗ và",
+    "developer": "Đơn vị phát triển: xác định nhanh loài gỗ và"
+  },
+  {
+    "num": 396,
+    "name": "396 Hệ thống giải mã và",
+    "desc": "Tên sản phẩm: Hệ thống",
+    "developer": "Đơn vị phát triển: Sản phẩm tập trung giải"
+  },
+  {
+    "num": 397,
+    "name": "397 Hệ thống giải quyết",
+    "desc": "Nền tảng theo dõi, tổng",
+    "developer": "Đơn vị phát triển: Giải quyết nhu cầu giảm tải"
+  },
+  {
+    "num": 398,
+    "name": "398 Hệ thống giải quyết",
+    "desc": "Giúp cán bộ thực hiện tiếp",
+    "developer": "Đơn vị phát triển: Kịp thời tiếp nhận và phản"
+  },
+  {
+    "num": 399,
+    "name": "399 Hệ thống giải quyết",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Trung tâm Thông tin Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 400,
+    "name": "400 Hệ thống gửi thư",
+    "desc": "Gửi và nhận thư điện tử",
+    "developer": "Cục Xúc tiến thương Gửi và nhận thư điện tử"
+  },
+  {
+    "num": 401,
+    "name": "401 Hệ thống Helpdesk",
+    "desc": "Phần mềm hỗ trợ, hướng",
+    "developer": "Bộ Giáo dục và Đào Phần mềm hỗ trợ, hướng"
+  },
+  {
+    "num": 402,
+    "name": "402 Hệ thống Hiện đại",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 403,
+    "name": "403 Hệ thống Hoàn thuế",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 404,
+    "name": "404 Hệ thống Hồ sơ",
+    "desc": "Quản lý và xử lý toàn bộ",
+    "developer": "Cục Bảo tồn thiên Quản lý và xử lý toàn bộ"
+  },
+  {
+    "num": 405,
+    "name": "405 Hệ thống Hồ sơ sức",
+    "desc": "Hồ sơ sức khỏe điện tử",
+    "developer": "Tổng Công ty Giải Xây dựng hồ sơ sức khỏe"
+  },
+  {
+    "num": 406,
+    "name": "406 Hệ thống Hồ sơ Y tế",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Tư Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 407,
+    "name": "407 Hệ thống hỗ trợ ra",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 408,
+    "name": "408 Hệ thống hỗ trợ",
+    "desc": "Hệ thống hỗ trợ công tác",
+    "developer": "Trường Đại học Trà Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 409,
+    "name": "409 Hệ thống hỏi đáp",
+    "desc": "Hỏi đáp tự động về văn",
+    "developer": "Cục Công nghệ thống Hỏi đáp tự động về văn"
+  },
+  {
+    "num": 410,
+    "name": "410 Hệ thống hợp đồng",
+    "desc": "Số hóa quy trình giao kết,",
+    "developer": "Đơn vị phát triển: Số hóa quy trình giao kết,"
+  },
+  {
+    "num": 411,
+    "name": "411 Hệ thống học tập,",
+    "desc": "Học tập quán triệt nghị",
+    "developer": "Ban Tuyên giáo và Học tập quán triệt nghị"
+  },
+  {
+    "num": 412,
+    "name": "412 Hệ thống họp không",
+    "desc": "Là giải pháp số hóa cuộc",
+    "developer": "Công ty Cổ phần Tin Nâng cao năng lực, hiệu"
+  },
+  {
+    "num": 413,
+    "name": "413 Hệ thống họp trực",
+    "desc": "Họp trực tuyến",
+    "developer": "Cục Hải quan Họp trực tuyến"
+  },
+  {
+    "num": 414,
+    "name": "414 Hệ thống họp trực",
+    "desc": "VNPT GoMeet là giải pháp",
+    "developer": "VNPT AI 1. Khó khăn trong quản lý"
+  },
+  {
+    "num": 415,
+    "name": "415 Hệ thống họp, hội",
+    "desc": "Thông tin riêng/HTTT",
+    "developer": "Cục Thống kê Thông tin riêng/HTTT"
+  },
+  {
+    "num": 416,
+    "name": "416 Hệ thống HSCV",
+    "desc": "HSCV",
+    "developer": "Trung tâm Xúc tiến HSCV"
+  },
+  {
+    "num": 417,
+    "name": "417 Hệ thống Kế toán",
+    "desc": "Quản lý ấn chỉ hải quan,",
+    "developer": "Cục Hải quan Quản lý ấn chỉ hải quan,"
+  },
+  {
+    "num": 418,
+    "name": "418 Hệ thống kế toán tập",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 419,
+    "name": "419 Hệ thống Kế toán",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 420,
+    "name": "420 Hệ thống Kế toán",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 421,
+    "name": "421 Hệ thống kết nối",
+    "desc": "Thông tin riêng/HTTT cở",
+    "developer": "Cục Thống kê Thông tin riêng/HTTT cở"
+  },
+  {
+    "num": 422,
+    "name": "422 Hệ thống kết nối",
+    "desc": "Thu thập số liệu và quản lý",
+    "developer": "Trung tâm Chứng thực Thu thập số liệu và quản lý"
+  },
+  {
+    "num": 423,
+    "name": "423 Hệ thống kết nối,",
+    "desc": "LGSP của Bộ Tài chính,",
+    "developer": "Cục Công nghệ thống LGSP của Bộ Tài chính,"
+  },
+  {
+    "num": 424,
+    "name": "424 Hệ thống Kết nối,",
+    "desc": "Trao đổi, cung cấp thông",
+    "developer": "Ủy ban Chứng khoán Trao đổi, cung cấp thông"
+  },
+  {
+    "num": 425,
+    "name": "425 Hệ thống khảo thí",
+    "desc": "Quản lý thi, ngân hàng câu",
+    "developer": "Học viện Tài chính Quản lý thi, ngân hàng câu"
+  },
+  {
+    "num": 426,
+    "name": "426 Hệ thống Kho dữ",
+    "desc": "Hệ thống Kho dữ liệu",
+    "developer": "Kho bạc Nhà nước Hệ thống Kho dữ liệu"
+  },
+  {
+    "num": 427,
+    "name": "427 Hệ thống Kho dữ",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 428,
+    "name": "428 Hệ thống Kiểm kê",
+    "desc": "Quản lý hồ sơ kiểm kê tài",
+    "developer": "Cơ quan Ủy ban Kiểm Quản lý hồ sơ kiểm kê tài"
+  },
+  {
+    "num": 429,
+    "name": "429 Hệ thống kiểm soát",
+    "desc": "Hệ thống kiểm soát chi đầu",
+    "developer": "Kho bạc Nhà nước Hệ thống kiểm soát chi đầu"
+  },
+  {
+    "num": 430,
+    "name": "430 Hệ thống kiểm tra",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 431,
+    "name": "431 Hệ thống kiosk và",
+    "desc": "Đây là giải pháp cung cấp",
+    "developer": "Đơn vị phát triển: Tập Giải pháp giúp số hóa hoạt"
+  },
+  {
+    "num": 432,
+    "name": "432 Hệ thống làm việc",
+    "desc": "Theo dõi cấp số văn bản,",
+    "developer": "Tòa án nhân dân tỉnh Theo dõi cấp số văn bản,"
+  },
+  {
+    "num": 433,
+    "name": "433 Hệ thống LGSP",
+    "desc": "Là nền tảng tích hợp, chia",
+    "developer": "Thông tấn xã Việt Là nền tảng tích hợp, chia"
+  },
+  {
+    "num": 434,
+    "name": "434 Hệ thống LMS",
+    "desc": "quản lý học tập, bài giảng,",
+    "developer": "Trường Cao đẳng Cơ Việc triển khai hệ thống"
+  },
+  {
+    "num": 435,
+    "name": "435 Hệ thống LMS tích",
+    "desc": "Giải pháp là hệ thống LMS",
+    "developer": "Đơn vị phát triển: Hiện nay tại các cơ sở giáo"
+  },
+  {
+    "num": 436,
+    "name": "436 Hệ thống loa truyền",
+    "desc": "Đây là hệ thống loa dùng",
+    "developer": "Đơn vị phát triển: Nâng cao chất lượng nội"
+  },
+  {
+    "num": 437,
+    "name": "437 Hệ thống Lưu trữ và",
+    "desc": "Phần mềm hệ thống lưu trữ",
+    "developer": "Tổng Công ty Giải Lưu trữ, quản lý và phân"
+  },
+  {
+    "num": 438,
+    "name": "438 Hệ thống lưu trữ",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Viện Kiểm sát nhân Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 439,
+    "name": "439 Hệ thống mail",
+    "desc": "Cho phép gửi nhận email",
+    "developer": "Tòa án nhân dân tối Cho phép gửi nhận email"
+  },
+  {
+    "num": 440,
+    "name": "440 Hệ thống mạng nội",
+    "desc": "Thông tin riêng/HT cơ sở",
+    "developer": "Cục Thống kê Thông tin riêng/HT cơ sở"
+  },
+  {
+    "num": 441,
+    "name": "441 Hệ thống mạng đấu",
+    "desc": "quản lý thông tin, đấu thầu",
+    "developer": "Cục Quản lý đấu thầu quản lý thông tin, đấu thầu"
+  },
+  {
+    "num": 442,
+    "name": "442 Hệ thống Miễn giảm",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 443,
+    "name": "443 Hệ thống một cửa và",
+    "desc": "Hỗ trợ sinh viên và người",
+    "developer": "Trường Đại học Hàng Hỗ trợ sinh viên và người"
+  },
+  {
+    "num": 444,
+    "name": "444 Hệ thống Ngân hàng",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Quản lý ngoại hối Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 445,
+    "name": "445 Hệ thống Ngân hàng",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "NHNN Khu vực 1 Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 446,
+    "name": "446 Hệ thống ngân hàng",
+    "desc": "Xây dựng hệ thống Ngân",
+    "developer": "Đơn vị phát triển: Hệ thống internet banking"
+  },
+  {
+    "num": 447,
+    "name": "447 Hệ thống ngân hàng",
+    "desc": "Xây dựng hệ thống Ngân",
+    "developer": "Đơn vị phát triển: BIDV Direct khắc phục các"
+  },
+  {
+    "num": 448,
+    "name": "448 Hệ thống Nhắc lịch",
+    "desc": "Hệ thống nhắc lịch tiêm",
+    "developer": "Tổng Công ty Giải Tự động nhắc lịch tiêm"
+  },
+  {
+    "num": 449,
+    "name": "449 Hệ thống nuôi tôm",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 450,
+    "name": "450 Hệ thống phân tích",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Phòng, chống rửa Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 451,
+    "name": "451 Hệ thống phần mềm",
+    "desc": "Quản lý cấp mới, cấp đổi,",
+    "developer": "C06 Quản lý cấp mới, cấp đổi,"
+  },
+  {
+    "num": 452,
+    "name": "452 Hệ thống phần mềm",
+    "desc": "Quản lý, cập nhật viên",
+    "developer": "Ban Tổ chức cán bộ Quản lý, cập nhật viên"
+  },
+  {
+    "num": 453,
+    "name": "453 Hệ thống phần mềm",
+    "desc": "Lưu trữ và chia sẻ dữ liệu",
+    "developer": "C06 Lưu trữ và chia sẻ dữ liệu"
+  },
+  {
+    "num": 454,
+    "name": "454 Hệ thống phần mềm",
+    "desc": "Quản lý, khai thác dữ liệu",
+    "developer": "C06 Quản lý, khai thác dữ liệu"
+  },
+  {
+    "num": 455,
+    "name": "455 Hệ thống phần mềm",
+    "desc": "Giải quyết thủ tục hành",
+    "developer": "C06 Giải quyết thủ tục hành"
+  },
+  {
+    "num": 456,
+    "name": "456 Hệ thống Phần mềm",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Đăng kiểm Việt Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 457,
+    "name": "457 Hệ thống phần mềm",
+    "desc": "Thực hành Code cho sinh",
+    "developer": "Học viện Công nghệ Thực hành Code cho sinh"
+  },
+  {
+    "num": 458,
+    "name": "458 Hệ thống phần mềm",
+    "desc": "Thống kê số liệu toàn học",
+    "developer": "Học viện Công nghệ Thống kê số liệu toàn học"
+  },
+  {
+    "num": 459,
+    "name": "459 Hệ thống phần mềm",
+    "desc": "Phầm mềm phục vụ kế toán",
+    "developer": "Học viện Công nghệ Phầm mềm phục vụ kế toán"
+  },
+  {
+    "num": 460,
+    "name": "460 Hệ thống phần mềm",
+    "desc": "Thi trắc nghiệm cho sinh",
+    "developer": "Học viện Công nghệ Thi trắc nghiệm cho sinh"
+  },
+  {
+    "num": 461,
+    "name": "461 Hệ thống phần mềm",
+    "desc": "Phục vụ công tác kiểm tra,",
+    "developer": "X06 Phục vụ công tác kiểm tra,"
+  },
+  {
+    "num": 462,
+    "name": "462 Hệ thống phần mềm",
+    "desc": "VBDLIS là hệ thống phần",
+    "developer": "Đơn vị phát triển: Dữ liệu đất đai phân tán,"
+  },
+  {
+    "num": 463,
+    "name": "463 Hệ thống phần mềm",
+    "desc": "Quản lý học tập Khoa An",
+    "developer": "Học viện Công nghệ Quản lý học tập Khoa An"
+  },
+  {
+    "num": 464,
+    "name": "464 Hệ thống phần mềm",
+    "desc": "Quản lý thông tin giảng",
+    "developer": "Học viện Hàng không Quản lý thông tin giảng"
+  },
+  {
+    "num": 465,
+    "name": "465 Hệ thống Phần mềm",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Đăng kiểm Việt Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 466,
+    "name": "466 Hệ thống phần mềm",
+    "desc": "Trang web tuyển sinh học",
+    "developer": "Học viện Công nghệ Trang web tuyển sinh học"
+  },
+  {
+    "num": 467,
+    "name": "467 Hệ thống phần mềm",
+    "desc": "Quản lý định danh điện tử,",
+    "developer": "C06 Quản lý định danh điện tử,"
+  },
+  {
+    "num": 468,
+    "name": "468 Hệ thống phản ánh",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Bộ Tư pháp Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 469,
+    "name": "469 Hệ thống phản ánh,",
+    "desc": "Tiếp nhận, trả lời PAKN",
+    "developer": "Trung tâm Công nghệ Tiếp nhận, trả lời PAKN"
+  },
+  {
+    "num": 470,
+    "name": "470 Hệ thống phòng học",
+    "desc": "Phần mềm hệ thống phòng",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 471,
+    "name": "471 Hệ thống phòng vệ",
+    "desc": "Nền tảng số quốc gia/nền",
+    "developer": "Bộ Công an Hỗ trợ số hóa, chuẩn hóa"
+  },
+  {
+    "num": 472,
+    "name": "472 Hệ thống Portal",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Phòng, chống rửa Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 473,
+    "name": "473 Hệ thống QLRR",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 474,
+    "name": "474 Hệ thống quản lý án",
+    "desc": "Hệ thống cho phép quản lý",
+    "developer": "Tòa án nhân dân tối Hệ thống cho phép quản lý"
+  },
+  {
+    "num": 475,
+    "name": "475 Hệ thống quản lý",
+    "desc": "VNPT HIS là một Hệ",
+    "developer": "Đơn vị phát triển: Quản lý khám chữa bệnh"
+  },
+  {
+    "num": 476,
+    "name": "476 Hệ thống quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 477,
+    "name": "477 Hệ thống Quản lý",
+    "desc": "Quản lý hồ sơ cán bộ",
+    "developer": "Cục Hải quan Quản lý hồ sơ cán bộ"
+  },
+  {
+    "num": 478,
+    "name": "478 Hệ thống quản lý",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Vụ Tổ chức cán bộ Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 479,
+    "name": "479 Hệ thống quản lý",
+    "desc": "Quản lý cầu trên quốc lộ",
+    "developer": "Cục Đường bộ Việt Quản lý cầu trên quốc lộ"
+  },
+  {
+    "num": 480,
+    "name": "480 Hệ thống quản lý",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Báo chí Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 481,
+    "name": "481 Hệ thống quản lý",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Báo chí Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 482,
+    "name": "482 Hệ thống quản lý",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Cục Báo chí Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 483,
+    "name": "483 Hệ thống Quản lý",
+    "desc": "Là công cụ hỗ trợ lãnh đạo",
+    "developer": "Công ty Cổ phần Tin Giúp lãnh đạo và cán bộ"
+  },
+  {
+    "num": 484,
+    "name": "484 Hệ thống quản lý",
+    "desc": "Xử lý các công việc",
+    "developer": "Cục Quản lý và phát Xử lý các công việc"
+  },
+  {
+    "num": 485,
+    "name": "485 Hệ thống quản lý",
+    "desc": "Quản lý, giao việc",
+    "developer": "Quỹ Đổi mới công Quản lý, giao việc"
+  },
+  {
+    "num": 486,
+    "name": "486 Hệ thống quản lý cơ",
+    "desc": "Nền tảng số quốc gia/nền",
+    "developer": "Văn phòng Chính phủ Hỗ trợ số hóa, chuẩn hóa"
+  },
+  {
+    "num": 487,
+    "name": "487 Hệ thống quản lý",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 488,
+    "name": "488 Hệ thống quản lý",
+    "desc": "Quản lý, lưu trữ tập trung",
+    "developer": "Bảo hiểm xã hội Việt Quản lý, lưu trữ tập trung"
+  },
+  {
+    "num": 489,
+    "name": "489 Hệ thống quản lý dữ",
+    "desc": "Cung cấp hệ thống dữ liệu",
+    "developer": "Đơn vị phát triển: Sở Xây dựng trang thông tin"
+  },
+  {
+    "num": 490,
+    "name": "490 Hệ thống quản lý dữ",
+    "desc": "Số hóa, lưu trữ và quản lý",
+    "developer": "Thông tấn xã Việt Số hóa, lưu trữ và quản lý"
+  },
+  {
+    "num": 491,
+    "name": "491 Hệ thống quản lý dữ",
+    "desc": "Hệ thống quản lý dữ liệu",
+    "developer": "Đơn vị phát triển: Sở Lưu trữ hồ sơ các sản phẩm"
+  },
+  {
+    "num": 492,
+    "name": "492 Hệ thống quản lý",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty TNHH Công Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 493,
+    "name": "493 Hệ thống quản lý",
+    "desc": "Hệ thống quản lý giáo dục",
+    "developer": "Công ty Cổ phần Tin Việc áp dụng LMS giúp"
+  },
+  {
+    "num": 494,
+    "name": "494 Hệ thống quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 495,
+    "name": "495 Hệ thống Quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 496,
+    "name": "496 Hệ thống Quản lý",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 497,
+    "name": "497 Hệ thống quản lý hồ",
+    "desc": "Thông tin riêng và thông",
+    "developer": "Cục Thống kê Thông tin riêng và thông"
+  },
+  {
+    "num": 498,
+    "name": "498 Hệ thống quản lý hồ",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 499,
+    "name": "499 Hệ thống quản lý hồ",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Ban Thi đua - Khen Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 500,
+    "name": "500 Hệ thống quản lý hồ",
+    "desc": "Quản lý hồ sơ dự án bảo trì",
+    "developer": "Cục Đường bộ Việt Quản lý hồ sơ dự án bảo trì"
+  },
+  {
+    "num": 501,
+    "name": "501 Hệ thống Quản lý",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Viện Kiểm sát nhân Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 502,
+    "name": "502 Hệ thống quản lý",
+    "desc": "Phục vụ công việc và vận",
+    "developer": "Trường Cao đẳng Phục vụ công việc và vận"
+  },
+  {
+    "num": 503,
+    "name": "503 Hệ thống quản lý",
+    "desc": "Là công cụ hỗ trợ người",
+    "developer": "Công ty Cổ phần Tin Kích cầu tiêu dùng, kết nối"
+  },
+  {
+    "num": 504,
+    "name": "504 Hệ thống quản lý",
+    "desc": "Phục vụ cán bộ khai thác,",
+    "developer": "Ủy ban Trung ương Phục vụ cán bộ khai thác,"
+  },
+  {
+    "num": 505,
+    "name": "505 Hệ thống Quản lý",
+    "desc": "Phục vụ công tác tổ chức",
+    "developer": "Bộ Giáo dục và Đào Phục vụ công tác tổ chức"
+  },
+  {
+    "num": 506,
+    "name": "506 Hệ thống quản lý",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 507,
+    "name": "507 Hệ thống quản lý",
+    "desc": "Quản lý tình trạng mặt",
+    "developer": "Cục Đường bộ Việt Quản lý tình trạng mặt"
+  },
+  {
+    "num": 508,
+    "name": "508 Hệ thống Quản lý",
+    "desc": "Hệ thống Quản lý nghiệp",
+    "developer": "Cục Dự trữ Nhà nước Hệ thống Quản lý nghiệp"
+  },
+  {
+    "num": 509,
+    "name": "509 Hệ thống Quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 510,
+    "name": "510 Hệ thống quản lý",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Văn Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 511,
+    "name": "511 Hệ thống Quản lý",
+    "desc": "Giải pháp quản lý hiệu quả",
+    "developer": "Tổng Công ty Giải Quản lý tổng thể hoạt động"
+  },
+  {
+    "num": 512,
+    "name": "512 Hệ thống quản lý",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 513,
+    "name": "513 Hệ thống Quản lý",
+    "desc": "Theo dõi quản lý nhân sự",
+    "developer": "Ủy ban Tiêu chuẩn Đo Theo dõi quản lý nhân sự"
+  },
+  {
+    "num": 514,
+    "name": "514 Hệ thống quản lý",
+    "desc": "Quản lý các chương trình,",
+    "developer": "Quỹ Đổi mới công Quản lý các chương trình,"
+  },
+  {
+    "num": 515,
+    "name": "515 Hệ thống quản lý nợ",
+    "desc": "Hỗ trợ quản lý nợ công của",
+    "developer": "Cục Quản lý nợ Hỗ trợ quản lý nợ công của"
+  },
+  {
+    "num": 516,
+    "name": "516 Hệ thống quản lý",
+    "desc": "Quản lý nhiệm vụ, quản lý",
+    "developer": "Học viện Chiến lược Quản lý nhiệm vụ, quản lý"
+  },
+  {
+    "num": 517,
+    "name": "517 Hệ thống quản lý",
+    "desc": "Phục vụ công việc",
+    "developer": "Tạp chí Công Thương Phục vụ công việc"
+  },
+  {
+    "num": 518,
+    "name": "518 Hệ thống Quản lý",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Công nghệ thống Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 519,
+    "name": "519 Hệ thống quản lý",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Cục Viễn thông Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 520,
+    "name": "520 Hệ thống Quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 521,
+    "name": "521 Hệ thống quản lý",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Đại học Kinh tế Thành Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 522,
+    "name": "522 Hệ thống Quản lý",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Trung tâm Thông tin Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 523,
+    "name": "523 Hệ thống quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 524,
+    "name": "524 Hệ thống quản lý",
+    "desc": "Quản lý hồ sơ sinh viên và",
+    "developer": "Học viện Tài chính Quản lý hồ sơ sinh viên và"
+  },
+  {
+    "num": 525,
+    "name": "525 Hệ thống quản lý",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Trường Cao đẳng Mỹ Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 526,
+    "name": "526 Hệ thống quản lý tài",
+    "desc": "Quản lý tập trung tại",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung tại"
+  },
+  {
+    "num": 527,
+    "name": "527 Hệ thống quản lý tài",
+    "desc": "Là công cụ giúp chuẩn hóa",
+    "developer": "Công ty Cổ phần Tin Số hóa, quản lý tập trung"
+  },
+  {
+    "num": 528,
+    "name": "528 Hệ thống quản lý tài",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 529,
+    "name": "529 Hệ thống quản lý tài",
+    "desc": "Quản lý các loại tài sản",
+    "developer": "Cục Đường bộ Việt Quản lý các loại tài sản"
+  },
+  {
+    "num": 530,
+    "name": "530 Hệ thống quản lý",
+    "desc": "Theo dõi tình hình giải",
+    "developer": "Cục Đường bộ Việt Theo dõi tình hình giải"
+  },
+  {
+    "num": 531,
+    "name": "531 Hệ thống Quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 532,
+    "name": "532 Hệ thống Quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 533,
+    "name": "533 Hệ thống quản lý",
+    "desc": "Hệ thống quản lý thu",
+    "developer": "Kho bạc Nhà nước Hệ thống quản lý thu"
+  },
+  {
+    "num": 534,
+    "name": "534 Hệ thống quản lý",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 535,
+    "name": "535 Hệ thống Quản lý",
+    "desc": "Hệ thống thông tin nhằm",
+    "developer": "Ủy ban Chứng khoán Hệ thống thông tin nhằm"
+  },
+  {
+    "num": 536,
+    "name": "536 Hệ thống quản lý",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Trường Cao đẳng Du Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 537,
+    "name": "537 Hệ thống quản lý",
+    "desc": "Quản lý tài liệu, tài nguyên",
+    "developer": "Học viện Tài chính Quản lý tài liệu, tài nguyên"
+  },
+  {
+    "num": 538,
+    "name": "538 Hệ thống quản lý tri",
+    "desc": "Quản lý đề tài, quản lý tài",
+    "developer": "Viện Khoa học và Quản lý đề tài, quản lý tài"
+  },
+  {
+    "num": 539,
+    "name": "539 Hệ thống Quản lý",
+    "desc": "SMAS là hệ thống phần",
+    "developer": "Tổng Công ty Giải Quản lý toàn diện hoạt"
+  },
+  {
+    "num": 540,
+    "name": "540 Hệ thống quản lý",
+    "desc": "Quản lý toàn bộ vòng đời",
+    "developer": "Quỹ Phát triển khoa Quản lý toàn bộ vòng đời"
+  },
+  {
+    "num": 541,
+    "name": "541 Hệ thống quản lý",
+    "desc": "Nền tảng số hóa toàn diện",
+    "developer": "Đơn vị phát triển: Tập trung quản lý nhiệm vụ"
+  },
+  {
+    "num": 542,
+    "name": "542 Hệ thống quản lý và",
+    "desc": "Nền tảng điện tử dùng để",
+    "developer": "Cục Xuất nhập khẩu Nền tảng điện tử dùng để"
+  },
+  {
+    "num": 543,
+    "name": "543 Hệ thống Quản lý và",
+    "desc": "Hệ thống quản lý và khai",
+    "developer": "Đơn vị phát triển: Giải quyết công tác điều"
+  },
+  {
+    "num": 544,
+    "name": "544 Hệ thống quản lý và",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 545,
+    "name": "545 Hệ thống quản lý và",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Văn phòng Bộ Hệ thống quản lý và điều"
+  },
+  {
+    "num": 546,
+    "name": "546 Hệ thống quản lý và",
+    "desc": "Quản lý văn bản, hệ thống",
+    "developer": "Trường Cao đẳng Cơ Quản lý văn bản, hệ thống"
+  },
+  {
+    "num": 547,
+    "name": "547 Hệ thống Quản lý",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Quản lý ngoại hối Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 548,
+    "name": "548 Hệ thống quản lý",
+    "desc": "Quản lý văn bản đi/đên -",
+    "developer": "Cục Văn thư và Lưu Quản lý văn bản đi/đên"
+  },
+  {
+    "num": 549,
+    "name": "549 Hệ thống quản lý",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Vụ Dự báo, thống kê - Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 550,
+    "name": "550 Hệ thống quản lý",
+    "desc": "Xử lý văn bản tác nghiệp",
+    "developer": "Cục Giám định nhà Xử lý văn bản tác nghiệp"
+  },
+  {
+    "num": 551,
+    "name": "551 Hệ thống quản lý",
+    "desc": "Phục vụ công tác quản lý,",
+    "developer": "Ban Quản lý Đầu tư Phục vụ công tác quản lý,"
+  },
+  {
+    "num": 552,
+    "name": "552 Hệ thống quản lý",
+    "desc": "xử lý công việc, theo dõi",
+    "developer": "Cục Chuyển đổi số xử lý công việc, theo dõi"
+  },
+  {
+    "num": 553,
+    "name": "553 Hệ thống quản lý",
+    "desc": "QUẢN LÝ VĂN BẢN VÀ",
+    "developer": "Đơn vị phát triển: BỘ Môi trường kỹ thuật số,"
+  },
+  {
+    "num": 554,
+    "name": "554 Hệ thống quản lý",
+    "desc": "Hệ thống Quản lý văn bản",
+    "developer": "Đơn vị phát triển: Bộ Cung cấp một số chức năng"
+  },
+  {
+    "num": 555,
+    "name": "555 Hệ thống quản lý",
+    "desc": "tiếp nhận, xử lý, giải quyết,",
+    "developer": "Đơn vị phát triển: chuyển công việc từ tiếp"
+  },
+  {
+    "num": 556,
+    "name": "556 Hệ thống Quản lý",
+    "desc": "Nền tảng số hóa toàn bộ",
+    "developer": "Đơn vị phát triển: Tập Xóa bỏ rào cản địa lý:"
+  },
+  {
+    "num": 557,
+    "name": "557 Hệ thống quản lý",
+    "desc": "Quản lý điều hành văn;",
+    "developer": "Ban Quản lý dự án Quản lý điều hành văn;"
+  },
+  {
+    "num": 558,
+    "name": "558 Hệ thống Quản lý",
+    "desc": "Phục vụ công tác quản lý,",
+    "developer": "Trung tâm Công nghệ Phục vụ công tác quản lý,"
+  },
+  {
+    "num": 559,
+    "name": "559 Hệ thống quản lý",
+    "desc": "Ban hành, chỉ đạo và thực",
+    "developer": "Cục Tần số vô tuyến Ban hành, chỉ đạo và thực"
+  },
+  {
+    "num": 560,
+    "name": "560 Hệ thống quản lý",
+    "desc": "Ban hành và chỉ đạo công",
+    "developer": "Cục Tần số vô tuyến Ban hành và chỉ đạo công"
+  },
+  {
+    "num": 561,
+    "name": "561 Hệ thống quản lý",
+    "desc": "Quản lý văn bản và điều",
+    "developer": "Cục Văn thư và Lưu Quản lý văn bản và điều"
+  },
+  {
+    "num": 562,
+    "name": "562 Hệ thống Quản lý",
+    "desc": "Hệ thống phần mềm phục",
+    "developer": "Trường Đại Học Khoa Giảm phụ thuộc vào xử lý"
+  },
+  {
+    "num": 563,
+    "name": "563 Hệ thống Quản lý",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 564,
+    "name": "564 Hệ thống quản lý",
+    "desc": "là nền tảng phần mềm văn",
+    "developer": "Đơn vị phát triển: Số hóa và tự động hóa quy"
+  },
+  {
+    "num": 565,
+    "name": "565 Hệ thống quản lý",
+    "desc": "Quản lý văn bản (đến, đi,",
+    "developer": "Tổng Công ty Xi Quản lý văn bản (đến, đi,"
+  },
+  {
+    "num": 566,
+    "name": "566 Hệ thống Quản lý vi",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 567,
+    "name": "567 Hệ thống quản lý",
+    "desc": "Quản lý xăng dầu",
+    "developer": "Cục Quản lý và phát Quản lý xăng dầu"
+  },
+  {
+    "num": 568,
+    "name": "568 Hệ thống Quản lý Y",
+    "desc": "VNPT HMIS là Hệ thống",
+    "developer": "Đơn vị phát triển: Quản lý y tế cơ sở còn thủ"
+  },
+  {
+    "num": 569,
+    "name": "569 Hệ thống Quản lý Y",
+    "desc": "Hệ thống Quản lý Y tế cơ",
+    "developer": "Tổng Công ty Giải Quản lý khám chữa bệnh"
+  },
+  {
+    "num": 570,
+    "name": "570 Hệ thống quản lý",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Trường Đại học Thể Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 571,
+    "name": "571 Hệ thống quản lý",
+    "desc": "Phần mềm hệ thống quản",
+    "developer": "Công ty TNHH Công Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 572,
+    "name": "572 Hệ thống quản lý",
+    "desc": "Quản lý chương trình đào",
+    "developer": "Học viện Tài chính Quản lý chương trình đào"
+  },
+  {
+    "num": 573,
+    "name": "573 Hệ thống quản lý",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Trường Cao đẳng Du Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 574,
+    "name": "574 Hệ thống quản lý",
+    "desc": "Quản tập trung thống nhất",
+    "developer": "Bảo hiểm xã hội Việt Quản tập trung thống nhất"
+  },
+  {
+    "num": 575,
+    "name": "575 Hệ thống quản lý",
+    "desc": "Nền tảng số quốc gia/nền",
+    "developer": "Bộ Công an Hỗ trợ số hóa, chuẩn hóa"
+  },
+  {
+    "num": 576,
+    "name": "576 Hệ thống quản lý",
+    "desc": "Phục vụ công việc",
+    "developer": "Cục Thương mại điện Phục vụ công việc"
+  },
+  {
+    "num": 577,
+    "name": "577 Hệ thống quản lý",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 578,
+    "name": "578 Hệ thống quản lý",
+    "desc": "Thông tin cá nhân/HT cơ",
+    "developer": "Cục Thống kê Thông tin cá nhân/HT cơ"
+  },
+  {
+    "num": 579,
+    "name": "579 Hệ thống Quản lý,",
+    "desc": "Sản phẩm, giải pháp hỗ trợ",
+    "developer": "Công ty Cổ phần Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 580,
+    "name": "580 Hệ thống quản trị",
+    "desc": "Nền tảng/phần mềm phục",
+    "developer": "Bộ Tư pháp Hỗ trợ chuẩn hóa quy trình,"
+  },
+  {
+    "num": 581,
+    "name": "581 Hệ thống quản trị",
+    "desc": "Sản phẩm/giải pháp mang",
+    "developer": "Đơn vị phát triển: Hệ thống quản trị nội bộ"
+  },
+  {
+    "num": 582,
+    "name": "582 Hệ thống quản trị",
+    "desc": "Quản lý nghiệp vụ sản xuất",
+    "developer": "Trung tâm R&D Quản lý nghiệp vụ sản xuất"
+  },
+  {
+    "num": 583,
+    "name": "583 Hệ thống quản trị",
+    "desc": "Công khai",
+    "developer": "Tạp chí Cộng sản Công khai"
+  },
+  {
+    "num": 584,
+    "name": "584 Hệ thống quản trị",
+    "desc": "Phần mềm quản lý trường",
+    "developer": "Tổng Công ty Giải Quản lý toàn bộ hoạt động"
+  },
+  {
+    "num": 585,
+    "name": "585 Hệ thống quản trị",
+    "desc": "Hệ thống quản trị đơn Sở",
+    "developer": "Cục Sở hữu trí tuệ Hệ thống quản trị đơn Sở"
+  },
+  {
+    "num": 586,
+    "name": "586 Hệ thống sao lưu",
+    "desc": "Thông tin riêng và thông",
+    "developer": "Cục Thống kê Thông tin riêng và thông"
+  },
+  {
+    "num": 587,
+    "name": "587 Hệ thống sản xuất",
+    "desc": "Sản xuất Video trực tuyến",
+    "developer": "Trung tâm Nội dung Sản xuất Video trực tuyến"
+  },
+  {
+    "num": 588,
+    "name": "588 Hệ thống soi chiếu",
+    "desc": "Quản lý nghiệp vụ hải quan",
+    "developer": "Cục Hải quan Quản lý nghiệp vụ hải quan"
+  },
+  {
+    "num": 589,
+    "name": "589 Hệ thống SSO",
+    "desc": "Trang đăng nhập vào hệ",
+    "developer": "Trung tâm Công nghệ Trang đăng nhập vào hệ"
+  },
+  {
+    "num": 590,
+    "name": "590 Hệ thống Streaming",
+    "desc": "Chuyển đổi file video sang",
+    "developer": "Thông tấn xã Việt Chuyển đổi file video sang"
+  },
+  {
+    "num": 591,
+    "name": "591 Hệ thống tài chính -",
+    "desc": "Quản lý tài chính, hóa đơn",
+    "developer": "Học viện Tài chính Quản lý tài chính, hóa đơn"
+  },
+  {
+    "num": 592,
+    "name": "592 Hệ thống Tạp chí",
+    "desc": "Xử lý nghiệp vụ của đơn vị",
+    "developer": "Tạp chí Văn hóa Nghệ Xử lý nghiệp vụ của đơn vị"
+  },
+  {
+    "num": 593,
+    "name": "593 Hệ thống Thanh",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "NHNN Khu vực 1 Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 594,
+    "name": "594 Hệ thống Thanh",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Cục Quản lý ngoại hối Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 595,
+    "name": "595 Hệ thống thanh toán",
+    "desc": "Nền tảng số quốc gia/nền",
+    "developer": "Ngân hàng Nhà nước Hỗ trợ số hóa, chuẩn hóa"
+  },
+  {
+    "num": 596,
+    "name": "596 Hệ thống Thanh",
+    "desc": "Thực hiện nghiệp vụ và",
+    "developer": "Sở Giao Dịch Thực hiện nghiệp vụ và"
+  },
+  {
+    "num": 597,
+    "name": "597 Hệ thống Thanh",
+    "desc": "Hệ thống Thanh toán điện",
+    "developer": "Kho bạc Nhà nước Hệ thống Thanh toán điện"
+  },
+  {
+    "num": 598,
+    "name": "598 Hệ thống thẩm định",
+    "desc": "Quản lý tập trung thống",
+    "developer": "Bảo hiểm xã hội Việt Quản lý tập trung thống"
+  },
+  {
+    "num": 599,
+    "name": "599 Hệ thống thăm dò",
+    "desc": "Tạo các phiếu điều tra theo",
+    "developer": "Ban Tuyên giáo và Tạo các phiếu điều tra theo"
+  },
+  {
+    "num": 600,
+    "name": "600 Hệ thống theo dõi",
+    "desc": "Theo dõi tiến độ các nhiệm",
+    "developer": "Vụ Hợp tác quốc tế Theo dõi tiến độ các nhiệm"
+  }
+]

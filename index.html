@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danh sách Sản phẩm & Giải pháp Chuyển đổi số 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f5f7;
+    --surface: #ffffff;
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --text-tertiary: #aeaeb2;
+    --border: #d2d2d7;
+    --blue: #0071e3;
+    --blue-light: #e8f1fb;
+    --radius: 18px;
+    --radius-sm: 12px;
+
+    /* Category colors */
+    --cat-ai: #6366f1;
+    --cat-government: #0071e3;
+    --cat-education: #30d158;
+    --cat-healthcare: #ff3b30;
+    --cat-finance: #ff9500;
+    --cat-smartcity: #00c7be;
+    --cat-agriculture: #34c759;
+    --cat-security: #1c1c1e;
+    --cat-tourism: #ff375f;
+    --cat-enterprise: #8e8e93;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 0 24px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .nav-brand {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-brand span { color: var(--blue); }
+  .search-wrap {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-tertiary);
+    pointer-events: none;
+  }
+  #searchInput {
+    width: 100%;
+    height: 34px;
+    background: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+    padding: 0 12px 0 36px;
+    font-size: 14px;
+    color: var(--text-primary);
+    outline: none;
+    transition: background .15s;
+  }
+  #searchInput:focus { background: #e8e8e8; }
+  #searchInput::placeholder { color: var(--text-tertiary); }
+  .nav-count {
+    font-size: 13px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(180deg, #1d1d1f 0%, #2d2d2f 100%);
+    padding: 80px 24px 64px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,113,227,0.25) 0%, transparent 70%);
+  }
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    position: relative;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+  }
+
+  /* ── CATEGORY FILTER ── */
+  .filter-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border: none;
+    background: none;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+    flex-shrink: 0;
+  }
+  .filter-btn:hover { color: var(--text-primary); }
+  .filter-btn.active {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+  }
+  .filter-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .filter-count {
+    font-size: 11px;
+    background: var(--bg);
+    padding: 1px 6px;
+    border-radius: 10px;
+    color: var(--text-secondary);
+  }
+
+  /* ── FEATURED SECTION ── */
+  .section { padding: 48px 24px; max-width: 1400px; margin: 0 auto; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .see-all {
+    font-size: 14px;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .see-all:hover { text-decoration: underline; }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  @media (min-width: 900px) {
+    .featured-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .featured-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    opacity: 0.08;
+    transform: translate(30%, -30%);
+  }
+  .featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  }
+  .featured-card .cat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .featured-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    flex: 1;
+  }
+  .featured-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .featured-card .dev-name {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  /* ── PRODUCT GRID ── */
+  .products-section {
+    padding: 0 24px 64px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  #productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .product-card {
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    cursor: pointer;
+    transition: transform .18s, box-shadow .18s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+  }
+  .product-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .product-num {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 600;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .cat-pill {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  .product-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .product-card .desc {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+  .product-card .dev {
+    font-size: 11.5px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+  }
+  .product-card .dev::before {
+    content: '';
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: var(--text-tertiary);
+  }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--text-secondary);
+  }
+  .empty-state svg { margin-bottom: 16px; opacity: .4; }
+  .empty-state h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .empty-state p { font-size: 14px; }
+
+  /* ── LOAD MORE ── */
+  #loadMoreWrap {
+    text-align: center;
+    padding: 24px;
+    display: none;
+  }
+  #loadMoreBtn {
+    padding: 12px 32px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 980px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--blue);
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  #loadMoreBtn:hover {
+    background: var(--blue-light);
+    border-color: var(--blue);
+  }
+
+  /* ── CATEGORY COLOR UTILS ── */
+  .c-ai       { --cc: var(--cat-ai);         }
+  .c-government{ --cc: var(--cat-government); }
+  .c-education { --cc: var(--cat-education);  }
+  .c-healthcare{ --cc: var(--cat-healthcare); }
+  .c-finance   { --cc: var(--cat-finance);    }
+  .c-smartcity { --cc: var(--cat-smartcity);  }
+  .c-agriculture{ --cc: var(--cat-agriculture);}
+  .c-security  { --cc: var(--cat-security);   }
+  .c-tourism   { --cc: var(--cat-tourism);    }
+  .c-enterprise{ --cc: var(--cat-enterprise); }
+
+  .cat-badge { background: color-mix(in srgb, var(--cc) 12%, white); color: var(--cc); }
+  .featured-card::before { background: var(--cc, transparent); }
+  .cat-pill { background: color-mix(in srgb, var(--cc) 12%, white); color: var(--cc); }
+
+  /* ── MODAL ── */
+  #modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  #modal.open { display: flex; }
+  .modal-box {
+    background: var(--surface);
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 32px;
+    position: relative;
+    animation: modalIn .2s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(.96) translateY(12px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 30px; height: 30px;
+    background: var(--bg);
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+  }
+  .modal-close:hover { background: var(--border); }
+  .modal-cat { margin-bottom: 16px; }
+  .modal-box h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .modal-box .modal-dev {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .modal-box .modal-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+  .modal-num {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1d1d1f;
+    color: rgba(255,255,255,0.5);
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  footer a { color: var(--blue); text-decoration: none; }
+  footer strong { color: rgba(255,255,255,0.8); }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .hero-stats { gap: 32px; }
+    .featured-grid { grid-template-columns: 1fr 1fr; }
+    #productsGrid { grid-template-columns: 1fr 1fr; }
+    .section, .products-section { padding-left: 16px; padding-right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">🇻🇳 <span>Sản phẩm số</span> Việt Nam</div>
+  <div class="search-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm, giải pháp...">
+  </div>
+  <div class="nav-count" id="navCount">600 sản phẩm</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Bộ Khoa học và Công nghệ · Tháng 04/2026</div>
+  <h1>Chuyển đổi số<br>Việt Nam 2026</h1>
+  <p>Danh sách chính thức các sản phẩm, giải pháp công nghệ tiêu biểu phục vụ chuyển đổi số quốc gia</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num" id="statTotal">600</span>
+      <span class="hero-stat-label">Sản phẩm & Giải pháp</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">10</span>
+      <span class="hero-stat-label">Lĩnh vực</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">200+</span>
+      <span class="hero-stat-label">Đơn vị phát triển</span>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY FILTER -->
+<div class="filter-bar" id="filterBar">
+  <button class="filter-btn active" data-cat="all">
+    <span>Tất cả</span>
+    <span class="filter-count" id="count-all">600</span>
+  </button>
+  <button class="filter-btn c-government" data-cat="government">
+    <span class="filter-dot" style="background:var(--cat-government)"></span>
+    <span>Chính phủ</span>
+    <span class="filter-count" id="count-government">0</span>
+  </button>
+  <button class="filter-btn c-ai" data-cat="ai">
+    <span class="filter-dot" style="background:var(--cat-ai)"></span>
+    <span>Trí tuệ nhân tạo</span>
+    <span class="filter-count" id="count-ai">0</span>
+  </button>
+  <button class="filter-btn c-enterprise" data-cat="enterprise">
+    <span class="filter-dot" style="background:var(--cat-enterprise)"></span>
+    <span>Doanh nghiệp</span>
+    <span class="filter-count" id="count-enterprise">0</span>
+  </button>
+  <button class="filter-btn c-education" data-cat="education">
+    <span class="filter-dot" style="background:var(--cat-education)"></span>
+    <span>Giáo dục</span>
+    <span class="filter-count" id="count-education">0</span>
+  </button>
+  <button class="filter-btn c-finance" data-cat="finance">
+    <span class="filter-dot" style="background:var(--cat-finance)"></span>
+    <span>Tài chính</span>
+    <span class="filter-count" id="count-finance">0</span>
+  </button>
+  <button class="filter-btn c-healthcare" data-cat="healthcare">
+    <span class="filter-dot" style="background:var(--cat-healthcare)"></span>
+    <span>Y tế</span>
+    <span class="filter-count" id="count-healthcare">0</span>
+  </button>
+  <button class="filter-btn c-security" data-cat="security">
+    <span class="filter-dot" style="background:var(--cat-security)"></span>
+    <span>An ninh mạng</span>
+    <span class="filter-count" id="count-security">0</span>
+  </button>
+  <button class="filter-btn c-smartcity" data-cat="smartcity">
+    <span class="filter-dot" style="background:var(--cat-smartcity)"></span>
+    <span>Đô thị thông minh</span>
+    <span class="filter-count" id="count-smartcity">0</span>
+  </button>
+  <button class="filter-btn c-tourism" data-cat="tourism">
+    <span class="filter-dot" style="background:var(--cat-tourism)"></span>
+    <span>Du lịch & Văn hóa</span>
+    <span class="filter-count" id="count-tourism">0</span>
+  </button>
+  <button class="filter-btn c-agriculture" data-cat="agriculture">
+    <span class="filter-dot" style="background:var(--cat-agriculture)"></span>
+    <span>Nông nghiệp</span>
+    <span class="filter-count" id="count-agriculture">0</span>
+  </button>
+</div>
+
+<!-- FEATURED -->
+<section class="section" id="featuredSection">
+  <div class="section-header">
+    <h2 class="section-title">Nổi bật</h2>
+    <a href="#" class="see-all" id="seeAllBtn">Xem tất cả →</a>
+  </div>
+  <div class="featured-grid" id="featuredGrid"></div>
+</section>
+
+<!-- ALL PRODUCTS -->
+<div class="products-section">
+  <div class="section-header">
+    <h2 class="section-title" id="gridTitle">Tất cả sản phẩm</h2>
+    <span style="font-size:14px; color:var(--text-secondary)" id="gridSubtitle">600 sản phẩm & giải pháp</span>
+  </div>
+  <div id="productsGrid"></div>
+  <div id="loadMoreWrap">
+    <button id="loadMoreBtn">Tải thêm sản phẩm</button>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-num" id="modalNum"></div>
+    <div class="modal-cat" id="modalCat"></div>
+    <h2 id="modalName"></h2>
+    <div class="modal-dev" id="modalDev"></div>
+    <div class="modal-desc" id="modalDesc"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Danh sách Sản phẩm, Giải pháp Chuyển đổi số</strong><br>
+  Kèm theo Công văn số 2765/BKHCN-CĐSQG ngày 29/4/2026 của Bộ Khoa học và Công nghệ<br>
+  <a href="https://mic.mediacdn.vn/document/2026/5/7/phuluc1baocaodanhsachsanphamgiaiphap-v3-17781254391172012614663.pdf">Xem tài liệu gốc (PDF)</a>
+</footer>
+
+<script>
+// ── CATEGORY CONFIG ──
+const CAT_CONFIG = {
+  ai:         { label: 'Trí tuệ nhân tạo', color: '#6366f1', icon: '🤖' },
+  government: { label: 'Chính phủ',        color: '#0071e3', icon: '🏛️' },
+  education:  { label: 'Giáo dục',         color: '#30d158', icon: '📚' },
+  healthcare: { label: 'Y tế',             color: '#ff3b30', icon: '🏥' },
+  finance:    { label: 'Tài chính',        color: '#ff9500', icon: '💰' },
+  smartcity:  { label: 'Đô thị thông minh',color: '#00c7be', icon: '🏙️' },
+  agriculture:{ label: 'Nông nghiệp',     color: '#34c759', icon: '🌾' },
+  security:   { label: 'An ninh mạng',    color: '#3a3a3c', icon: '🔒' },
+  tourism:    { label: 'Du lịch & Văn hóa',color: '#ff375f', icon: '🗺️' },
+  enterprise: { label: 'Doanh nghiệp',    color: '#8e8e93', icon: '💼' },
+};
+
+// ── PRODUCT DATA (embedded) ──
+</script>
+<script src="products_data.js"></script>
+<script>
+// ── STATE ──
+let currentCat = 'all';
+let currentSearch = '';
+let displayedCount = 0;
+const PAGE_SIZE = 60;
+
+// ── HELPERS ──
+function catClass(cat) { return 'c-' + cat; }
+
+function makeBadge(cat, size = 'sm') {
+  const c = CAT_CONFIG[cat] || CAT_CONFIG.enterprise;
+  const cls = size === 'lg' ? 'cat-badge' : 'cat-pill';
+  return `<span class="${cls} ${catClass(cat)}">${c.icon} ${c.label}</span>`;
+}
+
+function filtered() {
+  return PRODUCTS.filter(p => {
+    const matchCat = currentCat === 'all' || p.cat === currentCat;
+    if (!matchCat) return false;
+    if (!currentSearch) return true;
+    const q = currentSearch.toLowerCase();
+    return (p.name + p.desc + p.dev).toLowerCase().includes(q);
+  });
+}
+
+// ── COUNTS ──
+function updateCounts() {
+  const cats = ['all','government','ai','enterprise','education','finance','healthcare','security','smartcity','tourism','agriculture'];
+  cats.forEach(cat => {
+    const count = cat === 'all'
+      ? (currentSearch ? filtered().length : PRODUCTS.length)
+      : PRODUCTS.filter(p => p.cat === cat).length;
+    const el = document.getElementById('count-' + cat);
+    if (el) el.textContent = count;
+  });
+}
+
+// ── FEATURED ──
+function renderFeatured() {
+  const featured = [1,3,7,10,14,22,29,45].map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
+  const grid = document.getElementById('featuredGrid');
+  grid.innerHTML = featured.map(p => {
+    const c = CAT_CONFIG[p.cat] || CAT_CONFIG.enterprise;
+    return `
+    <div class="featured-card ${catClass(p.cat)}" onclick="openModal(${p.id})">
+      ${makeBadge(p.cat, 'lg')}
+      <h3>${p.name}</h3>
+      <p>${p.desc || 'Giải pháp chuyển đổi số quốc gia'}</p>
+      <div class="dev-name">${p.dev || '—'}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── PRODUCT GRID ──
+function renderCard(p) {
+  const c = CAT_CONFIG[p.cat] || CAT_CONFIG.enterprise;
+  return `
+  <div class="product-card ${catClass(p.cat)}" onclick="openModal(${p.id})">
+    <div class="product-card-top">
+      <span class="product-num">#${p.id}</span>
+      ${makeBadge(p.cat)}
+    </div>
+    <h3>${p.name}</h3>
+    <div class="desc">${p.desc || 'Giải pháp chuyển đổi số'}</div>
+    ${p.dev ? `<div class="dev">${p.dev}</div>` : ''}
+  </div>`;
+}
+
+function renderGrid(reset = false) {
+  const list = filtered();
+  const grid = document.getElementById('productsGrid');
+
+  if (reset) {
+    displayedCount = 0;
+    grid.innerHTML = '';
+  }
+
+  if (list.length === 0) {
+    grid.innerHTML = `
+    <div class="empty-state">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <h3>Không tìm thấy sản phẩm</h3>
+      <p>Thử tìm kiếm với từ khóa khác</p>
+    </div>`;
+    document.getElementById('loadMoreWrap').style.display = 'none';
+    return;
+  }
+
+  const batch = list.slice(displayedCount, displayedCount + PAGE_SIZE);
+  grid.insertAdjacentHTML('beforeend', batch.map(renderCard).join(''));
+  displayedCount += batch.length;
+
+  const hasMore = displayedCount < list.length;
+  document.getElementById('loadMoreWrap').style.display = hasMore ? 'block' : 'none';
+
+  // Update subtitle
+  document.getElementById('navCount').textContent = list.length + ' sản phẩm';
+  document.getElementById('gridSubtitle').textContent = list.length + ' sản phẩm & giải pháp';
+
+  const cat = CAT_CONFIG[currentCat];
+  document.getElementById('gridTitle').textContent = currentCat === 'all'
+    ? 'Tất cả sản phẩm'
+    : (cat?.icon + ' ' + cat?.label || 'Sản phẩm');
+}
+
+// ── FILTER BUTTONS ──
+document.getElementById('filterBar').addEventListener('click', e => {
+  const btn = e.target.closest('[data-cat]');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCat = btn.dataset.cat;
+  renderGrid(true);
+
+  // Show/hide featured section
+  const fs = document.getElementById('featuredSection');
+  fs.style.display = currentCat === 'all' && !currentSearch ? '' : 'none';
+});
+
+// ── SEARCH ──
+let searchTimer;
+document.getElementById('searchInput').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    currentSearch = e.target.value.trim();
+    renderGrid(true);
+    document.getElementById('featuredSection').style.display =
+      currentCat === 'all' && !currentSearch ? '' : 'none';
+    updateCounts();
+  }, 200);
+});
+
+// ── LOAD MORE ──
+document.getElementById('loadMoreBtn').addEventListener('click', () => renderGrid(false));
+
+// ── SEE ALL ──
+document.getElementById('seeAllBtn').addEventListener('click', e => {
+  e.preventDefault();
+  currentCat = 'all';
+  currentSearch = '';
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('[data-cat="all"]').classList.add('active');
+  document.getElementById('featuredSection').style.display = '';
+  renderGrid(true);
+});
+
+// ── MODAL ──
+function openModal(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  const c = CAT_CONFIG[p.cat] || CAT_CONFIG.enterprise;
+  document.getElementById('modalNum').textContent = 'Sản phẩm #' + p.id;
+  document.getElementById('modalCat').innerHTML = makeBadge(p.cat, 'lg');
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalDev').innerHTML =
+    `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+     ${p.dev || 'Không rõ đơn vị'}`;
+  document.getElementById('modalDesc').textContent =
+    p.desc || 'Giải pháp hỗ trợ chuyển đổi số trong các lĩnh vực kinh tế - xã hội.';
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal')) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── INIT ──
+updateCounts();
+renderFeatured();
+renderGrid(true);
+</script>
+</body>
+</html>

@@ -1,33 +1,60 @@
+import { Feather } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
+import { Platform, StyleSheet } from 'react-native';
 
 import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarActiveTintColor: '#f5bf23',
+        tabBarInactiveTintColor: '#AEAEB2',
+        tabBarStyle: {
+          backgroundColor: Platform.OS === 'ios' ? 'rgba(255,255,255,0.96)' : '#fff',
+          borderTopWidth: StyleSheet.hairlineWidth,
+          borderTopColor: '#E0E0E0',
+          elevation: 0,
+        },
+        tabBarLabelStyle: { fontSize: 10, fontWeight: '600', marginBottom: 2 },
+        tabBarIconStyle: { marginTop: 4 },
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Hôm nay',
+          tabBarIcon: ({ color }) => <Feather name="star" size={22} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="browse"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Khám phá',
+          tabBarIcon: ({ color }) => <Feather name="grid" size={22} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: 'Tìm kiếm',
+          tabBarIcon: ({ color }) => <Feather name="search" size={22} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="info"
+        options={{
+          title: 'Giới thiệu',
+          tabBarIcon: ({ color }) => <Feather name="info" size={22} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="account"
+        options={{
+          title: 'Tài khoản',
+          tabBarIcon: ({ color }) => <Feather name="user" size={22} color={color} />,
         }}
       />
     </Tabs>
