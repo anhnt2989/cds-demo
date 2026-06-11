@@ -1,14 +1,14 @@
 import { type FeatherName } from '@/data/products';
 
 export const LS = {
-  green:   '#00aa55',
+  green: '#00aa55',
   greenDk: '#007a3d',
   greenLt: '#e6f7ef',
-  black:   '#0A0A0A',
+  black: '#0A0A0A',
   surface: '#ffffff',
-  bg:      '#F0FAF5',
-  border:  '#C8E8D8',
-  muted:   '#5A8A6A',
+  bg: '#F0FAF5',
+  border: '#C8E8D8',
+  muted: '#5A8A6A',
 } as const;
 
 const BASE = 'https://langso.dx.gov.vn';
@@ -139,13 +139,13 @@ export const SOLUTIONS: Solution[] = [
 
 export const CONTACT = {
   address: '18 Nguyễn Du, Hai Bà Trưng, Hà Nội',
-  phone:   '024.39454461',
-  email:   'langso@mic.gov.vn',
-  org:     'Cục Kinh tế số và Xã hội số',
-  url:     'https://langso.dx.gov.vn',
+  phone: '024.39454461',
+  email: 'langso@mic.gov.vn',
+  org: 'Cục Kinh tế số và Xã hội số',
+  url: 'https://langso.dx.gov.vn',
 };
 
-export const LOGO_URL       = `${BASE}/image/logo.png`;
+export const LOGO_URL = `${BASE}/image/logo.png`;
 export const LOGO_TITLE_URL = `${BASE}/image/logotitle.png`;
 
 export const PILLARS = [

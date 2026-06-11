@@ -43,25 +43,25 @@ export function BambooIcon({ size = 24, color = '#1C1C1E' }: Props) {
   return (
     <View style={{ width: size, height: size }}>
       {/* Left stalk — two segments */}
-      <View style={stalk(5, 2,  9)} />
+      <View style={stalk(5, 2, 9)} />
       <View style={stalk(5, 13, 9)} />
       {/* Left stalk nodes */}
       <View style={node(4, 11, 5)} />
       <View style={node(4, 21, 5)} />
 
       {/* Right stalk — two segments, offset down */}
-      <View style={stalk(16, 5,  8)} />
+      <View style={stalk(16, 5, 8)} />
       <View style={stalk(16, 15, 7)} />
       {/* Right stalk nodes */}
       <View style={node(15, 13, 5)} />
 
       {/* Leaves — left stalk */}
-      <View style={leaf(8,  7,  -30)} />
-      <View style={leaf(2, 15,  150)} />
+      <View style={leaf(8, 7, -30)} />
+      <View style={leaf(2, 15, 150)} />
 
       {/* Leaves — right stalk */}
       <View style={leaf(10, 11, -25)} />
-      <View style={leaf(17, 18,  140)} />
+      <View style={leaf(17, 18, 140)} />
     </View>
   );
 }
