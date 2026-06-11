@@ -17,6 +17,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AppRow } from '@/components/AppRow';
 import { AppTile } from '@/components/AppTile';
+import { CarouselDots } from '@/components/CarouselDots';
 import { FeaturedCard } from '@/components/FeaturedCard';
 import { VIcon } from '@/components/VIcon';
 import {
@@ -30,7 +31,7 @@ import {
 
 const { width: SW } = Dimensions.get('window');
 const CARD_W = SW - 48;
-const SNAP   = CARD_W + 12;
+const SNAP = CARD_W + 12;
 
 const FEATURED = FEATURED_IDS.map(id => PRODUCTS.find(p => p.id === id)!).filter(Boolean);
 
@@ -69,13 +70,12 @@ function TopChart({ category }: { category: Category }) {
 
 export default function TodayScreen() {
   const [dot, setDot] = useState(0);
-  const topCats: Category[] = ['ai', 'government', 'healthcare', 'education'];
+  const topCats: Category[] = ['chinh_quyen', 'kinh_te', 'xa_hoi'];
 
   return (
     <SafeAreaView style={ss.safe} edges={['top']}>
       <StatusBar barStyle="dark-content" />
       <ScrollView showsVerticalScrollIndicator={false}>
-
         {/* Header */}
         <View style={ss.header}>
           <Text style={ss.date}>{TODAY}</Text>
@@ -93,7 +93,8 @@ export default function TodayScreen() {
           keyExtractor={p => String(p.id)}
           contentContainerStyle={{ paddingHorizontal: 24, gap: 12 }}
           onScroll={(e: NativeSyntheticEvent<NativeScrollEvent>) =>
-            setDot(Math.round(e.nativeEvent.contentOffset.x / SNAP))}
+            setDot(Math.round(e.nativeEvent.contentOffset.x / SNAP))
+          }
           scrollEventThrottle={16}
           renderItem={({ item }) => (
             <View style={{ width: CARD_W }}>
@@ -101,19 +102,14 @@ export default function TodayScreen() {
             </View>
           )}
         />
-        {/* Dots */}
-        <View style={ss.dots}>
-          {FEATURED.map((_, i) => (
-            <View key={i} style={[ss.dot, i === dot && ss.dotOn]} />
-          ))}
-        </View>
+        <CarouselDots count={FEATURED.length} active={dot} style={ss.dots} />
 
         {/* Stats strip */}
         <View style={ss.statsStrip}>
           {[
             { icon: 'layers' as const, n: '600', label: 'Sản phẩm' },
-            { icon: 'grid'   as const, n: '10',  label: 'Lĩnh vực' },
-            { icon: 'users'  as const, n: '200+',label: 'Đơn vị'   },
+            { icon: 'grid' as const, n: '3', label: 'Lĩnh vực' },
+            { icon: 'users' as const, n: '200+', label: 'Đơn vị' },
           ].map(({ icon, n, label }) => (
             <View key={label} style={ss.stat}>
               <VIcon name={icon} size={18} color="#8E8E93" />
@@ -127,7 +123,11 @@ export default function TodayScreen() {
 
         {/* Category grid */}
         <SectionHeader title="Lĩnh vực" onSeeAll={() => router.push('/browse')} />
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={ss.catScroll}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={ss.catScroll}
+        >
           {ALL_CATEGORIES.map(cat => {
             const c = CATEGORY_CONFIG[cat];
             const count = getProductsByCategory(cat).length;
@@ -135,7 +135,8 @@ export default function TodayScreen() {
               <Pressable
                 key={cat}
                 style={ss.catCard}
-                onPress={() => router.push({ pathname: '/browse', params: { category: cat } })}>
+                onPress={() => router.push({ pathname: '/browse', params: { category: cat } })}
+              >
                 <VIcon name={c.icon} size={28} color="#1C1C1E" />
                 <Text style={ss.catName}>{c.label}</Text>
                 <Text style={ss.catCount}>{count}</Text>
@@ -184,36 +185,60 @@ const ss = StyleSheet.create({
   date: { fontSize: 11, fontWeight: '700', color: '#AEAEB2', letterSpacing: 0.8, marginBottom: 2 },
   title: { fontSize: 34, fontWeight: '800', color: '#0A0A0A', letterSpacing: -0.5 },
 
-  dots: { flexDirection: 'row', justifyContent: 'center', marginTop: 14, gap: 5 },
-  dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#D0D0D0' },
-  dotOn: { backgroundColor: '#f5bf23', width: 20 },
+  dots: { marginTop: 14 },
 
   statsStrip: {
-    flexDirection: 'row', marginHorizontal: 24, marginTop: 20,
-    backgroundColor: '#fff', borderRadius: 16, paddingVertical: 16,
-    borderWidth: StyleSheet.hairlineWidth, borderColor: '#E0E0E0',
+    flexDirection: 'row',
+    marginHorizontal: 24,
+    marginTop: 20,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    paddingVertical: 16,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#E0E0E0',
   },
   stat: { flex: 1, alignItems: 'center', gap: 4 },
   statN: { fontSize: 20, fontWeight: '800', color: '#0A0A0A' },
   statL: { fontSize: 11, color: '#8E8E93' },
 
-  div: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA', marginHorizontal: 24, marginVertical: 24 },
+  div: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#E5E5EA',
+    marginHorizontal: 24,
+    marginVertical: 24,
+  },
 
-  secRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 24, marginBottom: 14 },
+  secRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 24,
+    marginBottom: 14,
+  },
   secTitle: { fontSize: 20, fontWeight: '800', color: '#0A0A0A', letterSpacing: -0.3 },
   seeAllBtn: { flexDirection: 'row', alignItems: 'center', gap: 2 },
   seeAll: { fontSize: 14, color: '#8E8E93', fontWeight: '500' },
 
   catScroll: { paddingHorizontal: 24, gap: 10 },
   catCard: {
-    width: 110, backgroundColor: '#fff', borderRadius: 16, padding: 14, gap: 6, alignItems: 'flex-start',
-    borderWidth: StyleSheet.hairlineWidth, borderColor: '#E0E0E0',
+    width: 110,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    padding: 14,
+    gap: 6,
+    alignItems: 'flex-start',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#E0E0E0',
   },
   catName: { fontSize: 12, fontWeight: '700', color: '#1C1C1E' },
   catCount: { fontSize: 11, color: '#8E8E93' },
 
   chartCard: {
-    marginHorizontal: 24, backgroundColor: '#fff', borderRadius: 16, overflow: 'hidden',
-    borderWidth: StyleSheet.hairlineWidth, borderColor: '#E0E0E0',
+    marginHorizontal: 24,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    overflow: 'hidden',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#E0E0E0',
   },
 });

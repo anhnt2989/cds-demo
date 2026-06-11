@@ -2,14 +2,14 @@ export interface Review {
   id: string;
   author: string;
   role: string;
-  rating: number;   // 1–5
+  rating: number; // 1–5
   text: string;
-  date: string;     // display string
+  date: string; // display string
   helpful: number;
 }
 
 export interface ProductRating {
-  average: number;   // 1.0–5.0, 1 decimal
+  average: number; // 1.0–5.0, 1 decimal
   count: number;
   distribution: [number, number, number, number, number]; // [1★…5★] counts
   reviews: Review[];
@@ -21,21 +21,44 @@ function hash(n: number): number {
   x = ((x >>> 16) ^ x) * 0x45d9f3b;
   return ((x >>> 16) ^ x) >>> 0;
 }
-function rng(seed: number, max: number) { return hash(seed) % max; }
-function pick<T>(arr: T[], seed: number): T { return arr[rng(seed, arr.length)]; }
+function rng(seed: number, max: number) {
+  return hash(seed) % max;
+}
+function pick<T>(arr: T[], seed: number): T {
+  return arr[rng(seed, arr.length)];
+}
 
 /* ── mock data pools ── */
 const NAMES = [
-  'Nguyễn Văn An', 'Trần Thị Bình', 'Lê Văn Cường', 'Phạm Thị Dung',
-  'Hoàng Minh Em', 'Đặng Thị Phương', 'Bùi Văn Giang', 'Vũ Thị Hoa',
-  'Đỗ Quang Inh', 'Ngô Thị Kim', 'Dương Văn Long', 'Mai Thị My',
-  'Phan Văn Nam', 'Tô Thị Oanh', 'Lý Văn Phúc', 'Hồ Thị Quỳnh',
+  'Nguyễn Văn An',
+  'Trần Thị Bình',
+  'Lê Văn Cường',
+  'Phạm Thị Dung',
+  'Hoàng Minh Em',
+  'Đặng Thị Phương',
+  'Bùi Văn Giang',
+  'Vũ Thị Hoa',
+  'Đỗ Quang Inh',
+  'Ngô Thị Kim',
+  'Dương Văn Long',
+  'Mai Thị My',
+  'Phan Văn Nam',
+  'Tô Thị Oanh',
+  'Lý Văn Phúc',
+  'Hồ Thị Quỳnh',
 ];
 
 const ROLES = [
-  'Cán bộ nhà nước', 'Chuyên viên IT', 'Giám đốc doanh nghiệp',
-  'Nhân viên y tế', 'Giáo viên', 'Kỹ sư phần mềm', 'Chuyên gia tư vấn',
-  'Quản lý dự án', 'Nhà nghiên cứu', 'Sinh viên đại học',
+  'Cán bộ nhà nước',
+  'Chuyên viên IT',
+  'Giám đốc doanh nghiệp',
+  'Nhân viên y tế',
+  'Giáo viên',
+  'Kỹ sư phần mềm',
+  'Chuyên gia tư vấn',
+  'Quản lý dự án',
+  'Nhà nghiên cứu',
+  'Sinh viên đại học',
 ];
 
 const TEXTS_5 = [
@@ -59,14 +82,26 @@ const TEXTS_3 = [
   'Cần thêm thời gian để đánh giá đầy đủ, ban đầu có một số vướng mắc khi cấu hình.',
 ];
 
-const MONTHS = ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6',
-                'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'];
+const MONTHS = [
+  'Tháng 1',
+  'Tháng 2',
+  'Tháng 3',
+  'Tháng 4',
+  'Tháng 5',
+  'Tháng 6',
+  'Tháng 7',
+  'Tháng 8',
+  'Tháng 9',
+  'Tháng 10',
+  'Tháng 11',
+  'Tháng 12',
+];
 
 function makeRating(productId: number): ProductRating {
   const h = hash(productId * 31);
 
   // Average in range 3.2–5.0
-  const raw     = 3.2 + (h % 180) / 100;
+  const raw = 3.2 + (h % 180) / 100;
   const average = Math.round(raw * 10) / 10;
 
   // Review count 15–250
@@ -74,34 +109,34 @@ function makeRating(productId: number): ProductRating {
 
   // Distribution (rough, sums to count)
   const w5 = Math.round(count * (0.35 + (h % 25) / 100));
-  const w4 = Math.round(count * (0.30 + (hash(h) % 15) / 100));
-  const w3 = Math.round(count * (0.18));
+  const w4 = Math.round(count * (0.3 + (hash(h) % 15) / 100));
+  const w3 = Math.round(count * 0.18);
   const w2 = Math.round(count * 0.09);
   const w1 = count - w5 - w4 - w3 - w2;
-  const dist: [number,number,number,number,number] = [
-    Math.max(0, w1), Math.max(0, w2), Math.max(0, w3), Math.max(0, w4), Math.max(0, w5),
+  const dist: [number, number, number, number, number] = [
+    Math.max(0, w1),
+    Math.max(0, w2),
+    Math.max(0, w3),
+    Math.max(0, w4),
+    Math.max(0, w5),
   ];
 
   // Generate 4 reviews
   const numReviews = 3 + (productId % 3); // 3–5
   const reviews: Review[] = Array.from({ length: numReviews }, (_, i) => {
-    const s      = productId * 100 + i * 17;
-    const rating = i === 0
-      ? 5
-      : i === 1
-        ? 4 + (rng(s, 2))
-        : 3 + (rng(s + 1, 3));
-    const texts  = rating === 5 ? TEXTS_5 : rating >= 4 ? TEXTS_4 : TEXTS_3;
-    const month  = MONTHS[rng(s + 3, 12)];
-    const year   = 2024 + rng(s + 4, 2);
-    const day    = 1 + rng(s + 5, 28);
+    const s = productId * 100 + i * 17;
+    const rating = i === 0 ? 5 : i === 1 ? 4 + rng(s, 2) : 3 + rng(s + 1, 3);
+    const texts = rating === 5 ? TEXTS_5 : rating >= 4 ? TEXTS_4 : TEXTS_3;
+    const month = MONTHS[rng(s + 3, 12)];
+    const year = 2024 + rng(s + 4, 2);
+    const day = 1 + rng(s + 5, 28);
     return {
-      id:      `${productId}-${i}`,
-      author:  pick(NAMES, s + 6),
-      role:    pick(ROLES, s + 7),
+      id: `${productId}-${i}`,
+      author: pick(NAMES, s + 6),
+      role: pick(ROLES, s + 7),
       rating,
-      text:    pick(texts, s + 8),
-      date:    `${day} ${month}, ${year}`,
+      text: pick(texts, s + 8),
+      date: `${day} ${month}, ${year}`,
       helpful: rng(s + 9, 40),
     };
   });

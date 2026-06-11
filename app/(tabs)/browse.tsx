@@ -17,7 +17,7 @@ export default function BrowseScreen() {
   }, [params.category]);
 
   const filtered = useMemo(
-    () => selected === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === selected),
+    () => (selected === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === selected)),
     [selected],
   );
 
@@ -31,16 +31,22 @@ export default function BrowseScreen() {
       </View>
 
       {/* Category chips */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={ss.chips} style={ss.chipScroll}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={ss.chips}
+        style={ss.chipScroll}
+      >
         {(['all', ...ALL_CATEGORIES] as const).map(cat => {
           const active = selected === cat;
-          const label  = cat === 'all' ? 'Tất cả' : CATEGORY_CONFIG[cat].label;
-          const icon   = cat !== 'all' ? CATEGORY_CONFIG[cat].icon : null;
+          const label = cat === 'all' ? 'Tất cả' : CATEGORY_CONFIG[cat].label;
+          const icon = cat !== 'all' ? CATEGORY_CONFIG[cat].icon : null;
           return (
             <Pressable
               key={cat}
               style={[ss.chip, active && ss.chipOn]}
-              onPress={() => setSelected(cat)}>
+              onPress={() => setSelected(cat)}
+            >
               {icon && <VIcon name={icon} size={13} color={active ? '#fff' : '#1C1C1E'} />}
               <Text style={[ss.chipTxt, active && ss.chipTxtOn]}>{label}</Text>
             </Pressable>
@@ -91,28 +97,50 @@ const ss = StyleSheet.create({
   chipScroll: { flexGrow: 0 },
   chips: { paddingHorizontal: 16, paddingVertical: 10, gap: 8 },
   chip: {
-    flexDirection: 'row', alignItems: 'center', gap: 5,
-    paddingHorizontal: 14, paddingVertical: 8, borderRadius: 20,
-    backgroundColor: '#fff', borderWidth: 1, borderColor: '#E0E0E0',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#E0E0E0',
   },
   chipOn: { backgroundColor: '#f5bf23', borderColor: '#f5bf23' },
   chipTxt: { fontSize: 13, fontWeight: '600', color: '#1C1C1E' },
   chipTxtOn: { color: '#0A0A0A' },
 
   banner: {
-    flexDirection: 'row', alignItems: 'center', gap: 14,
-    marginHorizontal: 16, marginBottom: 8,
-    backgroundColor: '#fff', borderRadius: 14, padding: 14,
-    borderWidth: StyleSheet.hairlineWidth, borderColor: '#E0E0E0',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 14,
+    marginHorizontal: 16,
+    marginBottom: 8,
+    backgroundColor: '#fff',
+    borderRadius: 14,
+    padding: 14,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#E0E0E0',
   },
-  bannerSub: { fontSize: 11, color: '#8E8E93', fontWeight: '600', textTransform: 'uppercase', letterSpacing: 0.4 },
+  bannerSub: {
+    fontSize: 11,
+    color: '#8E8E93',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.4,
+  },
   bannerName: { fontSize: 18, fontWeight: '800', color: '#0A0A0A', letterSpacing: -0.3 },
   bannerCount: { marginLeft: 'auto', fontSize: 28, fontWeight: '800', color: '#E0E0E0' },
 
   list: { flex: 1 },
   listPad: {
-    marginHorizontal: 16, backgroundColor: '#fff',
-    borderRadius: 16, overflow: 'hidden', paddingBottom: 32,
-    borderWidth: StyleSheet.hairlineWidth, borderColor: '#E0E0E0',
+    marginHorizontal: 16,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    overflow: 'hidden',
+    paddingBottom: 32,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#E0E0E0',
   },
 });
