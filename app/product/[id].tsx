@@ -6,7 +6,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AppRow } from '@/components/AppRow';
 import { VIcon } from '@/components/VIcon';
-import { CATEGORY_CONFIG, getProductsByCategory, getProductById } from '@/data/products';
+import {
+  CATEGORY_CONFIG,
+  FIELD_CONFIG,
+  getProductsByCategory,
+  getProductsByField,
+  getProductById,
+} from '@/data/products';
 import { getRating, type Review } from '@/data/reviews';
 import { useAuth } from '@/context/AuthContext';
 
@@ -172,9 +178,14 @@ export default function ProductScreen() {
   }
 
   const cfg = CATEGORY_CONFIG[product.cat];
-  const related = getProductsByCategory(product.cat)
-    .filter(p => p.id !== product.id)
-    .slice(0, 5);
+  const fieldCfg = FIELD_CONFIG[product.field];
+  // Prefer products in the same field; top up with the rest of the pillar.
+  const related = [
+    ...getProductsByField(product.field).filter(p => p.id !== product.id),
+    ...getProductsByCategory(product.cat).filter(
+      p => p.id !== product.id && p.field !== product.field,
+    ),
+  ].slice(0, 5);
 
   type IName = React.ComponentProps<typeof Feather>['name'];
   const blocks: { icon: IName; title: string; body: string }[] = (
@@ -212,8 +223,10 @@ export default function ProductScreen() {
             </View>
             <View style={ss.heroTexts}>
               <View style={ss.catPill}>
-                <VIcon name={cfg.icon} size={11} color="rgba(255,255,255,0.7)" />
-                <Text style={ss.catPillTxt}>{cfg.label}</Text>
+                <VIcon name={fieldCfg.icon} size={11} color="rgba(255,255,255,0.7)" />
+                <Text style={ss.catPillTxt}>
+                  {cfg.label} · {fieldCfg.label}
+                </Text>
               </View>
               <Text style={ss.heroName} numberOfLines={3}>
                 {product.name}

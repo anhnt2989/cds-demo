@@ -1,7 +1,29 @@
 ﻿import { type ComponentProps } from 'react';
 import { type Feather } from '@expo/vector-icons';
 
+// The three pillars (trụ cột).
 export type Category = 'chinh_quyen' | 'kinh_te' | 'xa_hoi';
+
+// The 18 fields (lĩnh vực), each a child of exactly one pillar.
+export type Field =
+  | 'quan_ly'
+  | 'dvc'
+  | 'du_lieu'
+  | 'an_toan'
+  | 'do_thi'
+  | 'tai_chinh'
+  | 'tmdt'
+  | 'doanh_nghiep'
+  | 'nong_nghiep'
+  | 'san_xuat'
+  | 'du_lich'
+  | 'logistics'
+  | 'y_te'
+  | 'giao_duc'
+  | 'van_hoa'
+  | 'lao_dong'
+  | 'moi_truong'
+  | 'truyen_thong';
 
 export type FeatherName = ComponentProps<typeof Feather>['name'];
 
@@ -14,12 +36,38 @@ export interface Product {
   users: string;
   process: string;
   cat: Category;
+  field: Field;
 }
 
 export const CATEGORY_CONFIG: Record<Category, { label: string; icon: FeatherName }> = {
   chinh_quyen: { label: 'Chính Quyền số', icon: 'shield' },
   kinh_te: { label: 'Kinh tế số', icon: 'trending-up' },
   xa_hoi: { label: 'Xã hội số', icon: 'users' },
+};
+
+// Each field maps to its parent pillar plus display label/icon.
+export const FIELD_CONFIG: Record<Field, { label: string; icon: FeatherName; pillar: Category }> = {
+  // Chính quyền số
+  quan_ly: { label: 'Quản lý & điều hành', icon: 'clipboard', pillar: 'chinh_quyen' },
+  dvc: { label: 'Dịch vụ công', icon: 'inbox', pillar: 'chinh_quyen' },
+  du_lieu: { label: 'Dữ liệu & nền tảng số', icon: 'database', pillar: 'chinh_quyen' },
+  an_toan: { label: 'An toàn thông tin', icon: 'lock', pillar: 'chinh_quyen' },
+  do_thi: { label: 'Đô thị thông minh', icon: 'map', pillar: 'chinh_quyen' },
+  // Kinh tế số
+  tai_chinh: { label: 'Tài chính - Ngân hàng', icon: 'credit-card', pillar: 'kinh_te' },
+  tmdt: { label: 'Thương mại điện tử', icon: 'shopping-bag', pillar: 'kinh_te' },
+  doanh_nghiep: { label: 'Doanh nghiệp & ERP', icon: 'briefcase', pillar: 'kinh_te' },
+  nong_nghiep: { label: 'Nông nghiệp số', icon: 'sun', pillar: 'kinh_te' },
+  san_xuat: { label: 'Sản xuất & Công nghiệp', icon: 'cpu', pillar: 'kinh_te' },
+  du_lich: { label: 'Du lịch', icon: 'compass', pillar: 'kinh_te' },
+  logistics: { label: 'Logistics & Vận tải', icon: 'truck', pillar: 'kinh_te' },
+  // Xã hội số
+  y_te: { label: 'Y tế', icon: 'heart', pillar: 'xa_hoi' },
+  giao_duc: { label: 'Giáo dục', icon: 'book-open', pillar: 'xa_hoi' },
+  van_hoa: { label: 'Văn hóa', icon: 'feather', pillar: 'xa_hoi' },
+  lao_dong: { label: 'Lao động & Việc làm', icon: 'user-check', pillar: 'xa_hoi' },
+  moi_truong: { label: 'Môi trường', icon: 'wind', pillar: 'xa_hoi' },
+  truyen_thong: { label: 'Truyền thông & Báo chí', icon: 'rss', pillar: 'xa_hoi' },
 };
 
 export const FEATURED_IDS = [1, 3, 7, 8, 10, 12, 14, 22, 29, 45, 49, 67];
@@ -37,6 +85,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Giới thiệu AgentBase; AI AgentBase bao gồm sáu module dịch vụ: Runtime, Access Control, Insight, Memory, Gateway và Tool. Mỗi module có thể hoạt động độc lập hoặc phối hợp với nhau để cung cấp các chức năng cốt lõi cho hệ sinh thái AI agent của bạn',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 2,
@@ -50,6 +99,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 3,
@@ -63,6 +113,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Nhập và Lưu trữ: Nội dung được lưu trữ có cấu trúc trong các kho dữ liệu (Big Data), thuận tiện cho tìm kiếm và tái sử dụng; Sản xuất thông minh: AI tự động viết kịch bản, tóm tắt',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 4,
@@ -75,6 +126,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 5,
@@ -87,6 +139,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 6,
@@ -100,6 +153,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình nghiệp vụ - Bàn Làm Việc Số 1. Văn bản về sở Hệ thống tự đồng bộ văn bản đến từ Tỉnh về kho nội bộ - ghi nhận số hiệu, trích yếu, cơ quan phát hành và phân biệt rõ file chính, file đính kèm, file liên quan. Ở bước này văn bản mới là dữ liệu thô, chưa đi vào điều hành. 2. AI đọc hiểu - chạy nền tự động',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 7,
@@ -113,6 +167,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Nền tảng Bản sao số đô thị (Viettel Urban Digital Twin - vUDT) là nền tảng hạ tầng số dùng chung, cho phép số hóa, tích hợp, quản trị, mô hình hoá, phân tích và mô phỏng toàn diện trạng thái đô thị trong không gian số, nhằm phục vụ quản lý, điều hành và ra quyết định theo hướng đa ngành, liên thông và bền vững',
     cat: 'chinh_quyen',
+    field: 'do_thi',
   },
   {
     id: 8,
@@ -126,6 +181,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bản đồ số 3D di sản văn hoá - du lịch: Hệ thống bản đồ số du lịch số hóa 3D toàn bộ tài nguyên du lịch, định vị trên nền bản đồ số: Layer hóa từng lớp, phân loại điểm đến, loại hình du lịch; Tích hợp chỉ đường, hướng dẫn du lịch',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 9,
@@ -138,6 +194,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 10,
@@ -151,6 +208,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống bảo tàng số 3D: Bảo tàng số tương tác 3D giúp người xem thông qua các thiết bị máy tính, máy tính bảng, thiết bị di động thông minh có thể tham quan, di chuyển, tìm hiểu thông tin trưng bày, hiện vật của bảo tàng một cách chi tiết nhất. Bao gồm cá c tính năng chính: Không gian trưng bày 3D; Hiện vật trưng bày 3D; Tham quan ảo; Tương tác 3D; Sơ đồ 3D không gian trưng bày; Hướng dẫn viên ảo; Video thuyết minh.',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 11,
@@ -163,6 +221,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 12,
@@ -175,6 +234,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bộ sản phẩm giúp thông minh hóa các hoạt động của bệnh viện bao gồm hệ thống quản lý nghiệp vụ khám chữa bệnh (tiếp đón, khám chữa bệnh nội/ngoại trú, dược, tài chính, bảo hiểm y tế…) và hệ thống bệnh án điện tử (số hóa toàn bộ hồ sơ bệnh án điện tử, tích hợp SNOMED',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 13,
@@ -186,6 +246,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 14,
@@ -198,6 +259,7 @@ export const PRODUCTS: Product[] = [
     process:
       'BnK IDP cho phép "hướng dẫn AI bằng ngôn ngữ tự nhiên" - chỉ cần mô tả thông tin cần trích xuất, AI sẽ tự động đọc hiểu và xử lý chính xác ngay cả với mẫu tài liệu mới',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 15,
@@ -210,6 +272,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 16,
@@ -222,6 +285,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 17,
@@ -234,6 +298,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 18,
@@ -247,6 +312,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng đặt câu hỏi hoặc lựa chọn nội dung cần tra cứu; trợ lý ảo tiếp nhận, xử lý và phản hồi thông tin theo kịch bản/dữ liệu đã được cấu hình',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 19,
@@ -259,6 +325,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 20,
@@ -272,6 +339,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 21,
@@ -283,6 +351,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 22,
@@ -296,6 +365,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 23,
@@ -308,6 +378,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 24,
@@ -321,6 +392,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 25,
@@ -333,6 +405,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Khi sử dụng tiện ích này là người dùng đang làm việc với phần mềm trí tuệ nhân tạo AI. AI sẽ trả lời tự động',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 26,
@@ -346,6 +419,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cán bộ, công chức, doanh nghiệp, nhân dân đặt câu hỏi sẽ được trợ lý ảo AI tìm kiếm một cách nhanh nhất và trả lời',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 27,
@@ -358,6 +432,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Phân tích dữ liệu, thiết lập mô hình dự đoán, giám sát và hiệu chỉnh, triển khai dịch vụ qua api',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 28,
@@ -368,6 +443,7 @@ export const PRODUCTS: Product[] = [
     users: 'Học sinh, sinh viên, giáo viên, phụ huynh,',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 29,
@@ -381,6 +457,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 30,
@@ -393,6 +470,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 31,
@@ -405,6 +483,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 32,
@@ -417,6 +496,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 33,
@@ -429,6 +509,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 34,
@@ -442,6 +523,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 35,
@@ -452,6 +534,7 @@ export const PRODUCTS: Product[] = [
     users: 'Học sinh, sinh viên, giáo viên, phụ huynh, cơ sở giáo dục và đơn vị đào tạo',
     process: '',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 36,
@@ -464,6 +547,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 37,
@@ -476,6 +560,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 38,
@@ -488,6 +573,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 39,
@@ -500,6 +586,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Ký số truyền thống sử dụng USB Token, SIM PKI và mô hình chữ ký số từ xa (Remote Signing), trong đó khóa bí mật được lưu trữ tập trung trong thiết bị HSM đạt chuẩn bảo mật',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 40,
@@ -513,6 +600,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bên cung cấp phần mềm cung ứng các dịch vụ nền tảng sổ, phần mềm quản lý giúp đơn vị thực hiện quản lý các công việc chuyên môn, lĩnh vực hoạt động của đơn vị trên môi trường điện tử',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 41,
@@ -526,6 +614,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Dịch vụ hạ tầng Public Cloud của Viettel Cloud cung cấp nền tảng hạ tầng điện toán đám mây linh hoạt và mở rộng theo nhu cầu, bao gồm máy chủ ảo hóa, lưu trữ, mạng và các thành phần hạ tầng thiết yếu khác. Khách hàng có thể chủ động triển khai, quản lý và vận hành tài nguyên mà không cần đầu',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 42,
@@ -539,6 +628,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Dịch vụ quản trị hạ tầng Cloud là các dịch vụ CNTT cung cấp cho khách hàng năng lực quản lý, vận hành và tối ưu môi trường điện toán đám mây của doanh nghiệp. Nhà cung cấp dịch vụ quản trị đám mây sẽ chịu trách nhiệm thực hiện các công việc như: Giám sát v à quản lý hạ tầng đám mây hàng ngày; Hỗ trợ vận hành, bảo trì, cập nhật, vá lỗi, sao lưu và phục hồi dữ liệu; Đảm bảo an toàn, bảo mật và tuân thủ các tiêu chuẩn liên quan.',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 43,
@@ -552,6 +642,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cung cấp license nền tảng Cloud Platform để triển khai hạ tầng Private Cloud tại trung tâm dữ liệu của khách hàng',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 44,
@@ -565,6 +656,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bao gồm các sản phẩm lớp P: Viettel Kubernetes Engine; Viettel Container Registry; Viettel Cloud Database - as - a - service (vDBaaS); Viettel Cloud Firewall (hợp tác).',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 45,
@@ -578,6 +670,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bao gồm các dịch vụ, giải pháp và công nghệ được thiết kế để bảo vệ dữ liệu, ứng dụng và hạ tầng trong môi trường điện toán đám mây khỏi các mối đe dọa an ninh mạng, truy cập trái phép, rò rỉ dữ liệu và các rủi ro khác. Các dịch vụ này bao gồm việc áp dụng các chính sách, quy trình, biện pháp kiểm soát và công cụ bảo mật nhằm đảm bảo tính bảo mật, toàn vẹn và sẵn sàng của dữ liệu và hệ thống trên đám mây',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 46,
@@ -591,6 +684,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 47,
@@ -604,6 +698,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cài đặt phần mềm trên máy người dùng; Quét file/ứng dụng theo thời gian thực; Phát hiện mã độc (signature + AI); Cảnh báo và xử lý (xóa/cách ly).',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 48,
@@ -617,6 +712,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thu thập dữ liệu hành vi từ endpoint; Phân tích và phát hiện bất thường; Sinh cảnh báo và điều tra sự cố; Thực hiện phản ứng (cô lập, xử lý).',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 49,
@@ -630,6 +726,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Triển khai agent lên các endpoint; Thiết lập chính sách bảo mật tập trung; Giám sát và quét định kỳ/toàn hệ thống; Phát hiện, chặn và quản lý sự cố từ console.',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 50,
@@ -643,6 +740,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cài app bảo mật trên thiết bị di động; Quét ứng dụng và hành vi hệ thống; Phát hiện app độc hại, phishing, spam; Cảnh báo và ngăn chặn rủi ro.',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 51,
@@ -656,6 +754,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thu thập log từ nhiều hệ thống; Chuẩn hóa và lưu trữ dữ liệu; Tương quan sự kiện, phát hiện bất thường; Sinh cảnh báo và báo cáo.',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 52,
@@ -669,6 +768,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Tạo môi trường bảo vệ ứng dụng (container); Kiểm tra tính toàn vẹn ứng dụng; Giám sát truy cập và dữ liệu; Ngăn chặn rò rỉ và tấn công vào app.',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 53,
@@ -682,6 +782,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thiết lập chính sách truy cập mạng; Giám sát lưu lượng vào/ra; Phát hiện và chặn tấn công (IDS/IPS); Ghi log và cảnh báo sự kiện.',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 54,
@@ -695,6 +796,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thu thập dữ liệu threat từ nhiều nguồn; Phân tích, chuẩn hóa IoC/TTP; Cung cấp intelligence cho hệ thống khác; Cập nhật cảnh báo và rule bảo mật.',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 55,
@@ -707,6 +809,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Tiếp nhận request đến web/app; Phân tích và kiểm tra payload; Phát hiện tấn công (SQLi, XSS, bot…); Chặn hoặc cho phép request hợp lệ.',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 56,
@@ -720,6 +823,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người học và giáo viên sử dụng hệ thống để tổ chức nội dung học tập; hệ thống ứng dụng AI để hỗ trợ học tập, gợi ý nội dung và theo dõi tiến độ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 57,
@@ -733,6 +837,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Dịch vụ Colocation (thuê chỗ đặt máy chủ) là dịch vụ cho phép doanh nghiệp hoặc cá nhân thuê không gian vật lý tại trung tâm dữ liệu (data center) để đặt máy chủ hoặc các thiết bị mạng mà họ sở hữu. Khách hàng sẽ tự trang bị và quản lý máy chủ của mình, cò n nhà cung cấp dịch vụ chịu trách nhiệm cung cấp hạ tầng như nguồn điện ổn định, hệ thống làm mát, bảo mật vật lý, kết nối',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 58,
@@ -744,6 +849,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 59,
@@ -755,6 +861,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan, tổ chức, doanh nghiệp và người dùng có nhu cầu sử dụng sản phẩm, giải pháp',
     process: 'Đáp ứng quy trình nghiệp vụ gửi nhận văn bản điện tử',
     cat: 'chinh_quyen',
+    field: 'quan_ly',
   },
   {
     id: 60,
@@ -768,6 +875,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Ứng dụng Công Dân Số hướng tới là 1 siêu ứng dụng, là kênh tương tác số thu hẹp khoảng cách giữa người dân, doanh nghiệp với chính quyền. Với mục tiêu lấy người dân, doanh nghiệp làm trung tâm, ứng dụng cung cấp thông tin toàn diện, tạo kênh kết nối, tương tác với chính quyền một cách hiệu quả',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 61,
@@ -779,6 +887,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 62,
@@ -792,6 +901,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 63,
@@ -803,6 +913,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 64,
@@ -815,6 +926,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 65,
@@ -827,6 +939,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 66,
@@ -839,6 +952,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 67,
@@ -851,6 +965,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 68,
@@ -864,6 +979,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 69,
@@ -877,6 +993,7 @@ export const PRODUCTS: Product[] = [
     process:
       '(1) Các đối tượng muốn khai thác sử dụng truy cập https://ioc.sonla.gov.vn để khai thác sử dụng; (2) Các đối tượng muốn khai thác sử dụng truy cập https://data.sonla.gov.vn để khai thác sử dụng; (3) Các đối tượng muốn khai thác sử dụng truy cập https://dul ieu.sonla.gov.vn để khai thác sử dụng.',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 70,
@@ -889,6 +1006,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 71,
@@ -901,6 +1019,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 72,
@@ -913,6 +1032,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Mọi công dân nhấn vào đường link hoặc quét mã QR để truy cập và khai thác dữ liệu trên Cổng kết nối số Phường Lê Ích Mộc',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 73,
@@ -926,6 +1046,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 74,
@@ -938,6 +1059,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 75,
@@ -950,6 +1072,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 76,
@@ -963,6 +1086,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đề xuất sáng kiến: Tổ chức cá nhân đăng ký tài khoản và nộp hồ sơ sáng kiến trực tuyến (mô tả giải pháp, video/hình ảnh minh họa, báo cáo hiệu quả). Tiếp nhận: Cổng Sáng kiến kiểm tra tính hợp lệ và phân loại sáng kiến theo lĩnh vực. Chấm điểm & Đánh giá: Hội đồng chuyên gia thực hiện chấm điểm trực tuyến dựa trên các tiêu chí: Tính mới, tính sáng tạo, khả năng áp dụng và hiệu quả kinh tế - xã hội',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 77,
@@ -975,6 +1099,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 78,
@@ -985,6 +1110,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan quản lý đô thị, chủ đầu tư, doanh nghiệp xây dựng/bất',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'chinh_quyen',
+    field: 'do_thi',
   },
   {
     id: 79,
@@ -997,6 +1123,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 80,
@@ -1010,6 +1137,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống Cổng thông tin du lịch thông minh: Là giải pháp du lịch thông minh được xây dựng với mục đích quảng bá hình ảnh du lịch của địa phương, cung cấp thông tin nhằm hỗ trợ du khách trong quá trình khám phá các địa điểm du lịch, trải nghiệm các điểm du lịch thông qua tương tác 3D, công nghệ thực tế ảo',
     cat: 'chinh_quyen',
+    field: 'quan_ly',
   },
   {
     id: 81,
@@ -1022,6 +1150,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 82,
@@ -1035,6 +1164,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình nghiệp vụ của Cổng thông tin không gian địa lý Việt Nam được thực hiện theo chu trình khép kín từ thu thập, chuẩn hóa, công bố đến khai thác dữ liệu, cụ thể như sau: - Thu thập và tích hợp dữ liệu: Dữ liệu không gian địa lý được thu thập từ các b ộ, ngành, địa phương và các nguồn dữ liệu chuyên ngành; thực hiện tích hợp vào hệ thống trên cơ sở tuân thủ các quy chuẩn, tiêu chuẩn kỹ thuật thống nhất',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 83,
@@ -1048,6 +1178,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 84,
@@ -1060,6 +1191,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quản trị cấp Sở đăng tải chia sẻ dữ liệu xuống cấp cơ sở và tiếp nhận thông tin từ cấp cơ sở gửi lên',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 85,
@@ -1072,6 +1204,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 86,
@@ -1085,6 +1218,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 87,
@@ -1097,6 +1231,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 88,
@@ -1108,6 +1243,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 89,
@@ -1121,6 +1257,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 90,
@@ -1133,6 +1270,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 91,
@@ -1144,6 +1282,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 92,
@@ -1156,6 +1295,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bao gồm 2 hệ thống: Portal Giáo dục, Portal Y tế; Cổng thông tin điện tử để thực hiện công tác thông tin, tuyên truyền cho khách hàng nhằm mục tiêu: Điều hành theo mô hình tập trung, có khả năng liên thông và đồng bộ cơ sở dữ liệu từ trên xuống dưới. Từ đó đưa ra các chỉ đạo kịp thời từ việc nắm bắt và khai thác các dữ liệu tập trung; Tích hợp với các hệ thống thông tin quản lý trực tuyến khác.',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 93,
@@ -1169,6 +1309,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 94,
@@ -1181,6 +1322,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 95,
@@ -1193,6 +1335,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'do_thi',
   },
   {
     id: 96,
@@ -1204,6 +1347,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 97,
@@ -1217,6 +1361,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 98,
@@ -1230,6 +1375,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 99,
@@ -1242,6 +1388,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'do_thi',
   },
   {
     id: 100,
@@ -1253,6 +1400,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 101,
@@ -1264,6 +1412,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 102,
@@ -1274,6 +1423,7 @@ export const PRODUCTS: Product[] = [
     users: 'Người dân, doanh nghiệp, cơ quan nhà nước và cán bộ tiếp',
     process: 'Cổng thông tin điện tử cho cơ quan nhà nước là điểm truy cập chính thức trên',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 103,
@@ -1287,6 +1437,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 104,
@@ -1299,6 +1450,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 105,
@@ -1310,6 +1462,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 106,
@@ -1322,6 +1475,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 107,
@@ -1333,6 +1487,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 108,
@@ -1344,6 +1499,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 109,
@@ -1355,6 +1511,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 110,
@@ -1366,6 +1523,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 111,
@@ -1377,6 +1535,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 112,
@@ -1388,6 +1547,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 113,
@@ -1399,6 +1559,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 114,
@@ -1411,6 +1572,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 115,
@@ -1423,6 +1585,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 116,
@@ -1435,6 +1598,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 117,
@@ -1446,6 +1610,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 118,
@@ -1459,6 +1624,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 119,
@@ -1471,6 +1637,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 120,
@@ -1482,6 +1649,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 121,
@@ -1494,6 +1662,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 122,
@@ -1506,6 +1675,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 123,
@@ -1517,6 +1687,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 124,
@@ -1528,6 +1699,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 125,
@@ -1539,6 +1711,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 126,
@@ -1550,6 +1723,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 127,
@@ -1561,6 +1735,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 128,
@@ -1572,6 +1747,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 129,
@@ -1584,6 +1760,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'do_thi',
   },
   {
     id: 130,
@@ -1595,6 +1772,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 131,
@@ -1608,6 +1786,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Input: dữ liệu thông tin ngành y tế, văn bản, tin tức, dữ liệu dịch vụ; Xử lý: tổng hợp, kiểm duyệt, cập nhật nội dung; Output: thông tin công khai, dữ liệu tra cứu, dịch vụ trực tuyến.',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 132,
@@ -1621,6 +1800,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 133,
@@ -1633,6 +1813,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 134,
@@ -1644,6 +1825,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 135,
@@ -1656,6 +1838,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 136,
@@ -1668,6 +1851,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Có kho học liệu số dùng chung; dữ liệu liên thông; tiết kiệm ngân sách; tăng chỉ số cải cách hành chính; thành thạo kỹ năng công nghệ, am hiểu quy trình số.',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 137,
@@ -1680,6 +1864,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 138,
@@ -1692,6 +1877,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'do_thi',
   },
   {
     id: 139,
@@ -1703,6 +1889,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 140,
@@ -1715,6 +1902,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 141,
@@ -1727,6 +1915,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 142,
@@ -1737,6 +1926,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan, tổ chức, doanh nghiệp, đội ngũ',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào;',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 143,
@@ -1749,6 +1939,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 144,
@@ -1760,6 +1951,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 145,
@@ -1772,6 +1964,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 146,
@@ -1785,6 +1978,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 147,
@@ -1795,6 +1989,7 @@ export const PRODUCTS: Product[] = [
     users: 'Doanh nghiệp sản xuất, nhà máy, bộ phận vận hành, kỹ',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 148,
@@ -1806,6 +2001,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 149,
@@ -1819,6 +2015,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 150,
@@ -1830,6 +2027,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 151,
@@ -1841,6 +2039,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 152,
@@ -1853,6 +2052,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 153,
@@ -1865,6 +2065,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 154,
@@ -1878,6 +2079,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 155,
@@ -1891,6 +2093,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 156,
@@ -1904,6 +2107,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'do_thi',
   },
   {
     id: 157,
@@ -1916,6 +2120,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 158,
@@ -1926,6 +2131,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ sở y tế, bác sĩ, nhân viên y tế, cơ quan quản lý y tế,',
     process: 'Cán bộ quản lý phân công nhiệm vụ cho cán bộ giáo viên, tùy theo từng chức',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 159,
@@ -1938,6 +2144,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Phần mềm Cơ Sở Dữ liệu Ngành được xây dựng nhằm tạo ra công cụ khai thác Dữ liệu tập trung, hỗ trợ công tác báo cáo, điều hành Ngành của các Sở giáo dục và Đào tạo',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 160,
@@ -1949,6 +2156,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 161,
@@ -1961,6 +2169,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 162,
@@ -1973,6 +2182,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 163,
@@ -1984,6 +2194,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 164,
@@ -1996,6 +2207,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 165,
@@ -2009,6 +2221,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 166,
@@ -2022,6 +2235,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 167,
@@ -2034,6 +2248,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 168,
@@ -2046,6 +2261,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đối với doanh nghiệp và người dân: kê khai hoạt động chăn nuôi. Đối với cơ quan quản lý (cấp xã, tỉnh, trung ương): quản lý, khai thác, sử dụng dữ liệu',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 169,
@@ -2059,6 +2275,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 170,
@@ -2071,6 +2288,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 171,
@@ -2083,6 +2301,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 172,
@@ -2096,6 +2315,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 173,
@@ -2108,6 +2328,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 174,
@@ -2121,6 +2342,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 175,
@@ -2133,6 +2355,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 176,
@@ -2146,6 +2369,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 177,
@@ -2159,6 +2383,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 178,
@@ -2170,6 +2395,7 @@ export const PRODUCTS: Product[] = [
     users: 'Lực lượng Công an, cán bộ xử lý nghiệp vụ, cơ quan nhà nước,',
     process: 'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 179,
@@ -2183,6 +2409,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 180,
@@ -2195,6 +2422,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 181,
@@ -2207,6 +2435,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 182,
@@ -2220,6 +2449,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 183,
@@ -2232,6 +2462,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 184,
@@ -2244,6 +2475,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 185,
@@ -2256,6 +2488,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 186,
@@ -2269,6 +2502,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 187,
@@ -2282,6 +2516,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 188,
@@ -2295,6 +2530,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 189,
@@ -2307,6 +2543,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 190,
@@ -2319,6 +2556,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 191,
@@ -2332,6 +2570,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 192,
@@ -2345,6 +2584,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 193,
@@ -2357,6 +2597,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 194,
@@ -2370,6 +2611,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 195,
@@ -2382,6 +2624,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 196,
@@ -2395,6 +2638,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cán bộ chuyên môn nhập dữ liệu lên hệ thống. Hệ thống lưu trữ, phân tích, phân loại dữ liệu. Hệ thống xây dựng các bảng biểu, biểu đồ báo cáo chi tiết phù hợp nhu cầu trích xuất thông tin',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 197,
@@ -2407,6 +2651,7 @@ export const PRODUCTS: Product[] = [
       'Ngân hàng, tổ chức tài chính, khách hàng cá nhân, khách hàng doanh nghiệp và đơn vị chấp nhận thanh toán',
     process: 'Các cơ quan, đơn vị liên quan nhập số liệu lên phần mềm cơ sở dữ liệu giá',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 198,
@@ -2419,6 +2664,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'do_thi',
   },
   {
     id: 199,
@@ -2432,6 +2678,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 200,
@@ -2444,6 +2691,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 201,
@@ -2457,6 +2705,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 202,
@@ -2470,6 +2719,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thực hiện thu thập, tổng hợp dữ liệu; số hóa và chuẩn hóa thông tin; lưu trữ trên hệ thống; phục vụ khai thác, tra cứu và sử dụng trong công tác chuyên môn.',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 203,
@@ -2483,6 +2733,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 204,
@@ -2496,6 +2747,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình triển khai gồm 5 bước: (1) Khảo sát và đánh giá hiện trạng bảo mật thiết bị đầu cuối của doanh nghiệp. (2) Thiết kế chính sách bảo mật phù hợp với quy mô và ngành nghề. (3) Cài đặt agent lên toàn bộ thiết bị đầu cuối cần bảo vệ. (4) Cấu hình chín h sách DLP, kiểm soát USB, giám sát hoạt động và kiểm thử vận hành',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 205,
@@ -2509,6 +2761,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình sử dụng CyStack Platform gồm các bước chính: (1) Doanh nghiệp đăng ký và xác định phạm vi tài sản số cần bảo vệ (ứng dụng web, mobile, API, hạ tầng mạng, hệ thống đám mây). (2) Đội ngũ chuyên gia CyStack thực hiện kiểm thử xâm',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 206,
@@ -2522,6 +2775,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 207,
@@ -2534,6 +2788,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 208,
@@ -2546,6 +2801,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 209,
@@ -2559,6 +2815,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình cấp chứng thư số: KH nộp hồ sơ trực tiếp - > Giao dịch viên lập hợp đồng, upload tài liệu - > RA tạo yêu cầu cấp mới Chứng',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 210,
@@ -2571,6 +2828,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 211,
@@ -2583,6 +2841,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đẩy mạnh tuyên truyền, hướng dẫn tới người dân trên địa bàn (nhóm đối tượng ưu tiên chính trước mắt là Thanh niên, người thao tác tốt trên điện thoại thông minh) các bước thực hiện các thủ tục hành chính liên quan',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 212,
@@ -2596,6 +2855,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Một cửa điện tử & Dịch vụ Công trực tuyến" được xây dựng nhằm tạo điều kiện thuận lợi cho các cá nhân tổ chức có nhu cầu giải quyết các thủ tục hành chính một cách nhanh chóng tại một địa chỉ truy cập duy nhất, cung cấp thông tin một cách tự động và trực t uyến về tình trạng giải quyết hồ sơ, cấp phép',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 213,
@@ -2609,6 +2869,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Kê khai hồ sơ BHXH điện tử; Lập và nộp tờ khai (tăng/giảm lao động, điều chỉnh); Ký số hồ sơ và gửi cơ quan BHXH; Tra cứu trạng thái xử lý hồ sơ; Nhận và quản lý kết quả phản hồi từ cơ quan BHXH; Quản lý dữ liệu lao động tham gia BHXH.',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 214,
@@ -2622,6 +2883,7 @@ export const PRODUCTS: Product[] = [
     process:
       '1. Quy trình Đăng ký chứng thư số; Mô tả chung: Cho phép khách hàng đăng ký chứng thư số mới; Quy trình đăng ký chứng thư số cá nhân toàn trình: Chọn chứng thư số - > Thực hiện eKYC - > Xác nhận thông tin - > Thanh toán - > Ký hợp đồng - > Kích hoạt chứng thư s ố - > Xác nhận nghiệm thu; 2. Quy trình Ký số; Mô tả chung: Cho phép khách hàng thực hiện ký số tài liệu.',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 215,
@@ -2634,6 +2896,7 @@ export const PRODUCTS: Product[] = [
       'Ngân hàng, tổ chức tài chính, khách hàng cá nhân, khách hàng doanh nghiệp và đơn vị chấp nhận thanh toán',
     process: 'đối tác yêu cầu các',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 216,
@@ -2647,6 +2910,7 @@ export const PRODUCTS: Product[] = [
     process:
       'ngân hàng/tổ chức tín dụng thực hiện onboarding khách hàng; KH điền thông tin và đồng ý đăng ký/sử dụng dịch vụ; ngân hàng/tổ chức tín dụng gọi sang VNPT Media để xác thực thông tin/truy vấn đánh giá/tập KH tiềm năng; VNPT Media gửi lại thông tin để ngân h àng/tổ chức tín dụng tiếp tục.',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 217,
@@ -2660,6 +2924,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 218,
@@ -2672,6 +2937,7 @@ export const PRODUCTS: Product[] = [
       'Cơ quan, tổ chức, doanh nghiệp, đội ngũ công nghệ thông tin, quản trị hệ thống và nhà phát triển ứng dụng',
     process: 'Cung cấp giải pháp hạ tầng cloud',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 219,
@@ -2682,6 +2948,7 @@ export const PRODUCTS: Product[] = [
     users: 'Doanh nghiệp du lịch, cơ sở lưu trú, điểm',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào;',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 220,
@@ -2694,6 +2961,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 221,
@@ -2704,6 +2972,7 @@ export const PRODUCTS: Product[] = [
     users: 'Học sinh, sinh viên, giáo viên, phụ huynh, cơ sở giáo dục và đơn vị đào tạo',
     process: 'Đầu vào: Các câu promt mô tả ảnh được tạo ra; Đầu ra: Ảnh được sinh ra tự động',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 222,
@@ -2717,6 +2986,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Dịch vụ số hóa Di sản văn hóa - Du lịch tỉnh: Sử dụng công nghệ số hóa 2D, 3D, Ảnh, Phim, AR/VR… để số hóa di sản văn hóa, tài nguyên du lịch trên toàn tỉnh, bao gồm: Dữ liệu di sản văn hóa tập thể, Dữ liệu di sản văn hóa phi vật thể, Các dịch vụ du lịch, địa điểm du lịch, danh thắng…; Thông tin khách tham quan, Dữ liệu văn bản, quản lý hành chính',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 223,
@@ -2728,6 +2998,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đầu vào: 1 số thông tin trong CCCD gắn chip của người dùng; Đầu ra: kết quả xác thực thẻ CCCD',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 224,
@@ -2741,6 +3012,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Khách hàng đăng ký sử dụng (qua kênh bán hàng trực tiếp/hoặc trực tuyến tại cloud. VNPT.vn); > Cấp phát tài nguyên (vCPU/RAM/SSD/IP và băng thông) -- > Khởi tạo vào sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tmdt',
   },
   {
     id: 225,
@@ -2753,6 +3025,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 226,
@@ -2765,6 +3038,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 227,
@@ -2778,6 +3052,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Nền tảng bán hàng B2B kết nối từ doanh nghiệp tới đại lý trực tiếp, cho phép Đối tượng người dùng đại lý (retailer), với các tính năng chính; Cho phép tự lập đơn hàng trực tiếp tới Nhà cung',
     cat: 'kinh_te',
+    field: 'tmdt',
   },
   {
     id: 228,
@@ -2791,6 +3066,7 @@ export const PRODUCTS: Product[] = [
     process:
       'DMS là phần mềm quản lý doanh nghiệp do VTS sản xuất giúp quản lý các hoạt động phân phối hàng hóa ra thị trường, diễn biến tại các kênh phân phối, bao gồm quản lý nhân viên bán hàng ngoài thị trường, tự động hóa bán hàng, kiểm soát hàng tồn và các biến độ ng ngoài thị trường, quản lý công nợ,',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 229,
@@ -2804,6 +3080,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống nền tảng thực hiện tác vụ phân loại - xử lý hình ảnh tự động thông qua AI. Áp dụng vào mô hình DMS ở bài toán đánh giá xử lý ảnh trưng bày (sản phẩm) với AI; Thực hiện lập chương trình trưng bày (sản phẩm); Đánh nhãn, gợi ý đánh giá sản phẩm phục vụ traiing huấn luyện nhận dạng hình ảnh (thương hiệu, nhãn hiệu…); Tự động nhận dạng, đếm số lượng theo nhãn hiệu sản phẩm; Báo cáo kết quả thực hiện.',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 230,
@@ -2817,6 +3094,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống xử lý - phân tích báo cáo (BI), hỗ trợ doanh nghiệp thực hiện; Cho phép tự thiết lập - xây dựng báo cáo phân tích theo nhu cầu dựa trên dữ liệu sẵn có hoặc thêm mới từ nguồn bên ngoài; Tích hợp các model - AI cho phép gợi ý phân tích thông tin từ bá o cáo.',
     cat: 'kinh_te',
+    field: 'tmdt',
   },
   {
     id: 231,
@@ -2830,6 +3108,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Nhóm khách là những cá nhân sử dụng các dịch vụ do tỉnh cung cấp như: Đọc, tra cứu thông tin trên cổng; sử dụng các dịch vụ khác mà tỉnh cung cấp cho du khách; Nhóm doanh nghiệp: Sử dụng các chức năng mà tỉnh cung cấp để thực hiện quảng cáo thông tin doanh nghiệp và các sản phẩm mà doanh nghiệp cung cấp; Cơ quan quản lý du lịch: Thực hiện quản trị các thông tin trên cổng.',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 232,
@@ -2842,6 +3121,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 233,
@@ -2855,6 +3135,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cơ sở giáo dục thiết lập lớp học, học liệu và người dùng; giáo viên tổ chức giảng dạy, giao bài và theo dõi kết quả học tập trên nền tảng',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 234,
@@ -2867,6 +3148,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cá nhân trình ký đưa lên hệ thống, ký xác nhận của các đối tượng liên quan xong ban hành đến các thành viên. Lãnh đạo kiểm tra, xác nhận hoàn thành nhiệm vụ',
     cat: 'xa_hoi',
+    field: 'lao_dong',
   },
   {
     id: 235,
@@ -2880,6 +3162,7 @@ export const PRODUCTS: Product[] = [
     process:
       '1. SIEM: Quy trình nghiệp vụ của SIEM bao gồm các giai đoạn tuần tự: Thu thập dữ liệu: Các Collector quét hạ tầng và thu thập log/sự kiện từ mọi thiết bị, ứng dụng và luồng mạng. Chuẩn hóa và Tích hợp: Dữ liệu thô được chuyển đổi về định dạng thống nhất (N ormalization), sau đó được làm giàu (Enrichment) bằng các thông tin tài sản và danh sách uy tín',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 236,
@@ -2892,6 +3175,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khai báo thông tin, truy cập học liệu hoặc chức năng quản lý; hệ thống xử lý, lưu trữ và',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 237,
@@ -2904,6 +3188,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 238,
@@ -2915,6 +3200,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 239,
@@ -2925,6 +3211,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan, tổ chức, doanh nghiệp và người dùng có nhu cầu sử dụng sản phẩm, giải pháp',
     process: 'Giải pháp định danh và xác thực điện tử',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 240,
@@ -2936,6 +3223,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 241,
@@ -2947,6 +3235,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 242,
@@ -2960,6 +3249,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Các nghiệp vụ chính được số hóa: Quản lý đặt phòng (nhận booking từ nhiều kênh, tự động phân phòng); Nhận phòng (check - in), trả phòng (check - out), quản lý khách đang lưu trú; Quản lý buồng phòng, tình trạng dọn dẹp, bảo trì; Quản lý thu ngân, công nợ, xuất hóa đơn điện tử; Đồng bộ tồn kho phòng và giá bán với các kênh OTA theo thời gian thực; Khai báo tạm trú trực tuyến với Cục Quản lý Xuất nhập cảnh - Bộ Công an.',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 243,
@@ -2973,6 +3263,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 244,
@@ -2985,6 +3276,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Các nghiệp vụ chính được số hóa: - Quản lý và đồng bộ hóa đặt phòng: đồng bộ ngay lập tức toàn bộ đặt phòng từ tất cả các kênh bán (website, OTA, GDS, mobile, call center, đại lý) về một hệ thống duy nhất -',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 245,
@@ -2997,6 +3289,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Các module và nghiệp vụ chuyên sâu được số hóa: - Front Office: đặt phòng (reservation), check - in/check - out, quản lý phòng, quản lý khách VIP, nhóm khách đoàn - Revenue Management: định giá động theo công suất/mùa vụ, dự báo công suất, phân tích đối thủ, t ối ưu doanh thu trên phòng khả dụng (RevPAR) - Multi - Property: quản lý tập trung chuỗi nhiều cơ sở, đồng bộ danh mục, báo cáo hợp nhất',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 246,
@@ -3010,6 +3303,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 247,
@@ -3020,6 +3314,7 @@ export const PRODUCTS: Product[] = [
     users: 'Ngân hàng, tổ chức tài chính, khách hàng cá nhân, khách hàng',
     process: 'Sẽ bổ sung sau',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 248,
@@ -3032,6 +3327,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 249,
@@ -3045,6 +3341,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 250,
@@ -3057,6 +3354,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 251,
@@ -3069,6 +3367,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 252,
@@ -3081,6 +3380,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 253,
@@ -3094,6 +3394,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 254,
@@ -3106,6 +3407,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 255,
@@ -3119,6 +3421,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đầu vào: Ảnh/video biển số xe; Đầu ra: Các ký tự nhận diện biển số xe cung cấp dịch vụ cho các trường hợp: Các hệ thống thu phí không dừng; Quản lý các bãi giữ ô tô, xe máy; Quản lý phương tiện ra vào kho hàng, trụ sở cơ quan.',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 256,
@@ -3131,6 +3434,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 257,
@@ -3143,6 +3447,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 258,
@@ -3155,6 +3460,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 259,
@@ -3167,6 +3473,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 260,
@@ -3179,6 +3486,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 261,
@@ -3191,6 +3499,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 262,
@@ -3203,6 +3512,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 263,
@@ -3215,6 +3525,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 264,
@@ -3227,6 +3538,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 265,
@@ -3239,6 +3551,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 266,
@@ -3251,6 +3564,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bước 1: Tiếp cận và tuyên truyền - Tổ công nghệ số cộng đồng và cán bộ xã tổ chức tuyên truyền trực tiếp tại thôn hoặc qua các kênh truyền thông (loa truyền thanh, Zalo, Facebook…) để hướng dẫn người dân về lợi ích của dịch vụ công trực tuyến và ứng dụng V NeID',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 267,
@@ -3263,6 +3577,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 268,
@@ -3275,6 +3590,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 269,
@@ -3287,6 +3603,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đầu vào: Video cần kiểm duyệt; Đầu ra: Phân loại video có các nội dung vi phạm: Vi phạm ngôn từ chính trị, ngôn từ nhạy cảm, hình ảnh chính trị, hình ảnh nhạy cảm, hình ảnh đồ cấm quảng cáo, hình ảnh ảnh bạo lực, hình ảnh lãnh đạo cấp cao, hình ảnh quân độ i chế độ Việt Nam Cộng Hòa, hình ảnh tôn giáo nhạy cảm, hình ảnh xâm hại trẻ em hay không?',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 270,
@@ -3299,6 +3616,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 271,
@@ -3311,6 +3629,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 272,
@@ -3324,6 +3643,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 273,
@@ -3335,6 +3655,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan, tổ chức, doanh nghiệp và người dùng có nhu cầu sử dụng sản phẩm, giải pháp',
     process: 'Phát hiện bất thường trong mạng; Xử lý sự cố; Điều tra truy vết.',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 274,
@@ -3347,6 +3668,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình chính: - Bước 1 - Khởi tạo: Nhập dữ liệu cư dân ban đầu (từ sổ hộ khẩu giấy, file Excel) qua công cụ import chuẩn hóa. Validate, kiểm tra trùng lặp, loại bỏ sai số. - Bước 2 - Vận hành thường xuyên: Cán bộ/tổ trưởng cập nhật phát sinh: chuyển đi, chuyển đến, sinh, tử, thay đổi nhân khẩu. Hệ thống ghi log thay đổi, lưu vết audit',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 275,
@@ -3359,6 +3681,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 276,
@@ -3371,6 +3694,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bước 1. Khảo sát - đánh giá hiện trạng Rà soát hạ tầng CNTT, nhu cầu sử dụng tại xã/phường (giáo dục, truyền thanh, an ninh), xác định phạm vi hệ thống và mức độ yêu cầu an toàn thông tin. Bước 2. Xây dựng hồ sơ và phê duyệt Lập hồ sơ đề xuất cấp độ hệ thố ng thông tin, phương án triển khai các giải pháp',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 277,
@@ -3383,6 +3707,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 278,
@@ -3395,6 +3720,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 279,
@@ -3407,6 +3733,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 280,
@@ -3419,6 +3746,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 281,
@@ -3432,6 +3760,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đầu vào: Luồng video từ camera; Đầu ra: Bản ghi thời gian (log), cảnh báo an ninh, báo cáo nhân sự',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 282,
@@ -3444,6 +3773,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 283,
@@ -3456,6 +3786,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 284,
@@ -3469,6 +3800,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Khách hàng đăng nhập Biz MBBank \u0000 Truy cập module "phát hành thẻ online" \u0000 Hệ thống kiểm tra thông tin khách hàng có nằm trong danh sách hạn chế không, có phải chủ doanh nghiệp không \u0000 Ký CA Cloud \u0000 Thực hiện mở thẻ online',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 285,
@@ -3482,6 +3814,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 286,
@@ -3495,6 +3828,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 287,
@@ -3507,6 +3841,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 288,
@@ -3519,6 +3854,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 289,
@@ -3531,6 +3867,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 290,
@@ -3544,6 +3881,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Giải pháp Số hóa 3D các điểm du lịch: Hệ thống bản đồ số du lịch số hóa 3D toàn bộ tài nguyên du lịch, định vị trên nền bản đồ số. Layer hóa từng lớp, phân loại điểm đến, loại hình du lịch. Tích hợp chỉ đường, hướng dẫn du lịch',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 291,
@@ -3557,6 +3895,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 292,
@@ -3570,6 +3909,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 293,
@@ -3583,6 +3923,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 294,
@@ -3596,6 +3937,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thanh toán (Thẻ Chip, QR, Contactless, Apple Pay, Samsung Pay…); Loa phát âm báo giao dịch (QR Sound)',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 295,
@@ -3606,6 +3948,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan, tổ chức, doanh nghiệp và người dùng có nhu cầu sử dụng sản phẩm, giải pháp',
     process: 'Minh bạch tài chính, giảm gian lận thuế, tiết kiệm chi phí in ấn và lưu trữ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 296,
@@ -3618,6 +3961,7 @@ export const PRODUCTS: Product[] = [
     process:
       '1. Chạm thẻ/quét mã (Tap & Go) - Người dùng sử dụng thẻ ngân hàng EMV/QR/Mobile App để thanh toán khi lên/xuống phương tiện hoặc vào điểm dịch vụ. 2. Xác thực & ghi nhận giao dịch - Thiết bị (validator/gate) kiểm tra hợp lệ - > gửi dữ liệu về hệ thống AFC đ ể xử lý realtime',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 297,
@@ -3630,6 +3974,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hiển thị mô hình 3D các hành tinh và hệ mặt trời bằng công nghệ AR; Mô phỏng chuyển động quỹ đạo, lực hấp dẫn giữa các thiên thể; Cho phép nhiều người dùng cùng tương tác trong một không gian học tập; Tổ chức trò chơi hóa',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 298,
@@ -3642,6 +3987,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 299,
@@ -3654,6 +4000,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 300,
@@ -3667,6 +4014,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 301,
@@ -3680,6 +4028,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Tích hợp AI Callbot, Chatbot chăm sóc khách hàng tự động - Chăm sóc khách hàng đa kênh: tích hợp hỗ trợ đa kênh: live chat, telegram, facebook, zalo, Instagram trên cùng một giao diện. - Các chức năng thoại: tổng đài chăm sóc, hỗ trợ khách hàng với',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 302,
@@ -3692,6 +4041,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Kiểm soát truy cập, bảo vệ dữ liệu, ngăn chặn tấn công và đảm bảo tuân thủ chính sách an toàn thông tin',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 303,
@@ -3705,6 +4055,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Bảo Vệ Hiệu Suất Ứng Dụng; Ngăn Chặn Các Mối Đe Dọa An Ninh; Phát Hiện và Ngăn Chặn Các Hành Vi Xâm Nhập; Bảo Vệ Dữ Liệu Nhạy Cảm.',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 304,
@@ -3717,6 +4068,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 305,
@@ -3730,6 +4082,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 306,
@@ -3742,6 +4095,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 307,
@@ -3754,6 +4108,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Tiếp nhận hồ sơ; Giải thích, hướng dẫn; Hướng dẫn xử lý Hồ sơ trên máy tính có kết nối liên thông; m Trả kết quả.',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 308,
@@ -3767,6 +4122,7 @@ export const PRODUCTS: Product[] = [
     process:
       'GPU AI Cloud là dịch vụ cung cấp hạ tầng và nền tảng điện toán GPU hiệu năng cao, bao gồm các lớp từ hạ tầng đến nền tảng triển khai ứng dụng AI. Dịch vụ đáp ứng toàn bộ vòng đời phát triển AI, từ chuẩn bị dữ liệu, huấn luyện mô hình đến triển khai và vận hành ứng dụng AI trong thực tế',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 309,
@@ -3780,6 +4136,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thiết bị thu nhận dữ liệu từ quá trình vận hành phương tiện; hệ thống phân tích, cảnh báo và hỗ trợ người lái trong các tình huống giao thông',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 310,
@@ -3793,6 +4150,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống dịch vụ công trực tuyến Cục Quản lý Dược được xây dựng, ứng dụng công nghệ thông tin vào các hoạt động quản lý, xử lý nghiệp vụ và tích hợp dịch vụ công trực tuyến cấp độ 4 cho nghiệp vụ của các phòng ban tại các cơ quan quản lý của ngành Dược nhằ m nâng cao chất lượng, hiệu quả trong hoạt động nội bộ và dịch vụ cung cấp cho các tổ chức và cá nhân khác; hỗ trợ đẩy mạnh cải',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 311,
@@ -3806,6 +4164,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 312,
@@ -3817,6 +4176,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 313,
@@ -3829,6 +4189,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 314,
@@ -3841,6 +4202,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 315,
@@ -3854,6 +4216,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Để hiện thực hóa tầm nhìn biến thế giới thực thành Bản sao số (Digital Twin) tương tác, thông minh và chân thực nhất, Star Global đã thiết lập một quy trình chuyển đổi số toàn diện, hiện đại, đảm bảo mang lại',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 316,
@@ -3866,6 +4229,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng cập nhật, tra cứu và khai thác dữ liệu; hệ thống hỗ trợ xử lý thông tin, kết nối giao dịch và quản lý hoạt động tài chính, bất động sản',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 317,
@@ -3878,6 +4242,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng cập nhật, tra cứu và khai thác dữ liệu; hệ thống hỗ trợ xử lý thông tin, kết nối giao dịch và quản lý hoạt động tài chính, bất động sản',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 318,
@@ -3888,6 +4253,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ sở y tế, bác sĩ, nhân viên y tế, cơ quan quản lý y tế, người bệnh và người dân',
     process: 'Quán lý trên công nghệ Blockchain, thông minh, minh bạch và bảo mật',
     cat: 'kinh_te',
+    field: 'tmdt',
   },
   {
     id: 319,
@@ -3898,6 +4264,7 @@ export const PRODUCTS: Product[] = [
     users: 'Học sinh, sinh viên, giáo viên, phụ huynh,',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 320,
@@ -3911,6 +4278,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 321,
@@ -3924,6 +4292,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 322,
@@ -3936,6 +4305,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 323,
@@ -3948,6 +4318,7 @@ export const PRODUCTS: Product[] = [
     process:
       'PABMIS Ecoystem gồm 12 phân hệ (modules) chính đáp ứng đầy đủ các nghiệp vụ về quản lý dự án đầu tư từ giai đoạn chuẩn bị dự án đến thực hiện dự án và kết thúc dự án, bao gồm: (1). Quản lý Kế hoạch vốn; (2). Quản lý Giải phóng mặt bằng; (3). Quản lý Tiến đ ộ dự án; (4). Quản lý Giám sát dự án; (5). Quản lý Kế toán dự án;',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 324,
@@ -3960,6 +4331,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 325,
@@ -3972,6 +4344,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 326,
@@ -3984,6 +4357,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 327,
@@ -3996,6 +4370,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 328,
@@ -4007,6 +4382,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'tmdt',
   },
   {
     id: 329,
@@ -4019,6 +4395,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 330,
@@ -4031,6 +4408,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 331,
@@ -4043,6 +4421,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 332,
@@ -4056,6 +4435,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cán bộ nhập dữ liệu các chỉ tiêu cần báo cáo định kỳ, đột xuất gửi lãnh đạo phòng ban thẩm định sau đó gửi đến lãnh đạo đơn vị. Lãnh đạo đơn vị phê duyệt, dữ liệu sẽ được lưu trữ vào CSDL của đơn vị, sinh ra các biểu đồ dashboard phục vụ công tác chỉ đạo, điều hành của lãnh đạo và báo cáo, chia sẻ cho các đơn vị khác',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 333,
@@ -4068,6 +4448,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tmdt',
   },
   {
     id: 334,
@@ -4080,6 +4461,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 335,
@@ -4092,6 +4474,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 336,
@@ -4104,6 +4487,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 337,
@@ -4116,6 +4500,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 338,
@@ -4129,6 +4514,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 339,
@@ -4140,6 +4526,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 340,
@@ -4153,6 +4540,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đầu vào: Danh sách sđt và kịch bản gọi; Đầu ra: Hệ thống tổng đài tự động gọi điện đến người dùng theo kịch bản tương ứng',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 341,
@@ -4165,6 +4553,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Trung tâm quản lý tại trụ sở công an xã. Công an xã sẽ quản lý và điều hành hệ thống. Khi có vụ việc xảy ra thì đồng chí công an quản lý sẽ báo cho các các đồng chí công an phục trách xuống thực hiện nhiệm vụ giải quyết vụ việc, một cách nhanh chóng và chí nh xác',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 342,
@@ -4177,6 +4566,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 343,
@@ -4188,6 +4578,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 344,
@@ -4200,6 +4591,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 345,
@@ -4213,6 +4605,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 346,
@@ -4225,6 +4618,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 347,
@@ -4238,6 +4632,7 @@ export const PRODUCTS: Product[] = [
     process:
       'thu thập dữ liệu → phân tích, phát hiện nguy cơ → cảnh báo sớm → xác minh hiện trường → chỉ huy xử lý → cập nhật, báo cáo',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 348,
@@ -4250,6 +4645,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 349,
@@ -4262,6 +4658,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 350,
@@ -4275,6 +4672,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 351,
@@ -4288,6 +4686,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 352,
@@ -4301,6 +4700,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Giải pháp hữu ích này dùng trong hệ thống thủy lợi bằng các định luật bernully, hiệu ứng COANDA, hiệu',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 353,
@@ -4314,6 +4714,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 354,
@@ -4325,6 +4726,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 355,
@@ -4338,6 +4740,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 356,
@@ -4350,6 +4753,7 @@ export const PRODUCTS: Product[] = [
       'Cơ quan, tổ chức, cán bộ, công chức, viên chức và người lao động tham gia xử lý hồ sơ, văn bản, điều hành',
     process: 'Ký số văn bản, hồ sơ điện tử; Trình ký và phê duyệt điện tử; Xác thực chữ ký số.',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 357,
@@ -4362,6 +4766,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 358,
@@ -4374,6 +4779,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 359,
@@ -4386,6 +4792,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 360,
@@ -4396,6 +4803,7 @@ export const PRODUCTS: Product[] = [
     users: 'Người dân, doanh nghiệp, cơ quan nhà',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào;',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 361,
@@ -4408,6 +4816,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 362,
@@ -4420,6 +4829,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 363,
@@ -4432,6 +4842,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 364,
@@ -4445,6 +4856,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 365,
@@ -4458,6 +4870,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 366,
@@ -4471,6 +4884,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 367,
@@ -4483,6 +4897,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 368,
@@ -4496,6 +4911,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'truyen_thong',
   },
   {
     id: 369,
@@ -4508,6 +4924,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 370,
@@ -4521,6 +4938,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'van_hoa',
   },
   {
     id: 371,
@@ -4533,6 +4951,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 372,
@@ -4545,6 +4964,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 373,
@@ -4555,6 +4975,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan tài chính, cán bộ xử lý nghiệp vụ,',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào;',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 374,
@@ -4567,6 +4988,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 375,
@@ -4578,6 +5000,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 376,
@@ -4589,6 +5012,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 377,
@@ -4601,6 +5025,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 378,
@@ -4613,6 +5038,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 379,
@@ -4626,6 +5052,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 380,
@@ -4639,6 +5066,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dân/Doanh nghiệp đăng nhập hệ thống; Nộp hồ sơ trực tuyến; Tiếp nhận và xử lý hồ sơ; Thanh toán phí/lệ phí; Tra cứu tiến độ xử lý; Trả kết quả; Lưu trữ và báo cáo.',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 381,
@@ -4652,6 +5080,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 382,
@@ -4665,6 +5094,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 383,
@@ -4677,6 +5107,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 384,
@@ -4688,6 +5119,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 385,
@@ -4701,6 +5133,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 386,
@@ -4714,6 +5147,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 387,
@@ -4726,6 +5160,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 388,
@@ -4738,6 +5173,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 389,
@@ -4749,6 +5185,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 390,
@@ -4762,6 +5199,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 391,
@@ -4773,6 +5211,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 392,
@@ -4785,6 +5224,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 393,
@@ -4796,6 +5236,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 394,
@@ -4809,6 +5250,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 395,
@@ -4821,6 +5263,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống có chức năng chính là phân tích phổ khối của mẫu gỗ để thu thập "dấu vân tay hóa học" đặc trưng, sau đó so sánh với cơ sở dữ liệu phổ khối tham chiếu để xác định loài. Quy trình bao gồm các bước: lấy mẫu gỗ (chỉ cần kích thước rất nhỏ); đưa mẫu và o thiết bị DART - TOFMS để thu thập',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 396,
@@ -4833,6 +5276,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình nghiên cứu và tạo lập sản phẩm được thực hiện qua 05 giai đoạn liên hoàn, chặt chẽ: Giai đoạn 1: Khảo cổ học và Thu thập dữ liệu gốc - Tiến hành điều tra, nghiên cứu khảo cổ học hệ thống nền móng, chân tảng, và các di vật (ngói, cấu kiện gỗ, vật liệu trang trí) tại khu di sản Hoàng thành Thăng Long. - Phân loại, giám định niên đại và đặc điểm kỹ thuật của từng loại hình cấu kiện kiến trúc và di vật vật liệu kiến trúc',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 397,
@@ -4846,6 +5290,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cán bộ quản trị đơn vị -- > Cán bộ tiếp nhận -- > Cán bộ giải quyết (thụ lý) TTHC -- > Lãnh đạo đơn vị phê duyệt',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 398,
@@ -4859,6 +5304,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đáp ứng quy trình nghiệp vụ cho công dân nộp hồ sơ trực tuyến, tra cứu hồ sơ, theo dõi quá trình xử lý hồ sơ, nhận các thông báo qua sms, email, zalo…; Cán bộ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 399,
@@ -4871,6 +5317,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 400,
@@ -4883,6 +5330,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 401,
@@ -4894,6 +5342,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 402,
@@ -4906,6 +5355,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 403,
@@ -4916,6 +5366,7 @@ export const PRODUCTS: Product[] = [
     users: 'Ngân hàng, tổ chức tài chính, khách hàng cá nhân, khách hàng',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 404,
@@ -4929,6 +5380,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 405,
@@ -4941,6 +5393,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hồ sơ sức khỏe điện tử (EHR - Electric Health Record) là bản tin học hóa của hồ sơ sức khỏe được lập, hiển thị, cập nhật, lưu trữ và chia sẻ bằng phương tiện điện tử. Mỗi người dân có một hồ sơ sức khỏe điện tử được theo dõi và lưu trữ suốt đời; hồ sơ sức khỏe điện tử được bảo mật, chỉ có những người có liên quan được tiếp cận thông tin; người dân có quyền quyết định chia sẻ hay không chia sẻ các thông tin cá nhân trong hồ sơ sức khỏe.',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 406,
@@ -4953,6 +5406,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 407,
@@ -4965,6 +5419,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 408,
@@ -4977,6 +5432,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 409,
@@ -4989,6 +5445,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 410,
@@ -5002,6 +5459,7 @@ export const PRODUCTS: Product[] = [
     process:
       "' - Tạo lập hợp đồng; Quản lý và thiết lập luồng ký; Ký số điện tử; Xác thực danh tính (eKYC); Lưu trữ tập trung và bảo mật; Chứng thực thông điệp CECA.",
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 411,
@@ -5013,6 +5471,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 412,
@@ -5025,6 +5484,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cán bộ hỗ trợ tổ chức cuộc họp chuẩn bị nội dung họp, tài liệu họp lên trên hệ thống, cập nhật thông tin lãnh đạo chủ trì, các đại biểu tham gia. Lãnh đạo chủ trì có các chức năng hỗ trợ điều hành toàn bộ cuộc họp. Hệ thống quản lý toàn bộ thông tin cuộc h ọp và kết luận cuộc họp của lãnh đạo',
     cat: 'chinh_quyen',
+    field: 'quan_ly',
   },
   {
     id: 413,
@@ -5036,6 +5496,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 414,
@@ -5048,6 +5509,7 @@ export const PRODUCTS: Product[] = [
     process:
       '(1) Người dùng đăng ký tài khoản và đăng nhập vào hệ thống; (2) Tạo và cấu hình cuộc họp (tiêu đề, thời gian, thành phần tham',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 415,
@@ -5060,6 +5522,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 416,
@@ -5071,6 +5534,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 417,
@@ -5083,6 +5547,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 418,
@@ -5093,6 +5558,7 @@ export const PRODUCTS: Product[] = [
     users: 'Người lao động, người sử dụng lao động, cơ',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào;',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 419,
@@ -5105,6 +5571,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 420,
@@ -5117,6 +5584,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 421,
@@ -5130,6 +5598,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 422,
@@ -5142,6 +5611,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 423,
@@ -5155,6 +5625,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 424,
@@ -5168,6 +5639,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 425,
@@ -5180,6 +5652,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 426,
@@ -5192,6 +5665,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 427,
@@ -5205,6 +5679,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 428,
@@ -5216,6 +5691,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 429,
@@ -5229,6 +5705,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 430,
@@ -5241,6 +5718,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 431,
@@ -5254,6 +5732,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Triển khai hạ tầng: Nhà thầu (Viettel) chịu trách nhiệm cung cấp và lắp đặt thiết bị để vận hành 05 điểm Kiosk và 32 điểm Wifi tại các khu du lịch đã định sẵn. - Vận hành và bảo trì: Hệ thống được vận hành liên tục trong thời gian thuê dịch vụ là 60 tháng. Nhà thầu phải đảm bảo chất lượng dịch vụ phi tư vấn, thực hiện các biện pháp khắc phục sai sót trong quá trình cung cấp dịch vụ. - Việc nghiệm thu được thực hiện định kỳ hàng năm',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 432,
@@ -5266,6 +5745,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 433,
@@ -5277,6 +5757,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 434,
@@ -5289,6 +5770,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình nghiệp vụ LMS được tổ chức theo chu trình khép kín từ xây dựng học liệu, tổ chức giảng dạy, theo dõi quá trình học tập đến kiểm tra, đánh giá và báo cáo trên một nền tảng số thống nhất. Hệ thống bảo đảm dữ liệu đào tạo được số hóa, liên thông và phục vụ hiệu quả công tác quản lý, kiểm định chất lượng cũng như kết nối với nhu cầu doanh nghiệp',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 435,
@@ -5301,6 +5783,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình triển khai gồm các bước: (1) Giảng viên xây dựng học liệu số (bài giảng, video, H5P, ngân hàng câu hỏi); (2) Tích hợp nội dung lên hệ thống LMS và phân quyền lớp học; (3) Sinh viên truy cập hệ thống để học tập, làm bài tập, tham gia hoạt động tươ ng tác; (4) Hệ thống tự động chấm điểm, lưu trữ dữ liệu học tập và theo dõi tiến độ; (5) Giảng viên và cán bộ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 436,
@@ -5313,6 +5796,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống được sử dụng đơn giản. Chỉ cần 1 người điều khiển, viết bài, hẹn giờ bật tắt thời gian phát sóng',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 437,
@@ -5325,6 +5809,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Phần mềm hệ thống lưu trữ và truyền hình ảnh (PACS - Picture Archiving and Communication Systems) là giải pháp tổng thể cung cấp nơi lưu trữ, quản lý, truy xuất, trình chiếu và phân phối hình ảnh, đồng thời cung cấp các công cụ xử lý ảnh chuyên sâu giúp hỗ trợ chẩn đoán hình ảnh y tế. PACS giúp hạn chế việc sử dụng phim nhựa, giấy tờ lưu trữ thông tin, cung cấp hình ảnh cho bệnh án điện tử (EMR), tiến tới triển khai bệnh viện không in phim',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 438,
@@ -5337,6 +5822,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 439,
@@ -5349,6 +5835,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 440,
@@ -5362,6 +5849,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 441,
@@ -5375,6 +5863,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tmdt',
   },
   {
     id: 442,
@@ -5387,6 +5876,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 443,
@@ -5398,6 +5888,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 444,
@@ -5410,6 +5901,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 445,
@@ -5422,6 +5914,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 446,
@@ -5435,6 +5928,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống BIDV Direct được thiết kế theo hành trình khách hàng và các luồng giao dịch chính: Onboard doanh nghiệp lên kênh ngân hàng số; Tạo user và phân quyền cho user chi tiết đến từng dịch vụ hoặc tài khoản; Doanh nghiệp tạo giao dịch hoàn toàn trên kênh online; Phê duyệt nhiều cấp đáp ứng mọi nhu cầu tùy biên của khách hàng; Hệ thống xử lý và ghi nhận kết quả giao dịch; Báo cáo và kiểm soát nội bộ.',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 447,
@@ -5445,6 +5939,7 @@ export const PRODUCTS: Product[] = [
     users: 'Ngân hàng, tổ chức tài chính, khách hàng cá nhân, khách hàng',
     process: 'Hệ thống BIDV Direct được thiết kế theo vòng đời khách hàng và các luồng',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 448,
@@ -5457,6 +5952,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống nhắc lịch tiêm chủng tự động theo phác đồ Bộ Y tế, giúp đảm bảo tiêm chủng đầy đủ, đúng lịch',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 449,
@@ -5469,6 +5965,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 450,
@@ -5481,6 +5978,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 451,
@@ -5491,6 +5989,7 @@ export const PRODUCTS: Product[] = [
     users: 'Doanh nghiệp sản xuất, nhà máy, bộ phận vận hành, kỹ',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 452,
@@ -5502,6 +6001,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 453,
@@ -5514,6 +6014,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 454,
@@ -5525,6 +6026,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 455,
@@ -5537,6 +6039,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 456,
@@ -5550,6 +6053,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 457,
@@ -5561,6 +6065,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 458,
@@ -5573,6 +6078,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 459,
@@ -5585,6 +6091,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 460,
@@ -5596,6 +6103,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 461,
@@ -5607,6 +6115,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 462,
@@ -5619,6 +6128,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thu thập, số hóa hồ sơ địa chính (bản đồ, sổ mục kê, hồ sơ giấy); Chuẩn hóa dữ liệu theo mô hình dữ liệu',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 463,
@@ -5631,6 +6141,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 464,
@@ -5643,6 +6154,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 465,
@@ -5656,6 +6168,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 466,
@@ -5667,6 +6180,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 467,
@@ -5679,6 +6193,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 468,
@@ -5692,6 +6207,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 469,
@@ -5704,6 +6220,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 470,
@@ -5716,6 +6233,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 471,
@@ -5728,6 +6246,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 472,
@@ -5740,6 +6259,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 473,
@@ -5752,6 +6272,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 474,
@@ -5764,6 +6285,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 475,
@@ -5776,6 +6298,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Tiếp đón bệnh nhân, đăng ký khám; Khám lâm sàng, chỉ định cận lâm sàng; Thực hiện xét nghiệm/chẩn đoán hình ảnh, trả kết quả; Bác sĩ chẩn đoán, kê đơn/điều trị; Quản lý nội trú; Thanh toán viện phí, xử lý BHYT; Tổng hợp',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 476,
@@ -5788,6 +6311,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 477,
@@ -5799,6 +6323,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 478,
@@ -5810,6 +6335,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 479,
@@ -5822,6 +6348,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 480,
@@ -5832,6 +6359,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan báo chí, nhà xuất bản, đài phát',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào;',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 481,
@@ -5844,6 +6372,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 482,
@@ -5856,6 +6385,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 483,
@@ -5868,6 +6398,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Lãnh đạo đơn vị tạo công việc, giao việc cho các phòng ban chuyên môn hoặc trực tiếp cho các cán bộ, chuyên viên trong đơn vị theo từng nhóm công việc, hệ thống ghi nhận và theo dõi tiến độ, trạng thái công việc và thời gian hoàn thành; Lãnh đạo đơn vị kíc h hoạt các kịch bản điều hành được xây dựng sẵn, các bộ phần phòng ban và cá nhân liên quan sẽ nhận được nhiệm vụ, công việc được giao đã tạo lập sẵn theo từng kịch bản',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 484,
@@ -5879,6 +6410,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 485,
@@ -5890,6 +6422,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 486,
@@ -5901,6 +6434,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 487,
@@ -5914,6 +6448,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 488,
@@ -5926,6 +6461,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 489,
@@ -5939,6 +6475,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Truy cập hệ thống - Xem danh sách, tìm kiếm thông tin sản phẩm, cơ sở SXKD - Xác thực thông tin - đăng nhập hệ thống - Đăng ký thành viên - Thêm, sửa, xóa sản - Phê duyệt - Thực hiện nghiệp vụ tương ứng trên hệ thống - Gửi email xác thực - Xử lý vấn đề người dùng yêu cầu - Phê duyệt yêu cầu - Thực hiện báo cáo thống kê',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 490,
@@ -5952,6 +6489,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 491,
@@ -5964,6 +6502,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Cập nhật Hồ sơ OCOP của các chủ thể lên Hệ thống quản lý dữ liệu các sản phẩm OCOP của Thành phố; Lưu trữ hồ sơ các sản',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 492,
@@ -5977,6 +6516,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 493,
@@ -5989,6 +6529,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hỗ trợ tất cả công tác quản lý, các luồng nghiệp vụ chuyên ngành trong công tác giáo dục, đào tạo tại các trường học trên địa bàn',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 494,
@@ -6001,6 +6542,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 495,
@@ -6013,6 +6555,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 496,
@@ -6026,6 +6569,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 497,
@@ -6038,6 +6582,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 498,
@@ -6051,6 +6596,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 499,
@@ -6063,6 +6609,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 500,
@@ -6075,6 +6622,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 501,
@@ -6088,6 +6636,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 502,
@@ -6099,6 +6648,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 503,
@@ -6112,6 +6662,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dân, hộ kinh doanh giới thiệu các mặt hàng cần mua, cần bán lên hệ thống gồm thông tin mặt hàng, nhu cầu mong muốn, giá cả… vv. Cán bộ được giao nhiệm vụ tại xã/phường phê duyệt các sản phẩm để công khai trên ứng dụng và cộng đồng dân cư tại địa phươ ng',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 504,
@@ -6124,6 +6675,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 505,
@@ -6135,6 +6687,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 506,
@@ -6148,6 +6701,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 507,
@@ -6160,6 +6714,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 508,
@@ -6172,6 +6727,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 509,
@@ -6184,6 +6740,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 510,
@@ -6196,6 +6753,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 511,
@@ -6208,6 +6766,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Giải pháp quản lý hiệu quả cho toàn bộ nhà thuốc, quầy thuốc trên toàn quốc giúp quản lý tổng thể quy trình hoạt động của nhà thuốc từ danh mục hàng hóa, xuất nhập kho, quản lý bán hàng, hóa đơn, khách hàng, đồng bộ dữ liệu tự động với Hệ thống quản lý Dượ c Quốc gia',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 512,
@@ -6221,6 +6780,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 513,
@@ -6233,6 +6793,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 514,
@@ -6244,6 +6805,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 515,
@@ -6257,6 +6819,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 516,
@@ -6268,6 +6831,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 517,
@@ -6279,6 +6843,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 518,
@@ -6291,6 +6856,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 519,
@@ -6303,6 +6869,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 520,
@@ -6315,6 +6882,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 521,
@@ -6327,6 +6895,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 522,
@@ -6338,6 +6907,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 523,
@@ -6350,6 +6920,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'logistics',
   },
   {
     id: 524,
@@ -6361,6 +6932,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 525,
@@ -6373,6 +6945,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 526,
@@ -6386,6 +6959,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 527,
@@ -6399,6 +6973,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Đơn vị số hóa và cập nhật toàn bộ tài sản công cùng các thuộc tính của tài sản lên trên hệ thống. Hệ thống phần mềm sẽ hỗ trợ theo dõi, quản lý toàn bộ quá trình sử dụng từ đăng ký,',
     cat: 'chinh_quyen',
+    field: 'quan_ly',
   },
   {
     id: 528,
@@ -6412,6 +6987,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 529,
@@ -6424,6 +7000,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 530,
@@ -6436,6 +7013,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 531,
@@ -6448,6 +7026,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 532,
@@ -6460,6 +7039,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 533,
@@ -6473,6 +7053,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 534,
@@ -6486,6 +7067,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 535,
@@ -6497,6 +7079,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'chinh_quyen',
+    field: 'dvc',
   },
   {
     id: 536,
@@ -6509,6 +7092,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'du_lich',
   },
   {
     id: 537,
@@ -6521,6 +7105,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 538,
@@ -6532,6 +7117,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 539,
@@ -6544,6 +7130,7 @@ export const PRODUCTS: Product[] = [
     process:
       'SMAS là hệ thống phần mềm quản lý nhà trường do Viettel cung cấp cho Sở/Phòng giáo dục và đào tạo, các trường trường từ cấp mầm non đến cấp phổ thông và trung tâm giáo dục thường xuyên để thực hiện các nghiệp vụ quản lý xoay quanh học sinh và giáo viên',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 540,
@@ -6554,6 +7141,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan, tổ chức, doanh nghiệp, đội ngũ',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 541,
@@ -6566,6 +7154,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Thông báo & Đăng ký: Đơn vị quản lý nhiệm vụ thông báo/đặt hàng/xét tài trợ; tổ chức/cá nhân nộp hồ sơ trực tuyến. Đánh giá hồ sơ: kiểm tra tính hợp lệ, thành lập hội đồng khoa học, Thành viên Hội đồng khoa học đánh giá trực tuyến. Phê duyệt: Cập nhật kết quả phê duyệt nhiệm vụ (tài trợ/không tài trợ). Ký hợp đồng điện tử: Thực hiện ký số hợp đồng trên nền tảng',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 542,
@@ -6578,6 +7167,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 543,
@@ -6588,6 +7178,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan quản lý đô thị, chủ đầu tư, doanh nghiệp xây dựng/bất',
     process: 'Xây dựng CSDL chuyên ngành, số hóa toàn toàn diện quy trình các thủ tục',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 544,
@@ -6600,6 +7191,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 545,
@@ -6611,6 +7203,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 546,
@@ -6624,6 +7217,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 547,
@@ -6635,6 +7229,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 548,
@@ -6647,6 +7242,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 549,
@@ -6659,6 +7255,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 550,
@@ -6671,6 +7268,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 551,
@@ -6684,6 +7282,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 552,
@@ -6696,6 +7295,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 553,
@@ -6707,6 +7307,7 @@ export const PRODUCTS: Product[] = [
       'Cơ quan, tổ chức, cán bộ, công chức, viên chức và người lao động tham gia xử lý hồ sơ, văn bản, điều hành',
     process: 'Sử lý văn bản đến, đi giữa các phòng ban, cơ sở, bộ',
     cat: 'kinh_te',
+    field: 'nong_nghiep',
   },
   {
     id: 554,
@@ -6719,6 +7320,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình tiếp nhận, chuyển xử lý văn bản đến; Quy trình dự thảo, phát hành văn bản đi; Quy trình xử lý Phiếu trình giải quyết công việc.',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 555,
@@ -6731,6 +7333,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Văn bản đến văn thư tiếp nhận, chuyển lãnh đạo Sở giao việc cho phòng chuyên môn, phòng chuyên môn xử lý công việc, soạn thảo văn bản trên hệ thống trình kí điện tử chuyển văn thư phát hành gửi các đơn vị liên thông trên hệ thống,',
     cat: 'xa_hoi',
+    field: 'moi_truong',
   },
   {
     id: 556,
@@ -6744,6 +7347,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình được thực hiện khép kín trên môi trường số như sau: - Tiếp nhận/Soạn thảo: Văn bản đến được số hóa (scan) vào hệ thống; hoặc chuyên viên soạn thảo văn bản đi trực tiếp trên hệ thống. - Trình ký: Chuyên viên chuyển văn bản lên lãnh đạo phòng/lãnh đạo UBND xem xét. - Phê duyệt & Ký số: Lãnh đạo sử dụng chữ ký số chuyên dùng Chính phủ để phê duyệt và ký ban hành ngay trên phần mềm',
     cat: 'xa_hoi',
+    field: 'lao_dong',
   },
   {
     id: 557,
@@ -6756,6 +7360,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 558,
@@ -6768,6 +7373,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 559,
@@ -6778,6 +7384,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan, tổ chức, cán bộ, công chức, viên chức và người lao',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 560,
@@ -6790,6 +7397,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 561,
@@ -6802,6 +7410,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 562,
@@ -6815,6 +7424,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Tiếp nhận văn bản đến (scan, nhập liệu); Phân luồng, giao xử lý theo quy trình; Soạn thảo, trình ký văn bản điện tử; Ký số và ban hành văn bản; Lưu trữ hồ sơ điện tử; Theo dõi tiến độ và tra cứu văn bản.',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 563,
@@ -6828,6 +7438,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 564,
@@ -6841,6 +7452,7 @@ export const PRODUCTS: Product[] = [
     process:
       '1. Tiếp nhận và đăng ký văn bản Văn bản đến được tiếp nhận (bản giấy hoặc điện tử), số hóa (scan) và cập nhật vào hệ thống. Gán số, phân loại, xác định mức độ khẩn/mật và đơn vị xử lý. 2. Phân luồng và giao xử lý',
     cat: 'xa_hoi',
+    field: 'lao_dong',
   },
   {
     id: 565,
@@ -6854,6 +7466,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 566,
@@ -6866,6 +7479,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 567,
@@ -6877,6 +7491,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 568,
@@ -6889,6 +7504,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Tiếp nhận khám bênh - lập hồ sơ sức khỏe 831; Quản lý hồ sơ sức khỏe cá nhân; Thực hiện khám, theo dõi bệnh, cấp phát thuốc; Quản lý tiêm chủng, y tế dự phòng; Theo dõi chương trình sức khỏe cộng đồng (bà mẹ - trẻ em, bệnh không lây nhiễm…); Tổng hợp báo cáo gửi cấp trên; Quản trị danh mục và người dùng.',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 569,
@@ -6901,6 +7517,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Hệ thống Quản lý Y tế cơ sở phục vụ công tác quản lý khám chữa bệnh và báo thống kê, sổ sách ngành y của tuyến y tế xã/phường, phòng khám, trạm y tế cơ quan và các cơ sở khám chữa bệnh có quy mô nhỏ. Hệ thống cho phép quản lý',
     cat: 'xa_hoi',
+    field: 'y_te',
   },
   {
     id: 570,
@@ -6912,6 +7529,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 571,
@@ -6924,6 +7542,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 572,
@@ -6935,6 +7554,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 573,
@@ -6946,6 +7566,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 574,
@@ -6959,6 +7580,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 575,
@@ -6971,6 +7593,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 576,
@@ -6983,6 +7606,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tmdt',
   },
   {
     id: 577,
@@ -6995,6 +7619,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 578,
@@ -7008,6 +7633,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'an_toan',
   },
   {
     id: 579,
@@ -7021,6 +7647,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 580,
@@ -7034,6 +7661,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 581,
@@ -7047,6 +7675,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Quy trình nghiệp vụ trên B. One được thiết kế theo hướng số hóa toàn diện, đảm bảo tính xuyên suốt và nhất quán trong hoạt động của Ngân hàng TMCP Đầu tư và Phát triển Việt Nam. Mỗi quy trình được chuẩn hóa từ khâu khởi tạo, phê duyệt đến theo dõi và lưu t rữ, giúp giảm thiểu sự phụ thuộc vào xử lý thủ công. Hệ thống cho phép phân luồng công việc tự động theo vai trò và thẩm quyền, đảm bảo đúng người, đúng việc',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 582,
@@ -7057,6 +7686,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan báo chí, nhà xuất bản, đài phát thanh - truyền hình,',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 583,
@@ -7068,6 +7698,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 584,
@@ -7080,6 +7711,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Phần mềm quản lý trường Đại học - UMS là hệ thống các nghiệp vụ quản lý trong trường đại học: quản lý đào tạo, quản lý sinh viên, quản lý thiết bị',
     cat: 'xa_hoi',
+    field: 'giao_duc',
   },
   {
     id: 585,
@@ -7092,6 +7724,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 586,
@@ -7105,6 +7738,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'chinh_quyen',
+    field: 'du_lieu',
   },
   {
     id: 587,
@@ -7115,6 +7749,7 @@ export const PRODUCTS: Product[] = [
     users: 'Cơ quan báo chí, nhà xuất bản, đài phát',
     process: 'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào;',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 588,
@@ -7127,6 +7762,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 589,
@@ -7139,6 +7775,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 590,
@@ -7151,6 +7788,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 591,
@@ -7163,6 +7801,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 592,
@@ -7175,6 +7814,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'san_xuat',
   },
   {
     id: 593,
@@ -7187,6 +7827,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 594,
@@ -7199,6 +7840,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 595,
@@ -7211,6 +7853,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Theo danh mục chính thức; quy trình nghiệp vụ cụ thể do cơ quan chủ quản/chủ trì xác định khi triển khai, vận hành',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 596,
@@ -7223,6 +7866,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 597,
@@ -7236,6 +7880,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 598,
@@ -7249,6 +7894,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'tai_chinh',
   },
   {
     id: 599,
@@ -7261,6 +7907,7 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
   {
     id: 600,
@@ -7273,11 +7920,20 @@ export const PRODUCTS: Product[] = [
     process:
       'Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý, lưu trữ và cung cấp kết quả phục vụ quản lý, khai thác hoặc sử dụng dịch vụ Người dùng khởi tạo yêu cầu hoặc dữ liệu đầu vào; hệ thống tiếp nhận, xử lý,',
     cat: 'kinh_te',
+    field: 'doanh_nghiep',
   },
 ];
 
 export function getProductsByCategory(cat: Category): Product[] {
   return PRODUCTS.filter(p => p.cat === cat);
+}
+
+export function getProductsByField(field: Field): Product[] {
+  return PRODUCTS.filter(p => p.field === field);
+}
+
+export function getFieldsForPillar(pillar: Category): Field[] {
+  return ALL_FIELDS.filter(f => FIELD_CONFIG[f].pillar === pillar);
 }
 
 export function getProductById(id: number): Product | undefined {
@@ -7294,3 +7950,25 @@ export function searchProducts(query: string, cat?: Category): Product[] {
 }
 
 export const ALL_CATEGORIES: Category[] = ['chinh_quyen', 'kinh_te', 'xa_hoi'];
+
+// All 18 fields in pillar order (Chính quyền → Kinh tế → Xã hội).
+export const ALL_FIELDS: Field[] = [
+  'quan_ly',
+  'dvc',
+  'du_lieu',
+  'an_toan',
+  'do_thi',
+  'tai_chinh',
+  'tmdt',
+  'doanh_nghiep',
+  'nong_nghiep',
+  'san_xuat',
+  'du_lich',
+  'logistics',
+  'y_te',
+  'giao_duc',
+  'van_hoa',
+  'lao_dong',
+  'moi_truong',
+  'truyen_thong',
+];

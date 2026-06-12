@@ -1,12 +1,12 @@
-import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import { BambooIcon } from '@/components/BambooIcon';
+import { C } from '@/constants/Colors';
 import { Feather } from '@expo/vector-icons';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import * as Haptics from 'expo-haptics';
 import React from 'react';
 import { Dimensions, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { BambooIcon } from '@/components/BambooIcon';
-import { C } from '@/constants/Colors';
+import Svg, { Path } from 'react-native-svg';
 
 const { width: SW } = Dimensions.get('window');
 
@@ -38,7 +38,7 @@ const barPath = [
 type TabName = 'index' | 'cqxa' | 'search' | 'langso' | 'account';
 
 const TAB_CFG: Record<TabName, { label: string; icon: (c: string) => React.ReactNode }> = {
-  index: { label: 'Hôm nay', icon: c => <Feather name="star" size={22} color={c} /> },
+  index: { label: 'Trang chủ', icon: c => <Feather name="star" size={22} color={c} /> },
   cqxa: { label: 'CQ Xã', icon: c => <Feather name="home" size={22} color={c} /> },
   search: { label: 'Tìm kiếm', icon: c => <Feather name="search" size={22} color={c} /> },
   langso: { label: 'Làng Số', icon: c => <BambooIcon size={22} color={c} /> },
