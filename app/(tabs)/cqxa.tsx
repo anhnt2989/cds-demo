@@ -38,6 +38,86 @@ interface EquipGroup {
 
 const GROUPS: EquipGroup[] = [
   {
+    id: 'national-central',
+    label: 'Hệ thống thông tin/nền tảng số Quốc gia, dùng chung cho các cơ quan Trung ương triển khai',
+    icon: 'globe',
+    accent: '#5856D6',
+    items: [
+      {
+        id: 16,
+        unit: 'hệ thống',
+        name: 'Cơ sở dữ liệu quốc gia về dân cư',
+        desc: 'Bộ Công an quản lý, kết nối định danh công dân toàn quốc',
+        buyPrice: null,
+        rentPrice: null,
+      },
+      {
+        id: 17,
+        unit: 'nền tảng',
+        name: 'Định danh & xác thực điện tử (VNeID)',
+        desc: 'Tài khoản định danh điện tử mức 1 và mức 2',
+        buyPrice: null,
+        rentPrice: null,
+      },
+      {
+        id: 18,
+        unit: 'cổng',
+        name: 'Cổng Dịch vụ công quốc gia',
+        desc: 'Tiếp nhận, thanh toán và tra cứu DVC trực tuyến',
+        buyPrice: null,
+        rentPrice: null,
+      },
+      {
+        id: 19,
+        unit: 'nền tảng',
+        name: 'Nền tảng tích hợp, chia sẻ dữ liệu quốc gia (NDXP)',
+        desc: 'Trục liên thông kết nối CSDL các bộ, ngành',
+        buyPrice: null,
+        rentPrice: null,
+      },
+    ],
+  },
+  {
+    id: 'national-province',
+    label: 'Hệ thống thông tin/nền tảng số Quốc gia, dùng chung cho tỉnh triển khai',
+    icon: 'map-pin',
+    accent: '#30B0C7',
+    items: [
+      {
+        id: 20,
+        unit: 'hệ thống',
+        name: 'Hệ thống thông tin giải quyết TTHC cấp tỉnh',
+        desc: 'Một cửa điện tử liên thông tỉnh — huyện — xã',
+        buyPrice: null,
+        rentPrice: null,
+      },
+      {
+        id: 21,
+        unit: 'nền tảng',
+        name: 'Nền tảng tích hợp, chia sẻ dữ liệu cấp tỉnh (LGSP)',
+        desc: 'Kết nối các hệ thống của tỉnh với NDXP quốc gia',
+        buyPrice: null,
+        rentPrice: null,
+      },
+      {
+        id: 22,
+        unit: 'hệ thống',
+        name: 'Quản lý văn bản & điều hành',
+        desc: 'Gửi nhận văn bản điện tử, ký số liên thông 4 cấp',
+        buyPrice: null,
+        rentPrice: null,
+      },
+      {
+        id: 23,
+        unit: 'trung tâm',
+        name: 'Giám sát, điều hành thông minh (IOC)',
+        desc: 'Tổng hợp chỉ tiêu KT-XH, giám sát điều hành tập trung',
+        buyPrice: null,
+        rentPrice: null,
+      },
+    ],
+  },
+  {
     id: 'it',
     label: 'Hạ tầng CNTT',
     icon: 'monitor',
@@ -247,7 +327,7 @@ function GroupBlock({ group }: { group: EquipGroup }) {
         </View>
         <View style={ss.groupMeta}>
           <Text style={ss.groupLabel}>{group.label}</Text>
-          <Text style={ss.groupCount}>{group.items.length} thiết bị</Text>
+          <Text style={ss.groupCount}>{group.items.length} mục</Text>
         </View>
         <Animated.View style={{ transform: [{ rotate }] }}>
           <Feather name="chevron-right" size={18} color={C.faint} />
