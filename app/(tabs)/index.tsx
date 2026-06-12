@@ -1,4 +1,5 @@
 import { Feather } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import React, { useState } from 'react';
 import {
   Dimensions,
@@ -12,7 +13,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AppRow } from '@/components/AppRow';
@@ -32,6 +32,13 @@ import {
 const { width: SW } = Dimensions.get('window');
 const CARD_W = SW - 48;
 const SNAP = CARD_W + 12;
+
+// Accent per pillar, used to tint each field card by its parent.
+const PILLAR_COLOR: Record<Category, string> = {
+  chinh_quyen: '#007AFF',
+  kinh_te: '#34C759',
+  xa_hoi: '#FF9500',
+};
 
 const FEATURED = FEATURED_IDS.map(id => PRODUCTS.find(p => p.id === id)!).filter(Boolean);
 
@@ -79,7 +86,7 @@ export default function TodayScreen() {
         {/* Header */}
         <View style={ss.header}>
           <Text style={ss.date}>{TODAY}</Text>
-          <Text style={ss.title}>Hôm nay</Text>
+          <Text style={ss.title}>Chuyển đổi số cấp Xã</Text>
         </View>
 
         {/* Featured carousel */}
@@ -107,8 +114,9 @@ export default function TodayScreen() {
         {/* Stats strip */}
         <View style={ss.statsStrip}>
           {[
-            { icon: 'layers' as const, n: '600', label: 'Sản phẩm' },
-            { icon: 'grid' as const, n: '3', label: 'Lĩnh vực' },
+            { icon: 'layers' as const, n: '1.591', label: 'Sản phẩm' },
+            { icon: 'grid' as const, n: '3', label: 'Trụ cột' },
+            { icon: 'columns' as const, n: '18', label: 'Lĩnh vực' },
             { icon: 'users' as const, n: '200+', label: 'Đơn vị' },
           ].map(({ icon, n, label }) => (
             <View key={label} style={ss.stat}>
@@ -121,8 +129,8 @@ export default function TodayScreen() {
 
         <View style={ss.div} />
 
-        {/* Category grid */}
-        <SectionHeader title="Lĩnh vực" onSeeAll={() => router.push('/browse')} />
+        {/* Category grid — 3 pillars, tap routes to Khám phá */}
+        <SectionHeader title="Các lĩnh vực" onSeeAll={() => router.push('/browse')} />
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -130,6 +138,7 @@ export default function TodayScreen() {
         >
           {ALL_CATEGORIES.map(cat => {
             const c = CATEGORY_CONFIG[cat];
+            const accent = PILLAR_COLOR[cat];
             const count = getProductsByCategory(cat).length;
             return (
               <Pressable
@@ -137,9 +146,13 @@ export default function TodayScreen() {
                 style={ss.catCard}
                 onPress={() => router.push({ pathname: '/browse', params: { category: cat } })}
               >
-                <VIcon name={c.icon} size={28} color="#1C1C1E" />
-                <Text style={ss.catName}>{c.label}</Text>
-                <Text style={ss.catCount}>{count}</Text>
+                <View style={[ss.catIconBox, { backgroundColor: accent + '18' }]}>
+                  <VIcon name={c.icon} size={22} color={accent} />
+                </View>
+                <Text style={ss.catName} numberOfLines={2}>
+                  {c.label}
+                </Text>
+                <Text style={ss.catCount}>{count} sản phẩm</Text>
               </Pressable>
             );
           })}
@@ -221,7 +234,7 @@ const ss = StyleSheet.create({
 
   catScroll: { paddingHorizontal: 24, gap: 10 },
   catCard: {
-    width: 110,
+    width: 124,
     backgroundColor: '#fff',
     borderRadius: 16,
     padding: 14,
@@ -230,7 +243,14 @@ const ss = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#E0E0E0',
   },
-  catName: { fontSize: 12, fontWeight: '700', color: '#1C1C1E' },
+  catIconBox: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  catName: { fontSize: 12, fontWeight: '700', color: '#1C1C1E', minHeight: 32 },
   catCount: { fontSize: 11, color: '#8E8E93' },
 
   chartCard: {
